@@ -1,15 +1,17 @@
 package Methods.MyProfile;
 
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by ��������� on 03.08.2015.
  */
-public class MyProfilePage extends Settings {
-    WebDriver driver = getDriver();
+public class MyProfilePage extends BaseTest {
+    RemoteWebDriver driver = getDriver();
     WebElement changePassBtn;
     WebElement oldPass;
     WebElement newPass;

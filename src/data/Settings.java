@@ -26,55 +26,9 @@ import java.util.Properties;
  */
 public class Settings {
 
-    public static RemoteWebDriver driver = getDriver();
-
-    public static RemoteWebDriver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(RemoteWebDriver _driver) {
-        driver = _driver;
-    }
+    public  RemoteWebDriver driver;
 
 
-
-
-
-    public PersonsPage GoToPersonsPage()throws InterruptedException, IOException {
-
-        wait(3000);
-        LoginPage loginPage = new LoginPage();
-        PersonsPage personsPage = loginPage.loginPositive();
-        return personsPage;
-    }
-    public void driverClose()
-    {
-        driver.close();
-    }
-
-    public static void wait(int milliSeconds) throws InterruptedException
-    {
-        Thread.sleep(milliSeconds);
-    }
-    public void alertAcept(){
-    getDriver().switchTo().alert().accept();
-
-}
-
-    public void waitForProgressBar(WebDriver driver, String text) throws InterruptedException {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
-        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='loading']")));
-        wait(5000);
-        try {
-            Assert.assertEquals(driver.findElement(By.xpath(".//*[@id='top-bar']/h3")).getText(), text);
-        }catch (Exception e){
-            System.out.print(e);
-        }
-
-//        webDriverWait.until(ExpectedConditions.textToBe(By.xpath(".//*[@id='top-bar']/h3"), text));
-
-
-    }
     }
 
 

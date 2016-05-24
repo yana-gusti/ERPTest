@@ -24,14 +24,14 @@ public class JobPositionsPageTest extends BaseTest {
     {
      personsPage = GoToPersonsPage();
         wait(1000);
-        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "!@#$";
         jobPositionsPage.createJobPosition(jobName);
         wait(3000);
         jobPositionsPage.cancel();
         wait(6000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -39,7 +39,7 @@ public class JobPositionsPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(1000);
-        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "QA Job";
         jobPositionsPage.createJobPosition(jobName);
@@ -52,14 +52,14 @@ public class JobPositionsPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(1000);
-        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "a";
         jobPositionsPage.createJobPosition(jobName);
         wait(3000);
         jobPositionsPage.cancel();
         wait(6000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "bad" })
@@ -67,14 +67,14 @@ public class JobPositionsPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(1000);
-        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "";
         jobPositionsPage.createJobPosition(jobName);
         wait(3000);
         jobPositionsPage.cancel();
         wait(6000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -82,14 +82,14 @@ public class JobPositionsPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(3000);
-        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         jobPositionsPage.viewJobDetails();
         wait(2000);
         jobPositionsPage.cancel();
 //        assertEquals("QA", getDriver().findElement(By.cssSelector("h3.left")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 
@@ -98,11 +98,11 @@ public class JobPositionsPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(3000);
-        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(4000);
         jobPositionsPage.editJobPosition();
         wait(4000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 
@@ -111,7 +111,7 @@ public class JobPositionsPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(1000);
-        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         jobPositionsPage.removeJobPosition();
         wait(3000);
@@ -119,6 +119,6 @@ public class JobPositionsPageTest extends BaseTest {
         wait(4000);
 //        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
 //        wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 }

@@ -26,13 +26,13 @@ public class PersonsPageTests extends BaseTest {
         wait(seconds);
         String firstName = "!@#";
         String lastName = "!@#";
-        personsPage.createCorrectPerson(firstName, lastName);
+        personsPage.createCorrectPerson(firstName, lastName, driver);
         wait(1000);
         alertAcept();
         wait(1000);
-        personsPage.cancel();
+        personsPage.cancel(driver);
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
         wait(1000);
 
     }
@@ -48,11 +48,11 @@ public class PersonsPageTests extends BaseTest {
         String firstName = "qwe";
         String lastName = "qwe";
         //steps
-        personsPage.createCorrectPerson(firstName, lastName);
+        personsPage.createCorrectPerson(firstName, lastName, driver);
         wait(1000);
         assertEquals("iana gusti", getDriver().findElement(By.cssSelector("a.gotoForm.title > span")).getText());
 
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 
@@ -67,13 +67,13 @@ public class PersonsPageTests extends BaseTest {
         String firstName = "";
         String lastName = "";
         //steps
-        personsPage.createCorrectPerson(firstName, lastName);
+        personsPage.createCorrectPerson(firstName, lastName, driver);
         wait(1000);
         alertAcept();
         wait(2000);
-        personsPage.cancel();
+        personsPage.cancel(driver);
         wait(2000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
 
@@ -84,14 +84,14 @@ public class PersonsPageTests extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(seconds);
-        personsPage.SwitchOnList();
+        personsPage.SwitchOnList(driver);
         wait(1000);
-        personsPage.viewPersonDetails();
+        personsPage.viewPersonDetails(driver);
         wait(1000);
 
         assertEquals("iana gusti", getDriver().findElement(By.cssSelector("span[title=\"iana gusti\"]")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
     @Test(groups = { "good" })
 
@@ -100,16 +100,16 @@ public class PersonsPageTests extends BaseTest {
         personsPage = GoToPersonsPage();
         wait(seconds);
 
-        personsPage.SwitchOnList();
+        personsPage.SwitchOnList(driver);
         wait(1000);
-        personsPage.viewPersonDetails();
+        personsPage.viewPersonDetails(driver);
         wait(1000);
-        personsPage.editPerson();
+        personsPage.editPerson(driver);
         wait(1000);
 
         assertEquals("yana@mail.ru", getDriver().findElement(By.linkText("yana@mail.ru")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -118,13 +118,13 @@ public class PersonsPageTests extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(seconds);
-        personsPage.removePerson();
+        personsPage.removePerson(driver);
         wait(1000);
         alertAcept();
         wait(1000);
 //        assertEquals("0", getDriver().findElement(By.id("grid-count")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
     @Test(groups = { "good" })
@@ -134,39 +134,39 @@ public class PersonsPageTests extends BaseTest {
         wait(seconds);
         String first = "qwe";
         String last = "qwe";
-        personsPage.createCorrectPerson(first,last);
+        personsPage.createCorrectPerson(first,last,driver);
         wait(1000);
         String firstTwo = "qaz";
         String lastTwo = "qaz";
-        personsPage.createCorrectPerson(firstTwo,lastTwo);
+        personsPage.createCorrectPerson(firstTwo,lastTwo, driver);
         wait(1000);
         String firstThree = "qsx";
         String lastThree = "qsx";
-        personsPage.createCorrectPerson(firstThree,lastThree);
+        personsPage.createCorrectPerson(firstThree,lastThree, driver);
         wait(1000);
         String firstFour= "qdc";
         String lastFour = "qdc";
-        personsPage.createCorrectPerson(firstFour,lastFour);
+        personsPage.createCorrectPerson(firstFour,lastFour, driver);
         wait(1000);
         String firstFive = "rfv";
         String lastFive = "rfv";
-        personsPage.createCorrectPerson(firstFive,lastFive);
+        personsPage.createCorrectPerson(firstFive,lastFive, driver);
         wait(1000);
         String firstSix = "aaa";
         String lastSix = "aaa";
-        personsPage.createCorrectPerson(firstSix,lastSix);
+        personsPage.createCorrectPerson(firstSix,lastSix, driver);
         wait(1000);
-        personsPage.SwitchOnList();
+        personsPage.SwitchOnList(driver);
         wait(1000);
-        personsPage.Select5PerPage();
+        personsPage.Select5PerPage(driver);
         wait(1000);
-        personsPage.NextPage();
+        personsPage.NextPage(driver);
         wait(1000);
-        personsPage.removePerson();
+        personsPage.removePerson(driver);
         wait(1000);
         alertAcept();
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 //
 //    @Test(groups = {"good"})
@@ -224,7 +224,7 @@ public class PersonsPageTests extends BaseTest {
     public void FiltersPerson() throws InterruptedException, IOException {
         personsPage = GoToPersonsPage();
         wait(1000);
-        personsPage.removePerson();
+        personsPage.removePerson(driver);
         wait(1000);
         alertAcept();
         wait(1000);
@@ -244,28 +244,28 @@ public class PersonsPageTests extends BaseTest {
         String phone3= "333333333";
         String country3= "USA";
 
-        personsPage.createCorrectPerson(firstName1, lastName1);
+        personsPage.createCorrectPerson(firstName1, lastName1, driver);
         wait(1000);
-        personsPage.SwitchOnList();
+        personsPage.SwitchOnList(driver);
         wait(1000);
 
         assertEquals("Anderson", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
         assertEquals("Andersonovich", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[4]")).getText());
         wait(1000);
-        personsPage.createCorrectPerson(firstName2, lastName2);
+        personsPage.createCorrectPerson(firstName2, lastName2, driver);
         wait(1000);
-        personsPage.SwitchOnList();
+        personsPage.SwitchOnList(driver);
         assertEquals("Bon", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
         assertEquals("Bonovich", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[4]")).getText());
         wait(1000);
-        personsPage.createCorrectPerson(firstName3, lastName3);
-        personsPage.SwitchOnList();
+        personsPage.createCorrectPerson(firstName3, lastName3, driver);
+        personsPage.SwitchOnList(driver);
         wait(1000);
         assertEquals("Citrix", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
         assertEquals("Citrixovich", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[4]")).getText());
         wait(1000);
 
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 }

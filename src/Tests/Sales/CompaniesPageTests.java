@@ -24,7 +24,7 @@ public class CompaniesPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.goToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "!@#$";
         companyPage.createCorrectCompany(companyName);
@@ -33,14 +33,14 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
         companyPage.cancel();
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
     @Test(groups = { "bad" })
     public void CreateShortCompany() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.goToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "a";
         companyPage.createCorrectCompany(companyName);
@@ -49,7 +49,7 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
         companyPage.cancel();
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     //
@@ -58,14 +58,14 @@ public class CompaniesPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.goToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "Test";
         companyPage.createCorrectCompany(companyName);
         wait(1000);
         assertEquals("MS", getDriver().findElement(By.linkText("MS")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "bad" })
@@ -74,7 +74,7 @@ public class CompaniesPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.goToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "";
         companyPage.createCorrectCompany(companyName);
@@ -83,7 +83,7 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
         companyPage.cancel();
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 
@@ -93,7 +93,7 @@ public class CompaniesPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.goToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(1000);
         companyPage.SwitchOnList();
         wait(1000);
@@ -101,7 +101,7 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
         assertEquals("MS", getDriver().findElement(By.cssSelector("span[title=\"MS\"]")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
     @Test(groups = { "good" })
@@ -109,7 +109,7 @@ public class CompaniesPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.goToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         companyPage.SwitchOnList();
         wait(1000);
@@ -121,7 +121,7 @@ public class CompaniesPageTests extends BaseTest {
         assertEquals("www.ua.com", getDriver().findElement(By.id("website")).getText());
 
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -130,7 +130,7 @@ public class CompaniesPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.goToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(1000);
         companyPage.SwitchOnList();
         wait(1000);
@@ -142,6 +142,6 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
 //        assertEquals("0", getDriver().findElement(By.id("grid-count")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 }

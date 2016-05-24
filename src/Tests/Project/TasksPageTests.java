@@ -22,7 +22,7 @@ public class TasksPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        TasksPage taskPage = personsPage.switchToTask();
+        TasksPage taskPage = personsPage.switchToTask(driver);
         wait(seconds);
         String summary = "!@#$";
         //steps
@@ -32,14 +32,14 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
     @Test(groups = { "bad" })
     public void CreateShortTask() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        TasksPage taskPage = personsPage.switchToTask();
+        TasksPage taskPage = personsPage.switchToTask(driver);
         wait(seconds);
         String summary = "a";
         //steps
@@ -49,7 +49,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
 
@@ -58,17 +58,17 @@ public class TasksPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        ProjectPage projectPage = personsPage.switchToProject();
+        ProjectPage projectPage = personsPage.switchToProject(driver);
         wait(seconds);
         projectPage.createProject("AS");
         wait(seconds);
-        TasksPage taskPage = personsPage.switchToTask();
+        TasksPage taskPage = personsPage.switchToTask(driver);
         wait(seconds);
         String summary = "QA Task";
         wait(seconds);
         taskPage.createCorrectTask(summary);
         wait(seconds);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "bad" })
@@ -77,7 +77,7 @@ public class TasksPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        TasksPage taskPage = personsPage.switchToTask();
+        TasksPage taskPage = personsPage.switchToTask(driver);
         wait(seconds);
         String summary = "";
         //steps
@@ -87,7 +87,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -96,13 +96,13 @@ public class TasksPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        TasksPage taskPage = personsPage.switchToTask();
+        TasksPage taskPage = personsPage.switchToTask(driver);
         wait(seconds);
         taskPage.viewTaskDetails();
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
 
@@ -113,21 +113,21 @@ public class TasksPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        TasksPage taskPage = personsPage.switchToTask();
+        TasksPage taskPage = personsPage.switchToTask(driver);
         wait(seconds);
         wait(seconds);
         taskPage.removeTask();
         wait(seconds);
         alertAcept();
         wait(seconds);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
     @Test(groups = { "good" })
     public void DragAndDropTasks() throws InterruptedException, IOException {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        TasksPage taskPage = personsPage.switchToTask();
+        TasksPage taskPage = personsPage.switchToTask(driver);
         wait(seconds);
 //        String summary = taskPage.getProperty("summary.good");
         wait(seconds);
@@ -139,7 +139,7 @@ public class TasksPageTests extends BaseTest {
 //        wait(1000);
 //        alertAcept();
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
 }

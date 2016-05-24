@@ -2,6 +2,7 @@ package Methods.HR;
 
 
 import Methods.MyProfile.LoginPage;
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ import static org.testng.Assert.assertEquals;
  * Time: 16:02
  * To change this template use File | Settings | File Templates.
  */
-public class JobPositionsPage extends Settings {
+public class JobPositionsPage extends BaseTest {
     public WebElement userName;
     public WebElement createBtn;
     public WebElement jobName;

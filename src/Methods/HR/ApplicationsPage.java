@@ -2,6 +2,7 @@ package Methods.HR;
 
 
 import Methods.MyProfile.LoginPage;
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -17,7 +18,7 @@ import java.io.IOException;
  * Time: 16:01
  * To change this template use File | Settings | File Templates.
  */
-public class ApplicationsPage extends Settings {
+public class ApplicationsPage extends BaseTest {
     public WebElement userName;
     public WebElement createBtn;
     public WebElement firstName;
@@ -52,50 +53,50 @@ public class ApplicationsPage extends Settings {
 
 
 
-    public void createApplication( String _firstName, String _lastName) throws InterruptedException {
-        createBtn  = getDriver().findElement(By.id("top-bar-createBtn"));
+    public void createApplication( String _firstName, String _lastName, RemoteWebDriver driver) throws InterruptedException {
+        createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
-        firstName = getDriver().findElement(By.id("first"));
+        firstName = driver.findElement(By.id("first"));
         firstName.sendKeys(_firstName);
-        lastName = getDriver().findElement(By.id("last"));
+        lastName = driver.findElement(By.id("last"));
         lastName.sendKeys(_lastName);
-        WebElement birthday=getDriver().findElement(By.id("dateBirth"));
+        WebElement birthday=driver.findElement(By.id("dateBirth"));
         birthday.click();
+        wait(3000);
+        driver.findElement(By.linkText("Prev")).click();
         wait(1000);
-        getDriver().findElement(By.linkText("Prev")).click();
-        wait(1000);
-        WebElement choose_birthday=getDriver().findElement(By.linkText("13"));
+        WebElement choose_birthday=driver.findElement(By.linkText("13"));
         choose_birthday.click();
         wait(1000);
 
-        createAppBtn  = getDriver().findElement(By.xpath("(//button[@type='button'])[2]"));
+        createAppBtn  = driver.findElement(By.xpath("(//button[@type='button'])[2]"));
         createAppBtn.click();
     }
 
-    public void SwitchOnList() throws InterruptedException {
-        listBtn = getDriver().findElement(By.xpath("listBtn"));
+    public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
+        listBtn = driver.findElement(By.xpath("listBtn"));
         listBtn.click();
     }
-    public void viewAppDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(".//*[@id='listTable']/tr/td[3]"));
+    public void viewAppDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
+        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[3]"));
         choose_one.click();
     }
-    public void removeApp() throws InterruptedException {
-        getDriver().findElement(By.xpath(".//*[@id='check_all']")).click();
+    public void removeApp(RemoteWebDriver driver) throws InterruptedException {
+        driver.findElement(By.xpath(".//*[@id='check_all']")).click();
         wait(1000);
-        deleteBtn = getDriver().findElement(By.id("top-bar-deleteBtn"));
+        deleteBtn = driver.findElement(By.id("top-bar-deleteBtn"));
         deleteBtn.click();
 
 
     }
-    public void cancel(){
-        getDriver().findElement(By.xpath("(//button[@type='button'])[3]")).click();
+    public void cancel(RemoteWebDriver driver){
+        driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
 
     }
 
 
-    public void cancelInDetails(){
-        getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
+    public void cancelInDetails(RemoteWebDriver driver){
+        driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
 
     }
 

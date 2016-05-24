@@ -17,32 +17,32 @@ public class BirthdaysPageTests extends BaseTest {
     public void CheckBirthdaysTest() throws InterruptedException, IOException {
       PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
-      JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+      JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
       wait(1000);
       String jobName = "QA";
       jobPositionsPage.createJobPosition(jobName);
       wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
         String firstName = "iana";
         String lastName = "gusti";
-        employeesPage.createEmployee(firstName, lastName);
+        employeesPage.createEmployee(firstName, lastName, driver);
         wait(2000);
-        BirthdaysPage birthdaysPage = personsPage.switchToBirthdays();
+        BirthdaysPage birthdaysPage = personsPage.switchToBirthdays(driver);
         wait(2000);
         birthdaysPage.CheckBirthdays();
         wait(1000);
-        employeesPage.removeEmployee();
+        employeesPage.removeEmployee(driver);
         wait(1000);
         alertAcept();
         wait(1000);
-      jobPositionsPage = personsPage.switchToJobPosition();
+      jobPositionsPage = personsPage.switchToJobPosition(driver);
       wait(1000);
       jobPositionsPage.removeJobPosition();
       wait(1000);
       alertAcept();
       wait(1000);
-      personsPage.logOut();
+      personsPage.logOut(driver);
 
 
 

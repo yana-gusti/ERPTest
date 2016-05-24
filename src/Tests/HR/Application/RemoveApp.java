@@ -16,17 +16,17 @@ public class RemoveApp extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
-        ApplicationsPage applicationsPage = personsPage.switchToApplication();
+        ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
         wait(3000);
-        applicationsPage.SwitchOnList();
+        applicationsPage.SwitchOnList(driver);
         wait(5000);
-        applicationsPage.removeApp();
+        applicationsPage.removeApp(driver);
         wait(1000);
         alertAcept();
         wait(1000);
 //        assertEquals("1 - 1 of 1 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
 
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 }

@@ -19,9 +19,9 @@ public class wTrackPageTests extends BaseTest {
     public void createwTrackItem() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        WTrackPage wTrackPage = personsPage.switchToWTrack();
+        WTrackPage wTrackPage = personsPage.switchToWTrack(driver);
         wTrackPage.createwTrackItem();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -29,9 +29,9 @@ public class wTrackPageTests extends BaseTest {
     public void editwTrackItem() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        WTrackPage wTrackPage = personsPage.switchToWTrack();
+        WTrackPage wTrackPage = personsPage.switchToWTrack(driver);
         wTrackPage.editwTrackItem();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -39,9 +39,9 @@ public class wTrackPageTests extends BaseTest {
     public void generateInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        WTrackPage wTrackPage = personsPage.switchToWTrack();
+        WTrackPage wTrackPage = personsPage.switchToWTrack(driver);
         InvoicePage invoicePage = wTrackPage.generateInvoice();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -49,9 +49,9 @@ public class wTrackPageTests extends BaseTest {
     public void kpayInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        InvoicePage invoicePage = personsPage.switchToInvoice();
+        InvoicePage invoicePage = personsPage.switchToInvoice(driver);
         invoicePage.payInvoice();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -59,9 +59,9 @@ public class wTrackPageTests extends BaseTest {
     public void lpayInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        CustomerPaymentsPage customerPaymentsPage = personsPage.switchToCustomerPaymentsPage();
+        CustomerPaymentsPage customerPaymentsPage = personsPage.switchToCustomerPaymentsPage(driver);
         customerPaymentsPage.payInvoice();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -69,9 +69,9 @@ public class wTrackPageTests extends BaseTest {
     public void mckeckInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        InvoicePage invoicePage = personsPage.switchToInvoice();
+        InvoicePage invoicePage = personsPage.switchToInvoice(driver);
         invoicePage.checkPaidStatus();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -79,9 +79,9 @@ public class wTrackPageTests extends BaseTest {
     public void removeInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        InvoicePage invoicePage = personsPage.switchToInvoice();
+        InvoicePage invoicePage = personsPage.switchToInvoice(driver);
         invoicePage.removeInvoice();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -89,9 +89,9 @@ public class wTrackPageTests extends BaseTest {
     public void removewPayment() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        CustomerPaymentsPage customerPaymentsPage = personsPage.switchToCustomerPaymentsPage();
+        CustomerPaymentsPage customerPaymentsPage = personsPage.switchToCustomerPaymentsPage(driver);
         customerPaymentsPage.removewPayments();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -99,8 +99,8 @@ public class wTrackPageTests extends BaseTest {
     public void removewTrackItem() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        WTrackPage wTrackPage = personsPage.switchToWTrack();
+        WTrackPage wTrackPage = personsPage.switchToWTrack(driver);
         wTrackPage.removewTrackItem();
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 }

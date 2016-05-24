@@ -24,20 +24,20 @@ public class MyProfilePageTest extends BaseTest {
         String userName = "yana.gusti";
         String pass = "thinkmobiles2015";
         String passNew = "222222";
-        loginPage.login(userName, pass);
+        loginPage.login(userName, pass,driver);
         PersonsPage personsPage = new PersonsPage();
-        MyProfilePage myProfilePage= personsPage.goToMyProfile();
+        MyProfilePage myProfilePage= personsPage.goToMyProfile(driver);
         wait(3000);
         myProfilePage.changePass(pass, passNew);
-        personsPage.logOut();
+        personsPage.logOut(driver);
         wait(3000);
-        loginPage.login(userName, passNew);
+        loginPage.login(userName, passNew,driver);
         wait(3000);
         PersonsPage personsPage1 = new PersonsPage();
-        MyProfilePage myProfilePage1= personsPage1.goToMyProfile();
+        MyProfilePage myProfilePage1= personsPage1.goToMyProfile(driver);
         wait(3000);
         myProfilePage1.changePass(passNew, pass);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -48,9 +48,9 @@ public class MyProfilePageTest extends BaseTest {
         String userName = "yana.gusti";
         String pass = "thinkmobiles2015";
         String passNew = "11";
-        loginPage.login(userName, pass);
+        loginPage.login(userName, pass, driver);
         PersonsPage personsPage = new PersonsPage();
-        MyProfilePage myProfilePage= personsPage.goToMyProfile();
+        MyProfilePage myProfilePage= personsPage.goToMyProfile(driver);
         wait(3000);
         myProfilePage.changePass(pass, passNew);
 
@@ -64,9 +64,9 @@ public class MyProfilePageTest extends BaseTest {
         String userName = "yana.gusti";
         String pass = "thinkmobiles2015";
         String passNew = "";
-        loginPage.login(userName, pass);
+        loginPage.login(userName, pass, driver);
         PersonsPage personsPage = new PersonsPage();
-        MyProfilePage myProfilePage= personsPage.goToMyProfile();
+        MyProfilePage myProfilePage= personsPage.goToMyProfile(driver);
         wait(3000);
         myProfilePage.changePass(pass, passNew);
 

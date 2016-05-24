@@ -16,14 +16,14 @@ public class EmptyApp extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
-        ApplicationsPage applicationsPage = personsPage.switchToApplication();
+        ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
         wait(3000);
         String firstName = "";
         String lastName = "";
-        applicationsPage.createApplication( firstName, lastName);
+        applicationsPage.createApplication( firstName, lastName, driver);
         wait(1000);
-        applicationsPage.cancel();
+        applicationsPage.cancel(driver);
         wait(6000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 }

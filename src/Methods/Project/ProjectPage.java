@@ -1,18 +1,20 @@
 package Methods.Project;
 
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static org.testng.Assert.assertEquals;
 
 /**
  * Created by ��������� on 05.08.2015.
  */
-public class ProjectPage extends Settings {
+public class ProjectPage extends BaseTest {
 
-    WebDriver driver = getDriver();
+    RemoteWebDriver driver = getDriver();
 
 
     public ProjectPage(){

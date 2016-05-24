@@ -1,6 +1,7 @@
 package Methods.Sales;
 
 import Methods.MyProfile.LoginPage;
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by puzzlefacePC on 06.01.14.
  */
-public class OpportunitiesPage extends Settings {
+public class OpportunitiesPage extends BaseTest {
 
     public WebElement userName;
     public WebElement logOut;

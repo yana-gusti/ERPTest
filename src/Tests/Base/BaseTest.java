@@ -1,10 +1,17 @@
 package Tests.Base;
 
+import Methods.MyProfile.LoginPage;
 import Methods.MyProfile.MoveThroughMenu;
+import Methods.Sales.PersonsPage;
 import data.Settings;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.IOException;
@@ -20,17 +27,17 @@ import java.util.concurrent.TimeUnit;
  * Time: 13:20
  * To change this template use File | Settings | File Templates.
  */
-public class BaseTest extends Settings {
-    public  String baseUrl = "http://testdemo.easyerp.com";
+public class BaseTest {
+    public static String baseUrl = "http://testdemo.easyerp.com";
 
     //ThreadLocal will keep local copy of driver
-    public  RemoteWebDriver driver = getDriver();
+    public RemoteWebDriver driver;
     public ArrayList<String> tabMenuItems = new ArrayList<String>();
 
 @BeforeTest
 //Parameter will get browser from testng.xml on which browser test to run
 @Parameters("myBrowser")
-public void beforeClass(String myBrowser) throws MalformedURLException {
+public  void beforeClass(String myBrowser) throws MalformedURLException {
 
     if(myBrowser.equals("chrome")){
         DesiredCapabilities capability = new DesiredCapabilities().chrome();
@@ -88,5 +95,48 @@ public void beforeClass(String myBrowser) throws MalformedURLException {
 //        setDriver(new ChromeDriver());
 //        getDriver().manage().window().maximize();
 //    }
+    public  RemoteWebDriver getDriver() {
+        return driver;
+    }
 
+    public void setDriver(RemoteWebDriver _driver) {
+        driver = _driver;
+    }
+
+
+
+
+
+    public PersonsPage GoToPersonsPage()throws InterruptedException, IOException {
+
+        wait(3000);
+        LoginPage loginPage = new LoginPage();
+        PersonsPage personsPage = loginPage.loginPositive(driver);
+        return personsPage;
+    }
+
+
+    public static void wait(int milliSeconds) throws InterruptedException
+    {
+        Thread.sleep(milliSeconds);
+    }
+    public void alertAcept(){
+        getDriver().switchTo().alert().accept();
+
+    }
+
+    public void waitForProgressBar(WebDriver driver, String text) throws InterruptedException {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
+        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='loading']")));
+        wait(5000);
+        try {
+            Assert.assertEquals(driver.findElement(By.xpath(".//*[@id='top-bar']/h3")).getText(), text);
+        }catch (Exception e){
+            System.out.print(e);
+        }
+
+//        webDriverWait.until(ExpectedConditions.textToBe(By.xpath(".//*[@id='top-bar']/h3"), text));
+
+
+    }
 }

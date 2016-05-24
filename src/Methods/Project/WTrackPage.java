@@ -1,18 +1,20 @@
 package Methods.Project;
 
 import Methods.Sales.InvoicePage;
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by ��������� on 05.08.2015.
  */
-public class WTrackPage extends Settings {
+public class WTrackPage extends BaseTest {
     Integer sec = 2000;
 
-    WebDriver driver = getDriver();
+    RemoteWebDriver driver = getDriver();
 
 
     public WTrackPage(){

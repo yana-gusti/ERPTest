@@ -2,6 +2,7 @@ package Methods.Project;
 
 
 import Methods.MyProfile.LoginPage;
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by puzzlefacePC on 03.01.14.
  */
-public class TasksPage extends Settings {
+public class TasksPage extends BaseTest {
 
     public WebElement userName;
     public WebElement createBtn;

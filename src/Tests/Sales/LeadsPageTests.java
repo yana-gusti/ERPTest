@@ -23,7 +23,7 @@ public class LeadsPageTests extends BaseTest {
     {
        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         String leadName = "!!!!";
         //steps
@@ -33,14 +33,14 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
         leadsPage.cancel();
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
     @Test(groups = { "bad" })
     public void CreateShortLead() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         String leadsName = "a";
         //steps
@@ -50,7 +50,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
         leadsPage.cancel();
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 }
 
 
@@ -59,7 +59,7 @@ public class LeadsPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         String leadsName = "MS";
         //steps
@@ -67,7 +67,7 @@ public class LeadsPageTests extends BaseTest {
 //        assertEquals("MS", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
 
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "bad" })
@@ -76,7 +76,7 @@ public class LeadsPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         String leadsName = "";
         //steps
@@ -93,14 +93,14 @@ public class LeadsPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         leadsPage.viewLeadDetails();
         wait(1000);
         leadsPage.cancel();
 //        assertEquals("MS", getDriver().findElement(By.cssSelector("h2")).getText());
         wait(2000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -109,13 +109,13 @@ public class LeadsPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(1000);
         leadsPage.ChangeStage();
         wait(1000);
         assertEquals("1 - 0 of 1 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 
@@ -125,7 +125,7 @@ public class LeadsPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         leadsPage.viewLeadDetails();
         wait(2000);
@@ -135,7 +135,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
 //        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
         wait(1000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
     @Test(groups = { "good" })
@@ -144,7 +144,7 @@ public class LeadsPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        LeadsPage leadsPage = personsPage.switchToLeads();
+        LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         String leadsName = "MS";
         //steps
@@ -154,7 +154,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
         leadsPage.convertToOpportunity();
         wait(3000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 

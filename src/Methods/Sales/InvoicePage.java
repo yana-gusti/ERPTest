@@ -1,15 +1,17 @@
 package Methods.Sales;
 
 import Methods.Accounting.CustomerPaymentsPage;
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by ��������� on 05.08.2015.
  */
-public class InvoicePage extends Settings {
-    WebDriver driver = getDriver();
+public class InvoicePage extends BaseTest {
+    RemoteWebDriver driver = getDriver();
     Integer sec = 2000;
 
 

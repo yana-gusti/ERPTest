@@ -24,17 +24,17 @@ public class EmployeesPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
         String firstName = "!@#$";
         String lastName = "!@#$";
-        employeesPage.createEmployee(firstName, lastName);
+        employeesPage.createEmployee(firstName, lastName, driver);
         wait(3000);
 //        alertAcept();
 //        wait(1000);
-        employeesPage.cancel();
+        employeesPage.cancel(driver);
         wait(3000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -47,13 +47,13 @@ public class EmployeesPageTest extends BaseTest {
 //        String jobName = jobPositionsPage.getProperty("jobName.good");
 //        jobPositionsPage.createJobPosition(jobName);
         wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
         String firstName ="iana";
         String lastName = "gusti";
-        employeesPage.createEmployee(firstName, lastName);
+        employeesPage.createEmployee(firstName, lastName, driver);
         wait(3000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
 
     }
 
@@ -62,17 +62,17 @@ public class EmployeesPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
         String firstName = "a";
         String lastName = "a";
-        employeesPage.createEmployee(firstName, lastName);
+        employeesPage.createEmployee(firstName, lastName, driver);
         wait(3000);
 //        alertAcept();
 //        wait(1000);
-        employeesPage.cancel();
+        employeesPage.cancel(driver);
         wait(3000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "bad" })
@@ -80,17 +80,17 @@ public class EmployeesPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
         String firstName = "";
         String lastName = "";
-        employeesPage.createEmployee(firstName, lastName);
+        employeesPage.createEmployee(firstName, lastName, driver);
         wait(3000);
 //        alertAcept();
 //        wait(1000);
-        employeesPage.cancel();
+        employeesPage.cancel(driver);
         wait(3000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
     @Test(groups = { "good" })
@@ -98,21 +98,21 @@ public class EmployeesPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
 //        String firstName = employeesPage.getProperty("firstName.good");
 //        String lastName = employeesPage.getProperty("lastName.good");
 //        employeesPage.createEmployee(firstName, lastName);
 //        wait(3000);
-        employeesPage.SwitchOnList();
+        employeesPage.SwitchOnList(driver);
         wait(5000);
-        employeesPage.viewEmployeeDetails();
+        employeesPage.viewEmployeeDetails(driver);
         wait(1000);
 //        assertEquals("iana", getDriver().findElement(By.xpath(".//*[@id='employeeForm']/div[2]/div[1]/div[2]/div[1]/dl/dd[1]")).getText());
         wait(1000);
-        employeesPage.cancel();
+        employeesPage.cancel(driver);
         wait(2000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 
 
@@ -137,17 +137,17 @@ public class EmployeesPageTest extends BaseTest {
     {
         personsPage = GoToPersonsPage();
         wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
 //        wait(3000);
 //        String firstName = employeesPage.getProperty("firstName.remove");
 //        String lastName = employeesPage.getProperty("lastName.remove");
 //        employeesPage.createEmployee(firstName, lastName);
         wait(5000);
-        employeesPage.SwitchOnList();
+        employeesPage.SwitchOnList(driver);
         wait(5000);
-        employeesPage.viewEmployeeDetails();
+        employeesPage.viewEmployeeDetails(driver);
         wait(3000);
-        employeesPage.removeEmployee();
+        employeesPage.removeEmployee(driver);
         wait(3000);
         alertAcept();
 //        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
@@ -156,20 +156,20 @@ public class EmployeesPageTest extends BaseTest {
 //        wait(1000);
 //        alertAcept();
         wait(5000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
     @Test(groups = {"good"})
     public void CreateNewFilterEmployees() throws InterruptedException, IOException {
         personsPage = GoToPersonsPage();
         wait(3000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
+        EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
 //        wait(3000);
 //        String firstName = employeesPage.getProperty("firstName.remove");
 //        String lastName = employeesPage.getProperty("lastName.remove");
 //        employeesPage.createEmployee(firstName, lastName);
         wait(5000);
-        employeesPage.EmployeesFilter();
+        employeesPage.EmployeesFilter(driver);
         wait(5000);
-        personsPage.logOut();
+        personsPage.logOut(driver);
     }
 }

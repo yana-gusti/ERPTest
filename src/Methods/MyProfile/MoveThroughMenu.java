@@ -1,5 +1,6 @@
 package Methods.MyProfile;
 
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Created by yana on 05.05.2016.
  */
-public class MoveThroughMenu extends Settings {
+public class MoveThroughMenu extends BaseTest {
 
 
     public void MoveThroughMenu(WebDriver driver, ArrayList<String> tabMenuItems) throws InterruptedException {

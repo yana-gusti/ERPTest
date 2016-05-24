@@ -1,12 +1,13 @@
 package Methods.Accounting;
 
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 
 /**
  * Created by Yana on 31.08.2015.
  */
-public class CustomerPaymentsPage extends Settings {
+public class CustomerPaymentsPage extends BaseTest {
 
 
     public CustomerPaymentsPage(){

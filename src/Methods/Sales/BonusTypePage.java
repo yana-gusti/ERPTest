@@ -1,14 +1,16 @@
 package Methods.Sales;
 
+import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by ��������� on 21.08.2015.
  */
-public class BonusTypePage extends Settings {
-    WebDriver driver = getDriver();
+public class BonusTypePage extends BaseTest {
+    RemoteWebDriver driver = getDriver();
 
 
     public BonusTypePage(){

@@ -11,7 +11,7 @@ import java.io.IOException;
 import static org.testng.Assert.assertEquals;
 
 /**
- * Created by Александр on 05.08.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 05.08.2015.
  */
 public class ProjectPageTests extends BaseTest {
     int seconds=2000;
@@ -20,7 +20,7 @@ public class ProjectPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        ProjectPage projectPage = personsPage.switchToProject();
+        ProjectPage projectPage = personsPage.switchToProject(driver);
         wait(seconds);
         String projectName= "Qa test";
         projectPage.createProject(projectName);
@@ -35,7 +35,7 @@ public class ProjectPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        ProjectPage projectPage = personsPage.switchToProject();
+        ProjectPage projectPage = personsPage.switchToProject(driver);
         wait(seconds);
         String projectName= "!!!!";
         projectPage.createProject(projectName);
@@ -49,7 +49,7 @@ public class ProjectPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        ProjectPage projectPage = personsPage.switchToProject();
+        ProjectPage projectPage = personsPage.switchToProject(driver);
         wait(seconds);
         String projectName= "";
         projectPage.createProject(projectName);
@@ -62,7 +62,7 @@ public class ProjectPageTests extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        ProjectPage projectPage = personsPage.switchToProject();
+        ProjectPage projectPage = personsPage.switchToProject(driver);
         wait(seconds);
         projectPage.createProjectWithAttachment();
         projectPage.switchToList();
