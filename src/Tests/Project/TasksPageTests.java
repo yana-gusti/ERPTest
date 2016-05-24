@@ -1,9 +1,9 @@
 package Tests.Project;
 
-import Methods.HR.EmployeesPage;
+import Methods.Project.ProjectPage;
 import Methods.Project.TasksPage;
 import Methods.Sales.PersonsPage;
-import Tests.BaseTest;
+import Tests.Base.BaseTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -16,10 +16,11 @@ public class TasksPageTests extends BaseTest {
 
 
 
+
     @Test(groups = { "bad" })
     public void CreateIncorrectTask() throws InterruptedException, IOException
     {
-       PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
@@ -36,7 +37,7 @@ public class TasksPageTests extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateShortTask() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
@@ -51,38 +52,30 @@ public class TasksPageTests extends BaseTest {
         taskPage.logOut();
     }
 
-    //
-//    @Test(groups = { "good" })
-//    public void CreateCorrectTask() throws InterruptedException, IOException
-//    {
-//        goHome();
-//        wait(3000);
-//
-//        LoginPage loginPage = new LoginPage();
-//        wait(seconds);
-//        String username = loginPage.getProperty("username.admin");
-//        String password = loginPage.getProperty("password.admin");
-//        PersonsPage personsPage = loginPage.successLogin(username, password);
-//        wait(3000);
-//        EmployeesPage employeesPage = personsPage.switchToEmployee();
-//        wait(3000);
-//        String firstName= "aaaaa";
-//        String lastName = "bbbbb";
-//        employeesPage.createEmployee(firstName, lastName);
-//        wait(2000);
-//        TasksPage taskPage = personsPage.switchToTask();
-//        String summary = taskPage.getProperty("summary.good");
-//        wait(seconds);
-//        taskPage.createCorrectTask(summary);
-//        wait(seconds);
-//        taskPage.logOut();
-//    }
+
+    @Test(groups = { "good" })
+    public void CreateCorrectTask() throws InterruptedException, IOException
+    {
+        PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
+        ProjectPage projectPage = personsPage.switchToProject();
+        wait(seconds);
+        projectPage.createProject("AS");
+        wait(seconds);
+        TasksPage taskPage = personsPage.switchToTask();
+        wait(seconds);
+        String summary = taskPage.getProperty("summary.good");
+        wait(seconds);
+        taskPage.createCorrectTask(summary);
+        wait(seconds);
+        taskPage.logOut();
+    }
 
     @Test(groups = { "bad" })
 
     public void CreateTaskWithBlankField() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
@@ -101,7 +94,7 @@ public class TasksPageTests extends BaseTest {
 
       public void DetailsOfTask() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
@@ -112,40 +105,16 @@ public class TasksPageTests extends BaseTest {
         taskPage.logOut();
     }
 
-//    @Test(groups = { "good" })
 
-//    public void Filter() throws InterruptedException, IOException
-//    {
-//        goHome();
-//        wait(2000);
-//        LoginPage loginPage = new LoginPage();
-//        String username = loginPage.getProperty("username.admin");
-//        String password = loginPage.getProperty("password.admin");
-//        PersonsPage personsPage = loginPage.successLogin(username, password);
-//        wait(1000);
-//        TasksPage taskPage = personsPage.switchToTask();
-//        wait(1000);
-//        taskPage.ChangeStage();
-//        wait(1000);
-//        String contentHolder = leadsPage.getProperty("content-holder.value");;
-//        assertEquals("0 - 0 of 0 items", contentHolder);
-//        wait(1000);
-//        leadsPage.logOut();
-//        wait(1000);
-//        String loginForm = loginPage.getProperty("loginForm.id");
-//        Assert.assertTrue(loginPage.pageContains(loginForm));
-//
-////        driverClose();
-//
-//    }
 
     @Test(groups = { "good" })
 
     public void RemoveTask() throws InterruptedException, IOException
     {
-       PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
+        wait(seconds);
         wait(seconds);
         taskPage.removeTask();
         wait(seconds);
@@ -156,9 +125,10 @@ public class TasksPageTests extends BaseTest {
     }
     @Test(groups = { "good" })
     public void DragAndDropTasks() throws InterruptedException, IOException {
-      PersonsPage  personsPage = GoToPersonPage();
-        wait(2000);
+        PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
+        wait(seconds);
 //        String summary = taskPage.getProperty("summary.good");
         wait(seconds);
 //        taskPage.createCorrectTask(summary);
@@ -176,29 +146,5 @@ public class TasksPageTests extends BaseTest {
         wait(1000);
         taskPage.logOut();
     }
-    @Test(groups = { "good" })
-    public void CheckStageTasks() throws InterruptedException, IOException {
-      PersonsPage  personsPage = GoToPersonPage();
-        wait(2000);
-        EmployeesPage employeesPage = personsPage.switchToEmployee();
-        wait(3000);
-        String firstName= "aaaaa";
-        String lastName = "bbbbb";
-        employeesPage.createEmployee(firstName, lastName);
-        wait(2000);
-        TasksPage taskPage = personsPage.switchToTask();
-        String summary = taskPage.getProperty("summary.good");
-        wait(seconds);
-        taskPage.createCorrectTask(summary);
-        wait(seconds);
-        taskPage.DeselectAllExeptOneInStageFilters();
-        taskPage.SelectOneStage();
-//        wait(1000);
-//        taskPage.removeTask();
-//        wait(1000);
-//        alertAcept();
-        wait(1000);
-        taskPage.logOut();
 
-    }
 }

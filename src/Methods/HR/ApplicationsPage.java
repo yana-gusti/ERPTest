@@ -1,10 +1,12 @@
 package Methods.HR;
 
-import Methods.LoginPage;
-import Methods.PageBase;
+
+import Methods.Base.PageBase;
+import Methods.MyProfile.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 
@@ -52,38 +54,42 @@ public class ApplicationsPage extends PageBase {
         userName  = getDriver().findElement(By.id(getProperty("userName.id")));
     }
 
-    public void createApplication(String _firstName, String _lastName) throws InterruptedException {
+    public void createApplication(RemoteWebDriver driver, String _firstName, String _lastName) throws InterruptedException {
         createBtn  = getDriver().findElement(By.id(getProperty("createBtn.id")));
         createBtn.click();
         firstName = getDriver().findElement(By.id(getProperty("firstName.id")));
         firstName.sendKeys(_firstName);
         lastName = getDriver().findElement(By.id(getProperty("lastName.id")));
         lastName.sendKeys(_lastName);
-        getDriver().findElement(By.id("dateBirth")).click();
+        WebElement birthday=getDriver().findElement(By.id("dateBirth"));
+        birthday.click();
         wait(1000);
-//        getDriver().findElement(By.linkText("Prev")).click();
-//        wait(1000);
-        getDriver().findElement(By.xpath("(//a[contains(text(),'4')])[3]")).click();
+        getDriver().findElement(By.linkText("Prev")).click();
+        wait(1000);
+        WebElement choose_birthday=getDriver().findElement(By.linkText("13"));
+        choose_birthday.click();
+        wait(1000);
 
-        createAppBtn  = getDriver().findElement(By.xpath(getProperty("createAppBtn.xpath")));
+        createAppBtn  = getDriver().findElement(By.xpath("(//button[@type='button'])[2]"));
         createAppBtn.click();
     }
-    public LoginPage logOut() throws InterruptedException, IOException
+    public LoginPage logOut(RemoteWebDriver driver) throws InterruptedException, IOException
     {
         userName  = getDriver().findElement(By.id(getProperty("userName.id")));
         userName.click();
         getDriver().findElement(By.linkText("Logout")).click();
+        wait(2000);
         return new LoginPage();
     }
-    public void SwitchOnList() throws InterruptedException {
+    public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
         listBtn = getDriver().findElement(By.xpath(getProperty("listBtn.xpath")));
         listBtn.click();
     }
-    public void viewAppDetails() throws IOException, InterruptedException {
+    public void viewAppDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
         choose_one = getDriver().findElement(By.xpath(getProperty("ChooseOne.xpath")));
         choose_one.click();
     }
-    public void removeApp() throws InterruptedException {
+    public void removeApp(RemoteWebDriver driver) throws InterruptedException {
         getDriver().findElement(By.xpath(".//*[@id='check_all']")).click();
         wait(1000);
         deleteBtn = getDriver().findElement(By.id("top-bar-deleteBtn"));
@@ -91,17 +97,17 @@ public class ApplicationsPage extends PageBase {
 
 
     }
-    public void cancel(){
+    public void cancel(RemoteWebDriver driver){
         getDriver().findElement(By.xpath("(//button[@type='button'])[3]")).click();
 
     }
 
     public void createEmployee()  {
-        createEmployee =  getDriver().findElement(By.xpath(getProperty("createEmployee.xpath")));
+        createEmployee =  getDriver().findElement(By.xpath(".//*[@id='createApplicationForm']/fieldset/div/ul/li[4]/button[1]"));
         createEmployee.click();
     }
-    public void cancelInDetails(){
-        getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[2]")).click();
+    public void cancelInDetails(RemoteWebDriver driver){
+        getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
 
     }
     public void DragDropToInitialQualification() throws InterruptedException {

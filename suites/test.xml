@@ -7,23 +7,26 @@
     <test name="Chrome_Tests">
 
         <classes>
-            <class name="Tests.LoginPageTests" />
-            <class name="Tests.MyProfilePageTests" />
-            <class name="Tests.Sales.PersonsPageTests" />
-            <class name="Tests.Sales.CompaniesPageTests" />
-            <class name="Tests.Sales.LeadsPageTests" />
-            <class name="Tests.Sales.OpportunitiesPageTests" />
-            <class name="Tests.Sales.SalesDashboardTest" />
-            <class name="Tests.Project.ProjectsPageTests" />
-            <class name="Tests.Project.TasksPageTests" />
+            <!--<class name="Tests.MyProfile.LoginPageTest" />-->
+            <!--<class name="Tests.MyProfile.MyProfilePageTest" />-->
+            <!--<class name="Tests.Sales.BonusTypePageTests" />-->
             <class name="Tests.HR.EmployeesPageTest" />
             <class name="Tests.HR.ApplicationsPageTest" />
             <class name="Tests.HR.JobPositionsPageTest" />
-            <class name="Tests.HR.BirthdaysPageTests" />
-            <class name="Tests.Settings.GroupPageTests" />
-            <class name="Tests.Settings.UserPageTest" />
-            <class name="Tests.Settings.WorkflowPageTests" />
-            <class name="Tests.Settings.ProfilePageTests" />
+            <!--<class name="Tests.HR.BirthdaysPageTests" />-->
+            <!--<class name="Tests.Sales.PersonsPageTests" />-->
+            <!--<class name="Tests.Sales.CompaniesPageTests" />-->
+            <!--<class name="Tests.Sales.LeadsPageTests" />-->
+            <!--<class name="Tests.Sales.OpportunitiesPageTests" />-->
+
+            <!--<class name="Tests.Project.ProjectPageTests" />-->
+            <!--<class name="Tests.Project.TasksPageTests" />-->
+            <!--<class name="Tests.Project.wTrackPageTests" />-->
+
+            <!--<class name="Tests.Settings.GroupPageTests" />-->
+            <!--<class name="Tests.Settings.UserPageTest" />-->
+            <!--<class name="Tests.Settings.WorkflowPageTests" />-->
+            <!--<class name="Tests.Settings.ProfilePageTests" />-->
 
         </classes>
     </test>

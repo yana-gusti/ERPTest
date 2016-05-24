@@ -2,8 +2,9 @@ package Tests.HR;
 
 import Methods.HR.BirthdaysPage;
 import Methods.HR.EmployeesPage;
+import Methods.HR.JobPositionsPage;
 import Methods.Sales.PersonsPage;
-import Tests.BaseTest;
+import Tests.Base.BaseTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -14,8 +15,13 @@ import java.io.IOException;
 public class BirthdaysPageTests extends BaseTest {
     @Test(groups = {"good"})
     public void CheckBirthdaysTest() throws InterruptedException, IOException {
-      PersonsPage  personsPage = GoToPersonPage();
+      PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
+      JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
+      wait(1000);
+      String jobName = jobPositionsPage.getProperty("jobName.good");
+      jobPositionsPage.createJobPosition(jobName);
+      wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee();
         wait(3000);
         String firstName = employeesPage.getProperty("firstName.good");
@@ -30,7 +36,13 @@ public class BirthdaysPageTests extends BaseTest {
         wait(1000);
         alertAcept();
         wait(1000);
-        employeesPage.logOut();
+      jobPositionsPage = personsPage.switchToJobPosition();
+      wait(1000);
+      jobPositionsPage.removeJobPosition();
+      wait(1000);
+      alertAcept();
+      wait(1000);
+      jobPositionsPage.logOut();
 
 
 

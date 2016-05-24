@@ -1,0 +1,23 @@
+package Tests.MoveThroughMenu;
+
+import Tests.Base.BaseTest;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+
+/**
+ * Created by yana on 13.05.2016.
+ */
+public class MoveThroughMenuSettings extends BaseTest {
+    @Test
+    public void MoveThroughMenuSettings() throws InterruptedException, IOException {
+        tabMenuItems.add("Settings");
+        tabMenuItems.add("Groups");
+        tabMenuItems.add("Users");
+        tabMenuItems.add("Workflows");
+        tabMenuItems.add("Profiles");
+        tabMenuItems.add("Employee");
+        tabMenuItems.add("Product Categories");
+        executeTest();
+    }
+}

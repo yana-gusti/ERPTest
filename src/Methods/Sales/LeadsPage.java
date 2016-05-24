@@ -1,10 +1,9 @@
 package Methods.Sales;
 
-import Methods.LoginPage;
-import Methods.PageBase;
+import Methods.Base.PageBase;
+import Methods.MyProfile.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 import java.io.IOException;
 
@@ -89,9 +88,9 @@ public class LeadsPage extends PageBase {
     }
 
     public void ChangeStage() throws InterruptedException {
-        Select select = new Select(getDriver().findElement(By.linkText(getProperty("stage.link"))));
-        select.selectByVisibleText("Open");
-        stage = select.getFirstSelectedOption();
+        getDriver().findElement(By.linkText("Open")).click();
+        getDriver().findElement(By.id("52b4265cc033b7e25ac4f91c")).click();
+
 
     }
 

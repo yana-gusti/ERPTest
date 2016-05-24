@@ -1,14 +1,15 @@
 package Tests.Sales;
 
 import Methods.Sales.CompaniesPage;
+
 import Methods.Sales.PersonsPage;
-import Tests.BaseTest;
+import Tests.Base.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created by puzzlefacePC on 02.01.14.
@@ -21,9 +22,9 @@ public class CompaniesPageTests extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateIncorrectCompany() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.switchToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
         String companyName = companyPage.getProperty("companyName.bad");
         companyPage.createCorrectCompany(companyName);
@@ -37,9 +38,9 @@ public class CompaniesPageTests extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateShortCompany() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.switchToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
         String companyName = companyPage.getProperty("companyName.short");
         companyPage.createCorrectCompany(companyName);
@@ -55,9 +56,9 @@ public class CompaniesPageTests extends BaseTest {
     @Test(groups = { "good" })
     public void CreateCorrectCompany() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.switchToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
         String companyName = companyPage.getProperty("companyName.good");
         companyPage.createCorrectCompany(companyName);
@@ -71,9 +72,9 @@ public class CompaniesPageTests extends BaseTest {
 
     public void CreateCompanyWithBlankField() throws InterruptedException, IOException
     {
-     PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.switchToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
         String companyName = companyPage.getProperty("companyName.empty");
         companyPage.createCorrectCompany(companyName);
@@ -90,9 +91,9 @@ public class CompaniesPageTests extends BaseTest {
 
     public void DetailsOfCompany() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.switchToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies();
         wait(1000);
         companyPage.SwitchOnList();
         wait(1000);
@@ -106,9 +107,9 @@ public class CompaniesPageTests extends BaseTest {
     @Test(groups = { "good" })
     public void EditCompany() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.switchToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
         companyPage.SwitchOnList();
         wait(1000);
@@ -127,9 +128,9 @@ public class CompaniesPageTests extends BaseTest {
 
     public void RemoveCompany() throws InterruptedException, IOException
     {
-       PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
-        CompaniesPage companyPage = personsPage.switchToCompanies();
+        CompaniesPage companyPage = personsPage.goToCompanies();
         wait(1000);
         companyPage.SwitchOnList();
         wait(1000);

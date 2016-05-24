@@ -1,7 +1,7 @@
 package Methods.Sales;
 
-import Methods.LoginPage;
-import Methods.PageBase;
+import Methods.Base.PageBase;
+import Methods.MyProfile.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

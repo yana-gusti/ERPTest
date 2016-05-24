@@ -1,11 +1,14 @@
 package Tests.Sales;
 
-import Methods.Sales.LeadsPage;
 import Methods.Sales.PersonsPage;
-import Tests.BaseTest;
+import Methods.Sales.LeadsPage;
+import Tests.Base.BaseTest;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created by puzzlefacePC on 03.01.14.
@@ -18,7 +21,7 @@ public class LeadsPageTests extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateIncorrectLead() throws InterruptedException, IOException
     {
-       PersonsPage  personsPage = GoToPersonPage();
+       PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
@@ -35,7 +38,7 @@ public class LeadsPageTests extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateShortLead() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
@@ -50,34 +53,28 @@ public class LeadsPageTests extends BaseTest {
         leadsPage.logOut();
 }
 
-    //
-//    @Test(groups = { "good" })
-//    public void CreateCorrectLead() throws InterruptedException, IOException
-//    {
-//        goHome();
-//        wait(seconds);
-//
-//        LoginPage loginPage = new LoginPage();
-//        String username = loginPage.getProperty("username.admin");
-//        String password = loginPage.getProperty("password.admin");
-//        PersonsPage personsPage = loginPage.successLogin(username, password);
-//        wait(seconds);
-//        LeadsPage leadsPage = personsPage.switchToLeads();
-//        wait(seconds);
-//        String leadsName = leadsPage.getProperty("leadsName.good");
-//        //steps
-//        leadsPage.createCorrectLead(leadsName);
-////        assertEquals("MS", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
-//
-//        wait(1000);
-//        leadsPage.logOut();
-//    }
+
+    @Test(groups = { "good" })
+    public void CreateCorrectLead() throws InterruptedException, IOException
+    {
+        PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
+        LeadsPage leadsPage = personsPage.switchToLeads();
+        wait(seconds);
+        String leadsName = leadsPage.getProperty("leadsName.good");
+        //steps
+        leadsPage.createCorrectLead(leadsName);
+//        assertEquals("MS", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
+
+        wait(1000);
+        leadsPage.logOut();
+    }
 
     @Test(groups = { "bad" })
 
     public void CreateLeadWithBlankField() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
@@ -94,7 +91,7 @@ public class LeadsPageTests extends BaseTest {
 
       public void DetailsOfLead() throws InterruptedException, IOException
     {
-       PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
@@ -106,32 +103,27 @@ public class LeadsPageTests extends BaseTest {
         leadsPage.logOut();
     }
 
-//    @Test(groups = { "good" })
-//
-//    public void Filter() throws InterruptedException, IOException
-//    {
-//        goHome();
-//        wait(2000);
-//        LoginPage loginPage = new LoginPage();
-//        String username = loginPage.getProperty("username.admin");
-//        String password = loginPage.getProperty("password.admin");
-//        PersonsPage personsPage = loginPage.successLogin(username, password);
-//        wait(1000);
-//        LeadsPage leadsPage = personsPage.switchToLeads();
-//        wait(1000);
-//        leadsPage.ChangeStage();
-//        wait(1000);
-//        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
-//        wait(1000);
-//        leadsPage.logOut();
-//
-//    }
-//
+    @Test(groups = { "good" })
+
+    public void Filter() throws InterruptedException, IOException
+    {
+        PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
+        LeadsPage leadsPage = personsPage.switchToLeads();
+        wait(1000);
+        leadsPage.ChangeStage();
+        wait(1000);
+        assertEquals("1 - 0 of 1 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
+        wait(1000);
+        leadsPage.logOut();
+
+    }
+
     @Test(groups = { "good" })
 
     public void RemoveLead() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
@@ -150,7 +142,7 @@ public class LeadsPageTests extends BaseTest {
 
     public void ToOpportunity() throws InterruptedException, IOException
     {
-      PersonsPage  personsPage = GoToPersonPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
@@ -165,20 +157,6 @@ public class LeadsPageTests extends BaseTest {
         leadsPage.logOut();
 
     }
-    @Test(groups = { "good" })
-    public void CheckStageLeads() throws InterruptedException, IOException {
-      PersonsPage  personsPage = GoToPersonPage();
-        wait(2000);
-        LeadsPage leadsPage = personsPage.switchToLeads();
-        wait(3000);
-        String leadsName = leadsPage.getProperty("leadsName.good");
-        leadsPage.createCorrectLead(leadsName);
-        wait(3000);
-        leadsPage.DeselectAllExeptOneInStageFilters();
-        wait(1000);
-        leadsPage.SelectOneStage();
-        wait(1000);
-        leadsPage.logOut();
-    }
+
 
 }

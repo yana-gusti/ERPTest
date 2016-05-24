@@ -1,8 +1,10 @@
 package Methods.HR;
 
-import Methods.LoginPage;
-import Methods.PageBase;
+
+import Methods.Base.PageBase;
+import Methods.MyProfile.LoginPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
@@ -28,6 +30,7 @@ public class EmployeesPage extends PageBase {
     public WebElement createFired;
     public WebElement birthday;
     public WebElement choose_birthday;
+    private WebDriver driver = getDriver();
 
     public EmployeesPage()
     {
@@ -42,7 +45,7 @@ public class EmployeesPage extends PageBase {
         wait(1000);
         createBtn  = getDriver().findElement(By.id(getProperty("createBtn.id")));
         createBtn.click();
-        wait(1000);
+        wait(2000);
         firstName = getDriver().findElement(By.id(getProperty("firstName.id")));
         firstName.sendKeys(_firstName);
         wait(1000);
@@ -56,7 +59,28 @@ public class EmployeesPage extends PageBase {
         wait(1000);
         choose_birthday=getDriver().findElement(By.linkText("13"));
         choose_birthday.click();
-
+        wait(1000);
+//        driver.findElement(By.xpath(".//*[@id='jobPositionDd']")).click();
+//        wait(1000);
+//        driver.findElement(By.className("newSelectList")).findElement(By.xpath("./li[2]")).click();
+//        wait(1000);
+        driver.findElement(By.linkText("Job")).click();
+        wait(1000);
+        driver.findElement(By.id("jobPositionDd")).click();
+        wait(1000);
+        driver.findElement(By.id("56e6b8b9701f50ac4d0a4974")).click();
+        wait(1000);
+        driver.findElement(By.id("departmentsDd")).click();
+        wait(1000);
+        driver.findElement(By.id("55b92ace21e4b7c40f000012")).click();
+        wait(1000);
+        driver.findElement(By.id("projectManagerDD")).click();
+        wait(1000);
+        driver.findElement(By.id("564dac3e9b85f8b16b574fea")).click();
+        wait(1000);
+        driver.findElement(By.id("jobTypeDd")).click();
+        wait(1000);
+        driver.findElement(By.id("fullTime")).click();
         wait(1000);
         createAppBtn  = getDriver().findElement(By.id("createBtnDialog"));
         createAppBtn.click();
@@ -64,9 +88,11 @@ public class EmployeesPage extends PageBase {
     }
     public LoginPage logOut() throws InterruptedException, IOException
     {
+        wait(2000);
         userName  = getDriver().findElement(By.id(getProperty("userName.id")));
         userName.click();
         getDriver().findElement(By.linkText("Logout")).click();
+        wait(2000);
         return new LoginPage();
     }
     public void SwitchOnList() throws InterruptedException {
@@ -74,11 +100,11 @@ public class EmployeesPage extends PageBase {
         listBtn.click();
     }
     public void viewEmployeeDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(getProperty("ChooseOne.xpath")));
-        choose_one.click();
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
+
     }
     public void removeEmployee() throws InterruptedException {
-        deleteBtn = getDriver().findElement(By.id("top-bar-deleteBtn"));
+        deleteBtn = getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]"));
         deleteBtn.click();
 
     }
@@ -87,25 +113,23 @@ public class EmployeesPage extends PageBase {
 
     }
     public void cancel(){
-        getDriver().findElement(By.xpath("(//button[@type='button'])[3]")).click();
+        getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
 
     }
 
-    public ApplicationsPage switchOnFired() throws InterruptedException {
-        getDriver().findElement(By.cssSelector("span.endContractReasonList")).click();
+    public void switchOnFired() throws InterruptedException {
+        driver.findElement(By.cssSelector(".arrow")).click();
         wait(2000);
-        getDriver().findElement(By.xpath("//form[@id='editEmployeeForm']/fieldset/div/ul/li[4]/ul/li[2]")).click();
+        driver.findElement(By.className("newSelectList")).findElement(By.xpath("./li[2]")).click();
         wait(2000);
 
-
-        return new ApplicationsPage();
 
     }
     public void EmployeesFilter() throws InterruptedException, IOException {
         getDriver().findElement(By.id("listBtn")).click();
-        wait(2000);
+        wait(5000);
         getDriver().findElement(By.linkText("A")).click();
-        wait(2000);
+        wait(5000);
         getDriver().findElement(By.linkText("G")).click();
 
     }

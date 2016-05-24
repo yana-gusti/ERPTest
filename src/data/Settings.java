@@ -1,11 +1,15 @@
 package data;
 
-import Methods.LoginPage;
+import Methods.MyProfile.LoginPage;
 import Methods.Sales.PersonsPage;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,9 +26,9 @@ import java.util.Properties;
  */
 public class Settings {
 
-    private static WebDriver driver;
+    private static RemoteWebDriver driver = getDriver();
     private DataStorage dataStorage;
-    private static final String RESOURCES_PATH = "src/Properties/${NAME}.properties";
+    private static final String RESOURCES_PATH = "src/properties/${NAME}.properties";
     private boolean acceptNextAlert = true;
 
 
@@ -39,11 +43,11 @@ public class Settings {
         }
     }
 
-    public static WebDriver getDriver() {
+    public static RemoteWebDriver getDriver() {
         return driver;
     }
 
-    public static void setDriver(WebDriver driver) {
+    public static void setDriver(RemoteWebDriver driver) {
         Settings.driver = driver;
     }
 
@@ -101,18 +105,12 @@ public class Settings {
         return RESOURCES_PATH.replaceAll("\\$\\{NAME\\}",name);
     }
 
-    public void goHome()
 
-    {
-        driver.get(getBaseUrl());
-    }
-    public PersonsPage GoToPersonPage()throws InterruptedException, IOException {
-         goHome();
+    public PersonsPage GoToPersonsPage()throws InterruptedException, IOException {
+
         wait(3000);
         LoginPage loginPage = new LoginPage();
-        String username = loginPage.getProperty("username.admin");
-        String password = loginPage.getProperty("password.admin");
-        PersonsPage personsPage = loginPage.successLogin(username, password);
+        PersonsPage personsPage = loginPage.loginPositive();
         return personsPage;
     }
     public void driverClose()
@@ -148,10 +146,20 @@ public class Settings {
             return alert.getText();
 
         }
+    public void waitForProgressBar(WebDriver driver, String text) throws InterruptedException {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
+        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='loading']")));
+        wait(5000);
+        try {
+            Assert.assertEquals(driver.findElement(By.xpath(".//*[@id='top-bar']/h3")).getText(), text);
+        }catch (Exception e){
+            System.out.print(e);
+        }
+
+//        webDriverWait.until(ExpectedConditions.textToBe(By.xpath(".//*[@id='top-bar']/h3"), text));
+
+
+    }
     }
 
-//    public void alertAceptVerify(){
-//        driver.verifyAlert;
-//
-//    }
 

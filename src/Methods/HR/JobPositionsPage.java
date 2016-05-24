@@ -1,11 +1,15 @@
 package Methods.HR;
 
-import Methods.LoginPage;
-import Methods.PageBase;
+
+import Methods.Base.PageBase;
+import Methods.MyProfile.LoginPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
+
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,6 +30,7 @@ public class JobPositionsPage extends PageBase {
     public WebElement createFired;
     public WebElement editJob;
     public WebElement department;
+    private WebDriver driver = getDriver();
 
     public JobPositionsPage()
     {
@@ -36,12 +41,13 @@ public class JobPositionsPage extends PageBase {
         userName  = getDriver().findElement(By.id(getProperty("userName.id")));
     }
 
-    public void createJobPosition(String _jobName)
-    {
+    public void createJobPosition(String _jobName) throws InterruptedException {
         createBtn  = getDriver().findElement(By.id(getProperty("createBtn.id")));
         createBtn.click();
+        wait(3000);
         jobName = getDriver().findElement(By.id(getProperty("jobName.id")));
         jobName.sendKeys(_jobName);
+        wait(2000);
         createAppBtn  = getDriver().findElement(By.xpath(getProperty("createJob.xpath")));
         createAppBtn.click();
     }
@@ -50,34 +56,38 @@ public class JobPositionsPage extends PageBase {
         userName  = getDriver().findElement(By.id(getProperty("userName.id")));
         userName.click();
         getDriver().findElement(By.linkText("Logout")).click();
-        wait(1000);
+        wait(2000);
         return new LoginPage();
     }
 
     public void viewJobDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(getProperty("ChooseOne.xpath")));
+        choose_one = getDriver().findElement(By.xpath(".//*[@id='listTable']/tr[67]/td[3]"));
         choose_one.click();
 
     }
     public void removeJobPosition() throws InterruptedException {
-        getDriver().findElement(By.id("check_all")).click();
-        getDriver().findElement(By.id("top-bar-deleteBtn")).click();
+        wait(2000);
+        getDriver().findElement(By.xpath(".//*[@id='listTable']/tr[67]/td[3]")).click();
+        wait(2000);
+        getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]")).click();
 
 
     }
     public void cancel(){
-        getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[2]")).click();
+        getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
 
     }
 
     public void editJobPosition() throws InterruptedException {
-        editJob = getDriver().findElement(By.xpath(getProperty("editJob.xpath")));
-        editJob.click();
-        jobName = getDriver().findElement(By.id(getProperty("jobName.id")));
-        jobName.click();
-        getDriver().findElement(By.id("departmentDd")).click();
-        getDriver().findElement(By.id("52b552de201b2d3813000008")).click();
-        getDriver().findElement(By.xpath("(//button[@type='button'])[6]")).click();
+        driver.findElement(By.xpath("//tbody[@id='listTable']/tr[67]/td[3]")).click();
+        wait(2000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("name")).sendKeys("QA");
+        driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
+        wait(3000);
+        assertEquals("QA", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr[67]/td[3]")).getText());
+
+
 
     }
 

@@ -1,18 +1,15 @@
 package Methods.Sales;
 
+import Methods.Accounting.CustomerPaymentsPage;
+import Methods.Base.PageBase;
 import Methods.HR.ApplicationsPage;
 import Methods.HR.BirthdaysPage;
 import Methods.HR.EmployeesPage;
 import Methods.HR.JobPositionsPage;
-import Methods.LoginPage;
-import Methods.MyProfilePage;
-import Methods.PageBase;
-import Methods.Project.ProjectsPage;
+import Methods.MyProfile.MyProfilePage;
+import Methods.Project.ProjectPage;
 import Methods.Project.TasksPage;
-import Methods.Settings.GroupPage;
-import Methods.Settings.ProfilePage;
-import Methods.Settings.UserPage;
-import Methods.Settings.WorkflowPage;
+import Methods.Project.WTrackPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,38 +17,18 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.IOException;
 
 /**
- * Created by puzzlefacePC on 26.12.13.
+ * Created by ��������� on 03.08.2015.
  */
 public class PersonsPage extends PageBase {
-    private WebElement companyLink;
-    private WebElement leadLink;
     private WebElement userName;
     private WebElement logOut;
-    private WebElement createBtn;
-    private WebElement firstName;
-    private WebElement lastName;
-    private WebElement createPersonBtn;
-    public WebElement chooseToDelete;
-    public WebElement personNameView;
-    public WebElement listBtn;
-    public WebElement deleteBtn;
-    public WebElement cancelBtn;
-    public WebElement choose_one;
-    public WebElement project;
-    public WebElement projectLink;
-    public WebElement taskLink;
-    public WebElement HR;
-    public WebElement applicationLink;
-    public WebElement jobPositionLink;
-    public WebElement editPerson;
-    public WebElement SettingsBTN;
-    public WebElement profileLink;
-    public WebElement WorkflowsLink;
-    public WebElement PerPageItems;
-    public WebElement Per5PageItem;
-    public WebElement PagesListButton;
-    public WebElement SelectPages;
-    public WebElement BirthdayPageOpen;
+    private WebElement myProfile;
+    private WebElement companyLink;
+    private WebElement leadLink;
+    private WebElement HR;
+    private WebElement applicationLink;
+    private WebElement jobPositionLink;
+    private WebElement BirthdayPageOpen;
     private WebElement CurrentPerson;
     private WebElement NoteArea;
     private WebElement AddTittleLink;
@@ -62,66 +39,113 @@ public class PersonsPage extends PageBase {
     private WebElement LastNameFilterPerson;
     private WebElement PhoneFilterPerson;
     private WebElement EmailFilterPerson;
+    private WebElement createBtn;
+    private WebElement firstName;
+    private WebElement lastName;
+    private WebElement createPersonBtn;
+    public WebElement chooseToDelete;
+    public WebElement listBtn;
+    public WebElement deleteBtn;
+    public WebElement choose_one;
+    public WebElement editPerson;
+    public WebElement PerPageItems;
+    public WebElement Per5PageItem;
+    public WebElement PagesListButton;
+    public WebElement SelectPages;
     private WebElement CountryFilterPerson;
-    Integer seconds=1000;
+    int seconds=2000;
 
+    @Override
+    protected void Init() {
 
-    public PersonsPage()
+    }
+    public PersonsPage()throws IOException
     {
         super();
     }
 
-    public void Init() {
+    public void logOut() throws InterruptedException, IOException
+    {
         userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-
+        userName.click();
+        logOut = getDriver().findElement(By.linkText(getProperty("logout.link")));
+        logOut.click();
     }
-    public MyProfilePage SwithToProfile() throws InterruptedException {
-        WebElement Username = getDriver().findElement(By.id("userName"));
-        Username.click();
-        wait(1000);
-        WebElement MyProfile=getDriver().findElement(By.linkText("My profile"));
-        MyProfile.click();
-        wait(1000);
+
+    public MyProfilePage goToMyProfile(){
+
+        userName= getDriver().findElement(By.id("userName"));
+        userName.click();
+        myProfile = getDriver().findElement(By.linkText("My profile"));
+        myProfile.click();
+
         return new MyProfilePage();
     }
-    public CompaniesPage switchToCompanies(){
+
+
+    public CompaniesPage goToCompanies() throws InterruptedException {
         companyLink = getDriver().findElement(By.linkText("Companies"));
         companyLink.click();
+        wait(3000);
         return new CompaniesPage();
     }
-
-
-    public LeadsPage switchToLeads(){
+    public LeadsPage switchToLeads() throws InterruptedException {
         leadLink = getDriver().findElement(By.linkText("Leads"));
         leadLink.click();
+        wait(3000);
         return new LeadsPage();
     }
 
-    public OpportunitiesPage switchToOpportunities(){
+//    public BonusTypePage switchToBonusType() throws InterruptedException {
+//        leadLink = getDriver().findElement(By.linkText("BonusType"));
+//        leadLink.click();
+//        wait(3000);
+//        return new BonusTypePage();
+//    }
+
+    public OpportunitiesPage switchToOpportunities() throws InterruptedException {
         leadLink = getDriver().findElement(By.linkText("Opportunities"));
         leadLink.click();
+        wait(3000);
         return new OpportunitiesPage();
     }
-    public SalesDashboard switchToSalesDashboard(){
-        WebElement GoToDashboard = getDriver().findElement(By.linkText("Dashboard"));
-        GoToDashboard.click();
-        return new SalesDashboard();
+    public InvoicePage switchToInvoice() throws InterruptedException {
+        leadLink = getDriver().findElement(By.linkText("Invoice"));
+        leadLink.click();
+        wait(3000);
+        return new InvoicePage();
     }
-    public ProjectsPage switchToProjects() throws InterruptedException {
-        project = getDriver().findElement(By.id("Project"));
-        project.click();
-        wait(1000);
-        return new ProjectsPage();
+    public CustomerPaymentsPage switchToCustomerPaymentsPage() throws InterruptedException {
+        wait(3000);
+        leadLink = getDriver().findElement(By.linkText("Accounting"));
+        leadLink.click();
+        wait(3000);
+        return new CustomerPaymentsPage();
     }
+    public WTrackPage switchToWTrack() throws InterruptedException {
+        getDriver().findElement(By.id("Project")).click();
+        wait(3000);
+        getDriver().findElement(By.linkText("wTrack")).click();
 
+        wait(3000);
+        return new WTrackPage();
+    }
+    public ProjectPage switchToProject() throws InterruptedException {
+        getDriver().findElement(By.id("Project")).click();
+
+        wait(3000);
+        return new ProjectPage();
+    }
     public TasksPage switchToTask() throws InterruptedException {
-        project = getDriver().findElement(By.id("Project"));
+        WebElement project = getDriver().findElement(By.id("Project"));
         project.click();
         wait(1000);
-        taskLink = getDriver().findElement(By.linkText("Tasks"));
+        WebElement taskLink = getDriver().findElement(By.linkText("Tasks"));
         taskLink.click();
+        wait(2000);
         return new TasksPage();
     }
+
     public ApplicationsPage switchToApplication() throws InterruptedException {
         HR = getDriver().findElement(By.id("HR"));
         HR.click();
@@ -135,6 +159,7 @@ public class PersonsPage extends PageBase {
     public EmployeesPage switchToEmployee() throws InterruptedException {
         HR = getDriver().findElement(By.id("HR"));
         HR.click();
+        wait(2000);
         return new EmployeesPage();
     }
 
@@ -144,45 +169,17 @@ public class PersonsPage extends PageBase {
         wait(1000);
         jobPositionLink = getDriver().findElement(By.xpath(".//*[@id='14']/a"));
         jobPositionLink.click();
+        wait(2000);
         return new JobPositionsPage();
     }
     public BirthdaysPage switchToBirthdays() throws InterruptedException {
         HR = getDriver().findElement(By.id("HR"));
         HR.click();
         wait(1000);
-        BirthdayPageOpen=getDriver().findElement(By.linkText(getProperty("birthdaylink.linkText")));
+        BirthdayPageOpen=getDriver().findElement(By.xpath(".//*[@id='52']/a"));
         BirthdayPageOpen.click();
-        return new BirthdaysPage();
-    }
-
-    public ProfilePage switchToProfile() throws InterruptedException {
-        SettingsBTN = getDriver().findElement(By.id("Settings"));
-        SettingsBTN.click();
         wait(2000);
-        profileLink = getDriver().findElement(By.linkText("Profiles"));
-        profileLink.click();
-        return new ProfilePage();
-    }
-    public GroupPage switchToGroup(){
-        SettingsBTN = getDriver().findElement(By.id("Settings"));
-        SettingsBTN.click();
-        return new GroupPage();
-    }
-    public WorkflowPage switchToWorkflow() throws InterruptedException {
-        SettingsBTN = getDriver().findElement(By.id("Settings"));
-        SettingsBTN.click();
-        wait(1000);
-        WorkflowsLink = getDriver().findElement(By.linkText("Workflows"));
-        WorkflowsLink.click();
-
-        return new WorkflowPage();
-    }
-    public UserPage switchToUsers() throws IOException, InterruptedException {
-        getDriver().findElement(By.id("Settings")).click();
-        wait(1000);
-        getDriver().findElement(By.linkText("Users")).click();
-
-        return new UserPage();
+        return new BirthdaysPage();
     }
 
     public void createCorrectPerson(String _firstName, String _lastName)
@@ -199,14 +196,6 @@ public class PersonsPage extends PageBase {
 
     }
 
-    public LoginPage logOut() throws InterruptedException, IOException
-    {
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-        userName.click();
-        logOut = getDriver().findElement(By.linkText(getProperty("logout.link")));
-        logOut.click();
-        return new LoginPage();
-    }
 
     public void SwitchOnList() throws InterruptedException {
         listBtn = getDriver().findElement(By.id("listBtn"));
@@ -238,20 +227,22 @@ public class PersonsPage extends PageBase {
         getDriver().findElement(By.xpath("(//button[@type='button'])[2]")).click();
     }
     public void cancel(){
-    getDriver().findElement(By.xpath("(//button[@type='button'])[3]")).click();
+        getDriver().findElement(By.xpath("(//button[@type='button'])[3]")).click();
 
-}
+    }
     public void Select5PerPage() throws InterruptedException {
-        PerPageItems=getDriver().findElement(By.id("itemsButton"));
-        PerPageItems.click();
+//        PerPageItems=getDriver().findElement(By.xpath(".//*[@id='content-holder']/div[4]/div[1]/div[3]/button"));
+//        PerPageItems.click();
+
+        new Actions(getDriver()).moveToElement(getDriver().findElement(By.xpath(".//*[@id='content-holder']/div[4]/div[1]/div[3]/button"))).perform();
         wait(seconds);
-        Per5PageItem=getDriver().findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[1]/div[2]/ul/li[1]/a"));
+        Per5PageItem=getDriver().findElement(By.className("allNumberPerPage")).findElement(By.xpath("./li"));
         Per5PageItem.click();
         wait(seconds);
     }
     public void NextPage() throws InterruptedException {
-        PagesListButton=getDriver().findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[2]/div[2]/div/div[2]/button"));
-        PagesListButton.click();
+        new Actions(getDriver()).moveToElement(getDriver().findElement(By.xpath(".//*[@id='content-holder']/div[4]/div[2]/div[2]/div/div[2]/button"))).perform();
+
         wait(seconds);
         SelectPages=getDriver().findElement(By.xpath(".//*[@id='pageList']/li[2]"));
         SelectPages.click();
@@ -401,5 +392,3 @@ public class PersonsPage extends PageBase {
 
     }
 }
-
-
