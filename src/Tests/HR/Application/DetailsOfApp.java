@@ -18,16 +18,16 @@ public class DetailsOfApp extends BaseTest {
         wait(3000);
         ApplicationsPage applicationsPage = personsPage.switchToApplication();
         wait(3000);
-        applicationsPage.SwitchOnList(driver);
+        applicationsPage.SwitchOnList();
         wait(3000);
-        applicationsPage.viewAppDetails(driver);
+        applicationsPage.viewAppDetails();
         wait(3000);
 //        assertEquals("iana", getDriver().findElement(By.id("first")).getAttribute("value"));
 //        wait(1000);
 //        assertEquals("gusti", getDriver().findElement(By.id("last")).getAttribute("value"));
 //        wait(1000);
-        applicationsPage.cancelInDetails(driver);
+        applicationsPage.cancelInDetails();
         wait(1000);
-        applicationsPage.logOut(driver);
+        personsPage.logOut();
     }
 }

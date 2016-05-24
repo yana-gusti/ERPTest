@@ -19,13 +19,13 @@ public class BirthdaysPageTests extends BaseTest {
         wait(3000);
       JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
       wait(1000);
-      String jobName = jobPositionsPage.getProperty("jobName.good");
+      String jobName = "QA";
       jobPositionsPage.createJobPosition(jobName);
       wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee();
         wait(3000);
-        String firstName = employeesPage.getProperty("firstName.good");
-        String lastName = employeesPage.getProperty("lastName.good");
+        String firstName = "iana";
+        String lastName = "gusti";
         employeesPage.createEmployee(firstName, lastName);
         wait(2000);
         BirthdaysPage birthdaysPage = personsPage.switchToBirthdays();
@@ -42,7 +42,7 @@ public class BirthdaysPageTests extends BaseTest {
       wait(1000);
       alertAcept();
       wait(1000);
-      jobPositionsPage.logOut();
+      personsPage.logOut();
 
 
 

@@ -21,9 +21,9 @@ public class MyProfilePageTest extends BaseTest {
 
         wait(3000);
         LoginPage loginPage = new LoginPage();
-        String userName = loginPage.getProperty("username.admin");
-        String pass = loginPage.getProperty("password.admin");
-        String passNew = loginPage.getProperty("password.admin.new");
+        String userName = "yana.gusti";
+        String pass = "thinkmobiles2015";
+        String passNew = "222222";
         loginPage.login(userName, pass);
         PersonsPage personsPage = new PersonsPage();
         MyProfilePage myProfilePage= personsPage.goToMyProfile();
@@ -45,8 +45,8 @@ public class MyProfilePageTest extends BaseTest {
 
         wait(3000);
         LoginPage loginPage = new LoginPage();
-        String userName = loginPage.getProperty("username.admin");
-        String pass = loginPage.getProperty("password.admin");
+        String userName = "yana.gusti";
+        String pass = "thinkmobiles2015";
         String passNew = "11";
         loginPage.login(userName, pass);
         PersonsPage personsPage = new PersonsPage();
@@ -61,8 +61,8 @@ public class MyProfilePageTest extends BaseTest {
 
         wait(3000);
         LoginPage loginPage = new LoginPage();
-        String userName = loginPage.getProperty("username.admin");
-        String pass = loginPage.getProperty("password.admin");
+        String userName = "yana.gusti";
+        String pass = "thinkmobiles2015";
         String passNew = "";
         loginPage.login(userName, pass);
         PersonsPage personsPage = new PersonsPage();

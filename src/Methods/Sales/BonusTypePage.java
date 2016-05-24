@@ -1,19 +1,15 @@
 package Methods.Sales;
 
-import Methods.Base.PageBase;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Created by Александр on 21.08.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 21.08.2015.
  */
-public class BonusTypePage extends PageBase {
+public class BonusTypePage extends Settings {
     WebDriver driver = getDriver();
 
-    @Override
-    protected void Init() {
-
-    }
 
     public BonusTypePage(){
         super();

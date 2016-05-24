@@ -1,8 +1,8 @@
 package Methods.HR;
 
 
-import Methods.Base.PageBase;
 import Methods.MyProfile.LoginPage;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +18,7 @@ import static org.testng.Assert.assertEquals;
  * Time: 16:02
  * To change this template use File | Settings | File Templates.
  */
-public class JobPositionsPage extends PageBase {
+public class JobPositionsPage extends Settings {
     public WebElement userName;
     public WebElement createBtn;
     public WebElement jobName;
@@ -38,27 +38,20 @@ public class JobPositionsPage extends PageBase {
     }
 
     public void Init() {
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
+
     }
 
     public void createJobPosition(String _jobName) throws InterruptedException {
-        createBtn  = getDriver().findElement(By.id(getProperty("createBtn.id")));
+        createBtn  = getDriver().findElement(By.id("top-bar-createBtn"));
         createBtn.click();
         wait(3000);
-        jobName = getDriver().findElement(By.id(getProperty("jobName.id")));
+        jobName = getDriver().findElement(By.id("name"));
         jobName.sendKeys(_jobName);
         wait(2000);
-        createAppBtn  = getDriver().findElement(By.xpath(getProperty("createJob.xpath")));
+        createAppBtn  = getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]"));
         createAppBtn.click();
     }
-    public LoginPage logOut() throws InterruptedException, IOException
-    {
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-        userName.click();
-        getDriver().findElement(By.linkText("Logout")).click();
-        wait(2000);
-        return new LoginPage();
-    }
+
 
     public void viewJobDetails() throws IOException, InterruptedException {
         choose_one = getDriver().findElement(By.xpath(".//*[@id='listTable']/tr[67]/td[3]"));

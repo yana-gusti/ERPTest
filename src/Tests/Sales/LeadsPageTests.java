@@ -25,7 +25,7 @@ public class LeadsPageTests extends BaseTest {
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
-        String leadName = leadsPage.getProperty("leadName.bad");
+        String leadName = "!!!!";
         //steps
         leadsPage.createCorrectLead(leadName);
         wait(1000);
@@ -33,7 +33,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
         leadsPage.cancel();
         wait(1000);
-        leadsPage.logOut();
+        personsPage.logOut();
     }
     @Test(groups = { "bad" })
     public void CreateShortLead() throws InterruptedException, IOException
@@ -42,7 +42,7 @@ public class LeadsPageTests extends BaseTest {
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
-        String leadsName = leadsPage.getProperty("leadsName.short");
+        String leadsName = "a";
         //steps
         leadsPage.createCorrectLead(leadsName);
         wait(1000);
@@ -50,7 +50,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
         leadsPage.cancel();
         wait(1000);
-        leadsPage.logOut();
+        personsPage.logOut();
 }
 
 
@@ -61,13 +61,13 @@ public class LeadsPageTests extends BaseTest {
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
-        String leadsName = leadsPage.getProperty("leadsName.good");
+        String leadsName = "MS";
         //steps
         leadsPage.createCorrectLead(leadsName);
 //        assertEquals("MS", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
 
         wait(1000);
-        leadsPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "bad" })
@@ -78,7 +78,7 @@ public class LeadsPageTests extends BaseTest {
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
-        String leadsName = leadsPage.getProperty("leadsName.empty");
+        String leadsName = "";
         //steps
         leadsPage.createCorrectLead(leadsName);
         wait(1000);
@@ -100,7 +100,7 @@ public class LeadsPageTests extends BaseTest {
         leadsPage.cancel();
 //        assertEquals("MS", getDriver().findElement(By.cssSelector("h2")).getText());
         wait(2000);
-        leadsPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "good" })
@@ -115,7 +115,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
         assertEquals("1 - 0 of 1 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
         wait(1000);
-        leadsPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -135,7 +135,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
 //        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
         wait(1000);
-        leadsPage.logOut();
+        personsPage.logOut();
 
     }
     @Test(groups = { "good" })
@@ -146,7 +146,7 @@ public class LeadsPageTests extends BaseTest {
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads();
         wait(seconds);
-        String leadsName = leadsPage.getProperty("leadsName.good");
+        String leadsName = "MS";
         //steps
         leadsPage.createCorrectLead(leadsName);
         wait(1000);
@@ -154,7 +154,7 @@ public class LeadsPageTests extends BaseTest {
         wait(1000);
         leadsPage.convertToOpportunity();
         wait(3000);
-        leadsPage.logOut();
+        personsPage.logOut();
 
     }
 

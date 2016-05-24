@@ -26,14 +26,14 @@ public class CompaniesPageTests extends BaseTest {
         wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
-        String companyName = companyPage.getProperty("companyName.bad");
+        String companyName = "!@#$";
         companyPage.createCorrectCompany(companyName);
         wait(1000);
         alertAcept();
         wait(1000);
         companyPage.cancel();
         wait(1000);
-        companyPage.logOut();
+        personsPage.logOut();
     }
     @Test(groups = { "bad" })
     public void CreateShortCompany() throws InterruptedException, IOException
@@ -42,14 +42,14 @@ public class CompaniesPageTests extends BaseTest {
         wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
-        String companyName = companyPage.getProperty("companyName.short");
+        String companyName = "a";
         companyPage.createCorrectCompany(companyName);
         wait(1000);
         alertAcept();
         wait(1000);
         companyPage.cancel();
         wait(1000);
-        companyPage.logOut();
+        personsPage.logOut();
     }
 
     //
@@ -60,12 +60,12 @@ public class CompaniesPageTests extends BaseTest {
         wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
-        String companyName = companyPage.getProperty("companyName.good");
+        String companyName = "Test";
         companyPage.createCorrectCompany(companyName);
         wait(1000);
         assertEquals("MS", getDriver().findElement(By.linkText("MS")).getText());
         wait(1000);
-        companyPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "bad" })
@@ -76,14 +76,14 @@ public class CompaniesPageTests extends BaseTest {
         wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies();
         wait(seconds);
-        String companyName = companyPage.getProperty("companyName.empty");
+        String companyName = "";
         companyPage.createCorrectCompany(companyName);
         wait(1000);
         alertAcept();
         wait(1000);
         companyPage.cancel();
         wait(1000);
-        companyPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -101,7 +101,7 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
         assertEquals("MS", getDriver().findElement(By.cssSelector("span[title=\"MS\"]")).getText());
         wait(1000);
-        companyPage.logOut();
+        personsPage.logOut();
 
     }
     @Test(groups = { "good" })
@@ -142,6 +142,6 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
 //        assertEquals("0", getDriver().findElement(By.id("grid-count")).getText());
         wait(1000);
-        companyPage.logOut();
+        personsPage.logOut();
     }
 }

@@ -1,22 +1,19 @@
 package Methods.Project;
 
-import Methods.Base.PageBase;
 import Methods.Sales.InvoicePage;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- * Created by Александр on 05.08.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 05.08.2015.
  */
-public class WTrackPage extends PageBase {
+public class WTrackPage extends Settings {
     Integer sec = 2000;
 
     WebDriver driver = getDriver();
-    @Override
-    protected void Init() {
 
-    }
 
     public WTrackPage(){
         super();

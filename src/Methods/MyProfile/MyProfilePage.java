@@ -1,6 +1,6 @@
 package Methods.MyProfile;
 
-import Methods.Base.PageBase;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,17 +8,14 @@ import org.openqa.selenium.WebElement;
 /**
  * Created by ��������� on 03.08.2015.
  */
-public class MyProfilePage extends PageBase{
+public class MyProfilePage extends Settings {
     WebDriver driver = getDriver();
     WebElement changePassBtn;
     WebElement oldPass;
     WebElement newPass;
     WebElement confPass;
     WebElement saveBtn;
-    @Override
-    protected void Init() {
 
-    }
 
     public MyProfilePage(){
         super();

@@ -26,15 +26,15 @@ public class EmployeesPageTest extends BaseTest {
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee();
         wait(3000);
-        String firstName = employeesPage.getProperty("firstName.bad");
-        String lastName = employeesPage.getProperty("lastName.bad");
+        String firstName = "!@#$";
+        String lastName = "!@#$";
         employeesPage.createEmployee(firstName, lastName);
         wait(3000);
 //        alertAcept();
 //        wait(1000);
         employeesPage.cancel();
         wait(3000);
-        employeesPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "good" })
@@ -49,11 +49,11 @@ public class EmployeesPageTest extends BaseTest {
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee();
         wait(3000);
-        String firstName = employeesPage.getProperty("firstName.good");
-        String lastName = employeesPage.getProperty("lastName.good");
+        String firstName ="iana";
+        String lastName = "gusti";
         employeesPage.createEmployee(firstName, lastName);
         wait(3000);
-        employeesPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -64,15 +64,15 @@ public class EmployeesPageTest extends BaseTest {
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee();
         wait(3000);
-        String firstName = employeesPage.getProperty("firstName.short");
-        String lastName = employeesPage.getProperty("lastName.short");
+        String firstName = "a";
+        String lastName = "a";
         employeesPage.createEmployee(firstName, lastName);
         wait(3000);
 //        alertAcept();
 //        wait(1000);
         employeesPage.cancel();
         wait(3000);
-        employeesPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "bad" })
@@ -82,15 +82,15 @@ public class EmployeesPageTest extends BaseTest {
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee();
         wait(3000);
-        String firstName = employeesPage.getProperty("firstName.empty");
-        String lastName = employeesPage.getProperty("lastName.empty");
+        String firstName = "";
+        String lastName = "";
         employeesPage.createEmployee(firstName, lastName);
         wait(3000);
 //        alertAcept();
 //        wait(1000);
         employeesPage.cancel();
         wait(3000);
-        employeesPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "good" })
@@ -112,7 +112,7 @@ public class EmployeesPageTest extends BaseTest {
         wait(1000);
         employeesPage.cancel();
         wait(2000);
-        employeesPage.logOut();
+        personsPage.logOut();
     }
 
 
@@ -156,7 +156,7 @@ public class EmployeesPageTest extends BaseTest {
 //        wait(1000);
 //        alertAcept();
         wait(5000);
-        employeesPage.logOut();
+        personsPage.logOut();
     }
     @Test(groups = {"good"})
     public void CreateNewFilterEmployees() throws InterruptedException, IOException {
@@ -170,6 +170,6 @@ public class EmployeesPageTest extends BaseTest {
         wait(5000);
         employeesPage.EmployeesFilter();
         wait(5000);
-        employeesPage.logOut();
+        personsPage.logOut();
     }
 }

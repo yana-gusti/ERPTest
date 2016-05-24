@@ -1,29 +1,26 @@
 package Methods.HR;
 
 
-import Methods.Base.PageBase;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 /**
  * Created by Дом on 27.03.14.
  */
-public class BirthdaysPage extends PageBase {
+public class BirthdaysPage extends Settings {
     public WebElement CreatedPerson;
     public WebElement GetPersonalInfo;
-    @Override
-    protected void Init() {
 
-    }
     public BirthdaysPage(){
         super();
     }
 
     public void CheckBirthdays() throws InterruptedException {
-        CreatedPerson=getDriver().findElement(By.cssSelector(getProperty("readmorelink.css")));
+        CreatedPerson=getDriver().findElement(By.cssSelector(".top>a"));
         CreatedPerson.click();
         wait(2000);
-        GetPersonalInfo=getDriver().findElement(By.linkText(getProperty("personalinfo.linkText")));
+        GetPersonalInfo=getDriver().findElement(By.linkText("Personal Information"));
         GetPersonalInfo.click();
         wait(2000);
     }

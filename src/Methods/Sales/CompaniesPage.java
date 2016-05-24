@@ -1,7 +1,7 @@
 package Methods.Sales;
 
-import Methods.Base.PageBase;
 import Methods.MyProfile.LoginPage;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by puzzlefacePC on 02.01.14.
  */
-public class CompaniesPage extends PageBase {
+public class CompaniesPage extends Settings {
 
     private WebElement userName;
     private WebElement logOut;
@@ -30,43 +30,30 @@ public class CompaniesPage extends PageBase {
         super();
     }
 
-    public void Init() {
-
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-
-    }
 
     public void createCorrectCompany(String _companyName) throws InterruptedException {
 
-        createBtn  = getDriver().findElement(By.xpath(getProperty("createBtn.xpath")));
+        createBtn  = getDriver().findElement(By.xpath(".//*[@id='top-bar-createBtn']"));
         createBtn.click();
         wait(1000);
-        companyName = getDriver().findElement(By.xpath(getProperty("companyName.xpath")));
+        companyName = getDriver().findElement(By.xpath("MS"));
         companyName.click();
         companyName.sendKeys(_companyName);
-        createCompanyBtn  = getDriver().findElement(By.xpath(getProperty("createCompanyBtn.xpath")));
+        createCompanyBtn  = getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[1]"));
         createCompanyBtn.click();
 
     }
 
-    public LoginPage logOut() throws InterruptedException, IOException
-    {
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-        userName.click();
-        logOut = getDriver().findElement(By.linkText(getProperty("logout.link")));
-        logOut.click();
-        wait(1000);
-        return new LoginPage();
-    }
+
 
     public void SwitchOnList() throws InterruptedException {
-        listBtn = getDriver().findElement(By.xpath(getProperty("listBtn.xpath")));
+        listBtn = getDriver().findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();
 
     }
 
     public void viewCompanyDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(getProperty("choose_one.xpath")));
+        choose_one = getDriver().findElement(By.xpath(".//*[@id='listTable']/tr/td[3]"));
         choose_one.click();
 
     }
@@ -84,7 +71,7 @@ public class CompaniesPage extends PageBase {
         deleteBtn.click();
     }
     public void cancel() throws InterruptedException {
-        cancelBtn = getDriver().findElement(By.xpath(getProperty("cancelBtn.xpath")));
+        cancelBtn = getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[2]"));
         cancelBtn.click();
     }
 }

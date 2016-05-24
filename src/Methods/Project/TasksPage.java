@@ -1,8 +1,8 @@
 package Methods.Project;
 
 
-import Methods.Base.PageBase;
 import Methods.MyProfile.LoginPage;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by puzzlefacePC on 03.01.14.
  */
-public class TasksPage extends PageBase {
+public class TasksPage extends Settings {
 
     public WebElement userName;
     public WebElement createBtn;
@@ -44,60 +44,35 @@ public class TasksPage extends PageBase {
         super();
     }
 
-    public void Init() {
 
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-
-    }
 
     public void createCorrectTask(String _Summary) throws InterruptedException {
 
-        createBtn  = getDriver().findElement(By.id(getProperty("createBtn.id")));
+        createBtn  = getDriver().findElement(By.id("top-bar-createBtn"));
         createBtn.click();
         wait(1000);
-        Summary = getDriver().findElement(By.id(getProperty("summary.id")));
+        Summary = getDriver().findElement(By.id("summaryTask"));
         Summary.click();
         Summary.sendKeys(_Summary);
         wait(1000);
-        WebElement StageSelector = getDriver().findElement(By.id(getProperty("stageselector.id")));
+        WebElement StageSelector = getDriver().findElement(By.id("workflowsDd"));
         StageSelector.click();
         wait(seconds);
-        WebElement SelectingStage = getDriver().findElement(By.id(getProperty("stage.id")));
+        WebElement SelectingStage = getDriver().findElement(By.id("528ce35af3f67bc40b000010"));
         SelectingStage.click();
         wait(seconds);
         getDriver().findElement(By.xpath("(//button[@type='button'])[6]")).click();
 
     }
-    public void createCorrectTask2(String _Summary) throws InterruptedException {
-
-        createBtn  = getDriver().findElement(By.id(getProperty("createBtn.id")));
-        createBtn.click();
-        wait(1000);
-        Summary = getDriver().findElement(By.id(getProperty("summary.id")));
-        Summary.click();
-        Summary.sendKeys(_Summary);
-        wait(1000);
-        getDriver().findElement(By.xpath("(//button[@type='button'])[6]")).click();
-
-    }
 
 
 
-    public LoginPage logOut() throws InterruptedException, IOException
-    {
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-        userName.click();
-        wait(1000);
-        WebElement logOut = getDriver().findElement(By.linkText(getProperty("logout.link")));
-        logOut.click();
-        wait(1000);
-        return new LoginPage();
-    }
+
 
 
 
     public void viewTaskDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(getProperty("choose_one.xpath")));
+        choose_one = getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]"));
         choose_one.click();
     }
 
@@ -113,95 +88,16 @@ public class TasksPage extends PageBase {
         cancelBtn.click();
     }
     public void SwitchToKarbanView() throws InterruptedException {
-        KarbanViewButton=getDriver().findElement(By.id(getProperty("kanbanbtn.id")));
+        KarbanViewButton=getDriver().findElement(By.id("kanbanBtn"));
         KarbanViewButton.click();
         wait(seconds);
     }
     public void DragDropToInProgress() throws InterruptedException {
         wait(seconds);
-        Source=getDriver().findElement(By.cssSelector(getProperty("createditem.css")));
-        Target=getDriver().findElement(By.xpath(getProperty("inprogressfield.xpath")));
+        Source=getDriver().findElement(By.cssSelector(".task-header"));
+        Target=getDriver().findElement(By.xpath(".//*[@id='528ce131f3f67bc40b00000d']"));
         new Actions(getDriver()).dragAndDrop(Source, Target).perform();
         wait(seconds);
     }
-    public void DragDropToFixed() throws InterruptedException {
-        wait(seconds);
-        Source=getDriver().findElement(By.cssSelector(getProperty("createditem.css")));
-        Target=getDriver().findElement(By.xpath(getProperty("fixedfield.xpath")));
-        new Actions(getDriver()).dragAndDrop(Source, Target).perform();
-        wait(seconds);
-    }
-    public void DragDropToTesting() throws InterruptedException {
-        wait(seconds);
-        Source=getDriver().findElement(By.cssSelector(getProperty("createditem.css")));
-        Target=getDriver().findElement(By.xpath(getProperty("testingfield.xpath")));
-        new Actions(getDriver()).dragAndDrop(Source, Target).perform();
-        wait(seconds);
-    }
-    public void DragDropToDone() throws InterruptedException {
-        wait(seconds);
-        Source=getDriver().findElement(By.cssSelector(getProperty("createditem.css")));
-        Target=getDriver().findElement(By.xpath(getProperty("donefield.xpath")));
-        new Actions(getDriver()).dragAndDrop(Source, Target).perform();
-        wait(seconds);
-    }
-    public void DragDropToCancelled() throws InterruptedException {
-        wait(seconds);
-        Source=getDriver().findElement(By.cssSelector(getProperty("createditem.css")));
-        Target=getDriver().findElement(By.xpath(getProperty("cancelledfield.xpath")));
-        new Actions(getDriver()).dragAndDrop(Source, Target).perform();
-        wait(seconds);
-    }
-    public void DragDropToNew() throws InterruptedException {
-        wait(seconds);
-        Source=getDriver().findElement(By.cssSelector(getProperty("createditem.css")));
-        Target=getDriver().findElement(By.xpath(getProperty("newfield.xpath")));
-        new Actions(getDriver()).dragAndDrop(Source, Target).perform();
-        wait(seconds);
-    }
-    public void SwitchToListView() throws InterruptedException {
-        WebElement ListViewButton = getDriver().findElement(By.id(getProperty("listbtn.id")));
-        ListViewButton.click();
-        wait(seconds);
-    }
-    public void DeselectAllExeptOneInStageFilters()throws InterruptedException {
-        ArrowButton=getDriver().findElement(By.xpath(getProperty("arrowbtn.xpath")));
-        ArrowButton.click();
-        wait(seconds);
-        UndefinedCheckBox=getDriver().findElement(By.xpath(getProperty("undefinedcheckbox.xpath")));
-        UndefinedCheckBox.click();
-        wait(seconds);
-        NewCheckBox=getDriver().findElement(By.xpath(getProperty("newcheckbox.xpath")));
-        NewCheckBox.click();
-        wait(seconds);
-        InProgressCheckBox=getDriver().findElement(By.xpath(getProperty("inprogresscheckbox.xpath")));
-        InProgressCheckBox.click();
-        wait(seconds);
-        FixedCheckBox=getDriver().findElement(By.xpath(getProperty("fixedcheckbox.xpath")));
-        FixedCheckBox.click();
-        wait(seconds);
-        TestingCheckBox=getDriver().findElement(By.xpath(getProperty("testingcheckbox.xpath")));
-        TestingCheckBox.click();
-        wait(seconds);
-        DoneCheckBox=getDriver().findElement(By.xpath(getProperty("donecheckbox.xpath")));
-        DoneCheckBox.click();
-        wait(seconds);
-        CancelledCheckBox=getDriver().findElement(By.xpath(getProperty("cancelledcheckbox.xpath")));
-        CancelledCheckBox.click();
-        wait(seconds);
-        ClickAnywhere=getDriver().findElement(By.cssSelector(getProperty("someplace.css")));
-        ClickAnywhere.click();
-        wait(seconds);
-    }
-    public void SelectOneStage() throws InterruptedException {
-        ArrowButton=getDriver().findElement(By.xpath(getProperty("arrowbtn.xpath")));
-        ArrowButton.click();
-        wait(seconds);
-        TestingCheckBox=getDriver().findElement(By.xpath(getProperty("testingcheckbox.xpath")));
-        TestingCheckBox.click();
-        wait(seconds);
-        ClickAnywhere=getDriver().findElement(By.cssSelector(getProperty("someplace.css")));
-        ClickAnywhere.click();
-        wait(seconds);
-    }
+
 }

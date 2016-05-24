@@ -24,7 +24,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
-        String summary = taskPage.getProperty("summary.bad");
+        String summary = "!@#$";
         //steps
         taskPage.createCorrectTask(summary);
         wait(seconds);
@@ -32,7 +32,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        taskPage.logOut();
+        personsPage.logOut();
     }
     @Test(groups = { "bad" })
     public void CreateShortTask() throws InterruptedException, IOException
@@ -41,7 +41,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
-        String summary = taskPage.getProperty("summary.short");
+        String summary = "a";
         //steps
         taskPage.createCorrectTask(summary);
         wait(seconds);
@@ -49,7 +49,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        taskPage.logOut();
+        personsPage.logOut();
     }
 
 
@@ -64,11 +64,11 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
-        String summary = taskPage.getProperty("summary.good");
+        String summary = "QA Task";
         wait(seconds);
         taskPage.createCorrectTask(summary);
         wait(seconds);
-        taskPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "bad" })
@@ -79,7 +79,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         TasksPage taskPage = personsPage.switchToTask();
         wait(seconds);
-        String summary = taskPage.getProperty("summary.empty");
+        String summary = "";
         //steps
         taskPage.createCorrectTask(summary);
         wait(seconds);
@@ -87,7 +87,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        taskPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "good" })
@@ -102,7 +102,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         taskPage.cancel();
         wait(seconds);
-        taskPage.logOut();
+        personsPage.logOut();
     }
 
 
@@ -120,7 +120,7 @@ public class TasksPageTests extends BaseTest {
         wait(seconds);
         alertAcept();
         wait(seconds);
-        taskPage.logOut();
+        personsPage.logOut();
 
     }
     @Test(groups = { "good" })
@@ -134,17 +134,12 @@ public class TasksPageTests extends BaseTest {
 //        taskPage.createCorrectTask(summary);
         taskPage.SwitchToKarbanView();
         taskPage.DragDropToInProgress();
-        taskPage.DragDropToFixed();
-        taskPage.DragDropToTesting();
-        taskPage.DragDropToDone();
-        taskPage.DragDropToCancelled();
-        taskPage.DragDropToNew();
-        taskPage.SwitchToListView();
+
 //        taskPage.removeTask();
 //        wait(1000);
 //        alertAcept();
         wait(1000);
-        taskPage.logOut();
+        personsPage.logOut();
     }
 
 }

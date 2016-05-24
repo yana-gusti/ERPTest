@@ -17,12 +17,12 @@ public class IncorrectApp extends BaseTest {
         wait(3000);
         ApplicationsPage applicationsPage = personsPage.switchToApplication();
         wait(2000);
-        String firstName = applicationsPage.getProperty("firstName.bad");
-        String lastName = applicationsPage.getProperty("lastName.bad");
-        applicationsPage.createApplication(driver, firstName, lastName);
+        String firstName = "!@#$";
+        String lastName = "!@#$";
+        applicationsPage.createApplication( firstName, lastName);
         wait(1000);
-        applicationsPage.cancel(driver);
+        applicationsPage.cancel();
         wait(6000);
-        applicationsPage.logOut(driver);
+        personsPage.logOut();
     }
 }

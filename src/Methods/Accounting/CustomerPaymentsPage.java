@@ -1,16 +1,13 @@
 package Methods.Accounting;
 
-import Methods.Base.PageBase;
+import data.Settings;
 import org.openqa.selenium.By;
 
 /**
  * Created by Yana on 31.08.2015.
  */
-public class CustomerPaymentsPage extends PageBase {
-    @Override
-    protected void Init() {
+public class CustomerPaymentsPage extends Settings {
 
-    }
 
     public CustomerPaymentsPage(){
         super();

@@ -1,20 +1,17 @@
 package Methods.Sales;
 
 import Methods.Accounting.CustomerPaymentsPage;
-import Methods.Base.PageBase;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Created by Александр on 05.08.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 05.08.2015.
  */
-public class InvoicePage extends PageBase {
+public class InvoicePage extends Settings {
     WebDriver driver = getDriver();
     Integer sec = 2000;
-    @Override
-    protected void Init() {
 
-    }
 
     public  InvoicePage(){
         super();

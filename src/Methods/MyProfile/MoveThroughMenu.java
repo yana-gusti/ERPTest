@@ -1,6 +1,6 @@
 package Methods.MyProfile;
 
-import Methods.Base.PageBase;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by yana on 05.05.2016.
  */
-public class MoveThroughMenu extends PageBase {
+public class MoveThroughMenu extends Settings {
 
 
     public void MoveThroughMenu(WebDriver driver, ArrayList<String> tabMenuItems) throws InterruptedException {
@@ -34,8 +34,4 @@ public class MoveThroughMenu extends PageBase {
 
     }
 
-    @Override
-    protected void Init() {
-
-    }
 }

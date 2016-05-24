@@ -12,6 +12,7 @@
         <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.IncorrectApp"/>
+            <class name="Tests.HR.Application.CorrectApp"/>
         </classes>
     </test>
     <test name="Test2" preserve-order="true" parallel="true">

@@ -1,6 +1,6 @@
 package Methods.Project;
 
-import Methods.Base.PageBase;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,13 +10,10 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by ��������� on 05.08.2015.
  */
-public class ProjectPage extends PageBase {
+public class ProjectPage extends Settings {
 
     WebDriver driver = getDriver();
-    @Override
-    protected void Init() {
 
-    }
 
     public ProjectPage(){
         super();

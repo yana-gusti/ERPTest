@@ -18,12 +18,12 @@ public class CorrectApp extends BaseTest {
         wait(3000);
         ApplicationsPage applicationsPage = personsPage.switchToApplication();
         wait(3000);
-        String firstName = applicationsPage.getProperty("firstName.good");
-        String lastName = applicationsPage.getProperty("lastName.good");
-        applicationsPage.createApplication(driver, firstName, lastName);
+        String firstName = "test";
+        String lastName = "test";
+        applicationsPage.createApplication(firstName, lastName);
         wait(1000);
 //        assertEquals("Initial Qualification 1", getDriver().findElement(By.cssSelector("h2.columnName")).getText());
         wait(1000);
-        applicationsPage.logOut(driver);
+        personsPage.logOut();
     }
 }

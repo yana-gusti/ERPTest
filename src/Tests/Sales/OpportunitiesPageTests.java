@@ -21,14 +21,14 @@ public class OpportunitiesPageTests extends BaseTest {
         wait(seconds);
         OpportunitiesPage opportunityPage = personsPage.switchToOpportunities();
         wait(seconds);
-        String opportunityName = opportunityPage.getProperty("opportunityName.bad");
+        String opportunityName = "!@#";
         //steps
         opportunityPage.createCorrectOpportunity(opportunityName);
         wait(1000);
         alertAcept();
         opportunityPage.cancel();
         wait(1000);
-        opportunityPage.logOut();
+        personsPage.logOut();
 
     }
     @Test(groups = { "bad" })
@@ -39,14 +39,14 @@ public class OpportunitiesPageTests extends BaseTest {
         wait(seconds);
         OpportunitiesPage opportunityPage = personsPage.switchToOpportunities();
         wait(seconds);
-        String opportunityName = opportunityPage.getProperty("opportunityName.short");
+        String opportunityName = "a";
         //steps
         opportunityPage.createCorrectOpportunity(opportunityName);
         wait(1000);
         alertAcept();
         opportunityPage.cancel();
         wait(1000);
-        opportunityPage.logOut();
+        personsPage.logOut();
       }
 
     @Test(groups = { "good" })
@@ -55,14 +55,14 @@ public class OpportunitiesPageTests extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         OpportunitiesPage opportunityPage = personsPage.switchToOpportunities();
-        String opportunityName = opportunityPage.getProperty("opportunityName.good");
+        String opportunityName = "Test";
         //steps
         opportunityPage.createCorrectOpportunity(opportunityName);
 
 //        assertEquals("New 2", getDriver().findElement(By.cssSelector("div.columnNameDiv.new > h2.columnName")).getText());
 
         wait(1000);
-        opportunityPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "bad" })
@@ -72,14 +72,14 @@ public class OpportunitiesPageTests extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         OpportunitiesPage opportunityPage = personsPage.switchToOpportunities();
-        String opportunityName = opportunityPage.getProperty("opportunityName.empty");
+        String opportunityName = "";
         //steps
         opportunityPage.createCorrectOpportunity(opportunityName);
         wait(1000);
         alertAcept();
         opportunityPage.cancel();
         wait(1000);
-        opportunityPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -95,7 +95,7 @@ public class OpportunitiesPageTests extends BaseTest {
 //        assertEquals("MS", getDriver().findElement(By.id("name")).getAttribute("value"));
         opportunityPage.cancel();
         wait(1000);
-        opportunityPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -110,7 +110,7 @@ public class OpportunitiesPageTests extends BaseTest {
         opportunityPage.SwitchToListView();
         wait(1000);
         opportunityPage.ChangeStage();
-        opportunityPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -129,7 +129,7 @@ public class OpportunitiesPageTests extends BaseTest {
 //        String contentHolder = opportunityPage.getProperty("content-holder.value");
 //        assertEquals("0 - 0 of 0 items", contentHolder);
         wait(1000);
-        opportunityPage.logOut();
+        personsPage.logOut();
 
     }
 

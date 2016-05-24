@@ -26,12 +26,12 @@ public class JobPositionsPageTest extends BaseTest {
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
         wait(3000);
-        String jobName = jobPositionsPage.getProperty("jobName.bad");
+        String jobName = "!@#$";
         jobPositionsPage.createJobPosition(jobName);
         wait(3000);
         jobPositionsPage.cancel();
         wait(6000);
-        jobPositionsPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "good" })
@@ -41,7 +41,7 @@ public class JobPositionsPageTest extends BaseTest {
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
         wait(3000);
-        String jobName = jobPositionsPage.getProperty("jobName.good");
+        String jobName = "QA Job";
         jobPositionsPage.createJobPosition(jobName);
 
 
@@ -54,12 +54,12 @@ public class JobPositionsPageTest extends BaseTest {
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
         wait(3000);
-        String jobName = jobPositionsPage.getProperty("jobName.short");
+        String jobName = "a";
         jobPositionsPage.createJobPosition(jobName);
         wait(3000);
         jobPositionsPage.cancel();
         wait(6000);
-        jobPositionsPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "bad" })
@@ -69,12 +69,12 @@ public class JobPositionsPageTest extends BaseTest {
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
         wait(3000);
-        String jobName = jobPositionsPage.getProperty("jobName.empty");
+        String jobName = "";
         jobPositionsPage.createJobPosition(jobName);
         wait(3000);
         jobPositionsPage.cancel();
         wait(6000);
-        jobPositionsPage.logOut();
+        personsPage.logOut();
     }
 
     @Test(groups = { "good" })
@@ -89,7 +89,7 @@ public class JobPositionsPageTest extends BaseTest {
         jobPositionsPage.cancel();
 //        assertEquals("QA", getDriver().findElement(By.cssSelector("h3.left")).getText());
         wait(1000);
-        jobPositionsPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -102,7 +102,7 @@ public class JobPositionsPageTest extends BaseTest {
         wait(4000);
         jobPositionsPage.editJobPosition();
         wait(4000);
-        jobPositionsPage.logOut();
+        personsPage.logOut();
 
     }
 
@@ -119,6 +119,6 @@ public class JobPositionsPageTest extends BaseTest {
         wait(4000);
 //        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
 //        wait(1000);
-        jobPositionsPage.logOut();
+        personsPage.logOut();
     }
 }

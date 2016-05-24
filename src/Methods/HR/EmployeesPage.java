@@ -1,8 +1,8 @@
 package Methods.HR;
 
 
-import Methods.Base.PageBase;
 import Methods.MyProfile.LoginPage;
+import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ import java.io.IOException;
  * Time: 15:59
  * To change this template use File | Settings | File Templates.
  */
-public class EmployeesPage extends PageBase {
+public class EmployeesPage extends Settings {
     public WebElement userName;
     public WebElement createBtn;
     public WebElement firstName;
@@ -37,19 +37,16 @@ public class EmployeesPage extends PageBase {
         super();
     }
 
-    public void Init() {
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-    }
 
     public void createEmployee(String _firstName, String _lastName) throws InterruptedException {
         wait(1000);
-        createBtn  = getDriver().findElement(By.id(getProperty("createBtn.id")));
+        createBtn  = getDriver().findElement(By.id("top-bar-createBtn"));
         createBtn.click();
         wait(2000);
-        firstName = getDriver().findElement(By.id(getProperty("firstName.id")));
+        firstName = getDriver().findElement(By.id("first"));
         firstName.sendKeys(_firstName);
         wait(1000);
-        lastName = getDriver().findElement(By.id(getProperty("lastName.id")));
+        lastName = getDriver().findElement(By.id("last"));
         lastName.sendKeys(_lastName);
         wait(1000);
         birthday=getDriver().findElement(By.id("dateBirth"));
@@ -86,17 +83,9 @@ public class EmployeesPage extends PageBase {
         createAppBtn.click();
 
     }
-    public LoginPage logOut() throws InterruptedException, IOException
-    {
-        wait(2000);
-        userName  = getDriver().findElement(By.id(getProperty("userName.id")));
-        userName.click();
-        getDriver().findElement(By.linkText("Logout")).click();
-        wait(2000);
-        return new LoginPage();
-    }
+
     public void SwitchOnList() throws InterruptedException {
-        listBtn = getDriver().findElement(By.xpath(getProperty("listBtn.xpath")));
+        listBtn = getDriver().findElement(By.xpath("listBtn"));
         listBtn.click();
     }
     public void viewEmployeeDetails() throws IOException, InterruptedException {
