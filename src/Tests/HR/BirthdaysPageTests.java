@@ -20,7 +20,7 @@ public class BirthdaysPageTests extends BaseTest {
       JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
       wait(1000);
       String jobName = "QA";
-      jobPositionsPage.createJobPosition(jobName);
+      jobPositionsPage.createJobPosition(jobName, driver);
       wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
@@ -38,7 +38,7 @@ public class BirthdaysPageTests extends BaseTest {
         wait(1000);
       jobPositionsPage = personsPage.switchToJobPosition(driver);
       wait(1000);
-      jobPositionsPage.removeJobPosition();
+      jobPositionsPage.removeJobPosition(driver);
       wait(1000);
       alertAcept();
       wait(1000);

@@ -40,16 +40,16 @@ public class EmployeesPage extends BaseTest {
 
 
     public void createEmployee(String _firstName, String _lastName, RemoteWebDriver driver) throws InterruptedException {
-        wait(1000);
+        wait(3000);
         createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
-        wait(2000);
+        wait(3000);
         firstName = driver.findElement(By.id("first"));
         firstName.sendKeys(_firstName);
         wait(1000);
         lastName = driver.findElement(By.id("last"));
         lastName.sendKeys(_lastName);
-        wait(1000);
+        wait(5000);
         birthday=driver.findElement(By.id("dateBirth"));
         birthday.click();
         wait(1000);
@@ -80,13 +80,13 @@ public class EmployeesPage extends BaseTest {
         wait(1000);
         driver.findElement(By.id("fullTime")).click();
         wait(1000);
-        createAppBtn  = getDriver().findElement(By.id("createBtnDialog"));
+        createAppBtn  = driver.findElement(By.id("createBtnDialog"));
         createAppBtn.click();
 
     }
 
     public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
-        listBtn = driver.findElement(By.xpath("listBtn"));
+        listBtn = driver.findElement(By.id("listBtn"));
         listBtn.click();
     }
     public void viewEmployeeDetails(RemoteWebDriver driver) throws IOException, InterruptedException {

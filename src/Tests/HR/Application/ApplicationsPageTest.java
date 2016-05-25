@@ -1,4 +1,4 @@
-package Tests.HR;
+package Tests.HR.Application;
 
 import Methods.HR.ApplicationsPage;
 import Methods.Sales.PersonsPage;

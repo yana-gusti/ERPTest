@@ -18,8 +18,8 @@ public class ShortApp extends BaseTest {
         wait(3000);
         ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
         wait(3000);
-        String firstName = "";
-        String lastName = "";
+        String firstName = "a";
+        String lastName = "a";
         applicationsPage.createApplication(firstName, lastName, driver);
         wait(1000);
         applicationsPage.cancel(driver);

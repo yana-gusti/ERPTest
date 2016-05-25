@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="4">
+    <test name="AccountingChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuAccounting"/>
+        </classes>
+    </test>
+    <test name="ExpensesChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuExpenses"/>
+        </classes>
+    </test>
+    <test name="HRChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuHR"/>
+        </classes>
+    </test>
+    <test name="PayrollFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuPayroll"/>
+        </classes>
+    </test>
+    <test name="ProjectFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuProject"/>
+        </classes>
+    </test>
+    <test name="PurchasesChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuPurchases"/>
+        </classes>
+    </test>
+    <test name="SalesChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuSales"/>
+        </classes>
+    </test>
+    <test name="SettingsChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuSettings"/>
+        </classes>
+    </test>
+</suite>

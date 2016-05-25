@@ -165,10 +165,10 @@ public class PersonsPage extends BaseTest {
     public JobPositionsPage switchToJobPosition(RemoteWebDriver driver) throws InterruptedException {
         HR = driver.findElement(By.id("HR"));
         HR.click();
-        wait(1000);
+        wait(3000);
         jobPositionLink = driver.findElement(By.xpath(".//*[@id='14']/a"));
         jobPositionLink.click();
-        wait(2000);
+        wait(5000);
         return new JobPositionsPage();
     }
     public BirthdaysPage switchToBirthdays(RemoteWebDriver driver) throws InterruptedException {

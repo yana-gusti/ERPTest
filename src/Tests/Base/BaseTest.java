@@ -82,7 +82,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
     }
 
     public void executeTest() throws InterruptedException, IOException {
-
+        GoToPersonsPage();
         wait(3000);
         MoveThroughMenu moveThroughMenu = new MoveThroughMenu();
         moveThroughMenu.MoveThroughMenu(driver, tabMenuItems);

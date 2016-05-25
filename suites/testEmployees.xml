@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="5">
+    <test name="CorrectEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateCorrectEmployee"/>
+        </classes>
+    </test>
+    <test name="EmptyEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateEmptyEmployee"/>
+        </classes>
+    </test>
+    <test name="IncorrectEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateIncorrectEmployee"/>
+        </classes>
+    </test>
+    <test name="FilterEmployeesFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateNewFilterEmployees"/>
+        </classes>
+    </test>
+    <test name="ShortEmployeeFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateShortEmployee"/>
+        </classes>
+    </test>
+    <test name="DetailsOfEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.DetailsOfEmployee"/>
+        </classes>
+    </test>
+    <test name="RemoveEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.RemoveEmployee"/>
+        </classes>
+    </test>
+</suite>

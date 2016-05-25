@@ -1,4 +1,4 @@
-package Tests.HR;
+package Tests.HR.Employees;
 
 import Methods.HR.EmployeesPage;
 import Methods.Sales.PersonsPage;
@@ -40,7 +40,7 @@ public class EmployeesPageTest extends BaseTest {
     @Test(groups = { "good" })
     public void CreateCorrectEmployee() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage  personsPage = GoToPersonsPage();
         wait(3000);
 //        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
 //        wait(1000);
@@ -60,7 +60,7 @@ public class EmployeesPageTest extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateShortEmployee() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage   personsPage = GoToPersonsPage();
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
@@ -78,7 +78,7 @@ public class EmployeesPageTest extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateEmptyEmployee() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage   personsPage = GoToPersonsPage();
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
@@ -96,7 +96,7 @@ public class EmployeesPageTest extends BaseTest {
     @Test(groups = { "good" })
     public void DetailsOfEmployee() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
         wait(3000);
@@ -135,7 +135,7 @@ public class EmployeesPageTest extends BaseTest {
     @Test(groups = { "good" })
     public void RemoveEmployee() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
 //        wait(3000);
@@ -160,7 +160,7 @@ public class EmployeesPageTest extends BaseTest {
     }
     @Test(groups = {"good"})
     public void CreateNewFilterEmployees() throws InterruptedException, IOException {
-        personsPage = GoToPersonsPage();
+        PersonsPage   personsPage = GoToPersonsPage();
         wait(3000);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
 //        wait(3000);

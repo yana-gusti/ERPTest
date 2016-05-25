@@ -18,18 +18,18 @@ import static org.testng.Assert.assertEquals;
  */
 public class JobPositionsPageTest extends BaseTest {
 
-    PersonsPage personsPage;
+
     @Test(groups = { "bad" })
     public void CreateIncorrectJob() throws InterruptedException, IOException
     {
-     personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "!@#$";
-        jobPositionsPage.createJobPosition(jobName);
+        jobPositionsPage.createJobPosition(jobName, driver);
         wait(3000);
-        jobPositionsPage.cancel();
+        jobPositionsPage.cancel(driver);
         wait(6000);
         personsPage.logOut(driver);
     }
@@ -37,12 +37,12 @@ public class JobPositionsPageTest extends BaseTest {
     @Test(groups = { "good" })
     public void CreateCorrectJob() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "QA Job";
-        jobPositionsPage.createJobPosition(jobName);
+        jobPositionsPage.createJobPosition(jobName,driver);
 
 
     }
@@ -50,14 +50,14 @@ public class JobPositionsPageTest extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateShortJob() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "a";
-        jobPositionsPage.createJobPosition(jobName);
+        jobPositionsPage.createJobPosition(jobName, driver);
         wait(3000);
-        jobPositionsPage.cancel();
+        jobPositionsPage.cancel(driver);
         wait(6000);
         personsPage.logOut(driver);
     }
@@ -65,14 +65,14 @@ public class JobPositionsPageTest extends BaseTest {
     @Test(groups = { "bad" })
     public void CreateEmptyJob() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
         String jobName = "";
-        jobPositionsPage.createJobPosition(jobName);
+        jobPositionsPage.createJobPosition(jobName, driver);
         wait(3000);
-        jobPositionsPage.cancel();
+        jobPositionsPage.cancel(driver);
         wait(6000);
         personsPage.logOut(driver);
     }
@@ -80,13 +80,13 @@ public class JobPositionsPageTest extends BaseTest {
     @Test(groups = { "good" })
     public void DetailsOfJob() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
-        jobPositionsPage.viewJobDetails();
+        jobPositionsPage.viewJobDetails(driver);
         wait(2000);
-        jobPositionsPage.cancel();
+        jobPositionsPage.cancel(driver);
 //        assertEquals("QA", getDriver().findElement(By.cssSelector("h3.left")).getText());
         wait(1000);
         personsPage.logOut(driver);
@@ -96,11 +96,11 @@ public class JobPositionsPageTest extends BaseTest {
     @Test(groups = { "good" })
     public void EditJob() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(4000);
-        jobPositionsPage.editJobPosition();
+        jobPositionsPage.editJobPosition(driver);
         wait(4000);
         personsPage.logOut(driver);
 
@@ -109,11 +109,11 @@ public class JobPositionsPageTest extends BaseTest {
     @Test(groups = { "good" })
     public void RemoveJob() throws InterruptedException, IOException
     {
-        personsPage = GoToPersonsPage();
+        PersonsPage personsPage = GoToPersonsPage();
         wait(1000);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(3000);
-        jobPositionsPage.removeJobPosition();
+        jobPositionsPage.removeJobPosition(driver);
         wait(3000);
         alertAcept();
         wait(4000);

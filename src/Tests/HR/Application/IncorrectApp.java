@@ -26,7 +26,7 @@ public class IncorrectApp extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
         ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
-        wait(2000);
+        wait(4000);
         String firstName = "!@#$";
         String lastName = "!@#$";
         applicationsPage.createApplication( firstName, lastName, driver);

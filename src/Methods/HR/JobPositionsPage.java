@@ -7,6 +7,7 @@ import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 
@@ -33,53 +34,47 @@ public class JobPositionsPage extends BaseTest {
     public WebElement department;
     private WebDriver driver = getDriver();
 
-    public JobPositionsPage()
-    {
-        super();
-    }
 
-    public void Init() {
 
-    }
 
-    public void createJobPosition(String _jobName) throws InterruptedException {
-        createBtn  = getDriver().findElement(By.id("top-bar-createBtn"));
+    public void createJobPosition(String _jobName, RemoteWebDriver driver) throws InterruptedException {
+        createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
         wait(3000);
-        jobName = getDriver().findElement(By.id("name"));
+        jobName = driver.findElement(By.id("name"));
         jobName.sendKeys(_jobName);
         wait(2000);
-        createAppBtn  = getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]"));
+        createAppBtn  = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]"));
         createAppBtn.click();
     }
 
 
-    public void viewJobDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(".//*[@id='listTable']/tr[67]/td[3]"));
+    public void viewJobDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
+        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]"));
         choose_one.click();
 
     }
-    public void removeJobPosition() throws InterruptedException {
+    public void removeJobPosition(RemoteWebDriver driver) throws InterruptedException {
         wait(2000);
-        getDriver().findElement(By.xpath(".//*[@id='listTable']/tr[67]/td[3]")).click();
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
         wait(2000);
-        getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]")).click();
+       driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]")).click();
 
 
     }
-    public void cancel(){
-        getDriver().findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
+    public void cancel(RemoteWebDriver driver){
+        driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
 
     }
 
-    public void editJobPosition() throws InterruptedException {
-        driver.findElement(By.xpath("//tbody[@id='listTable']/tr[67]/td[3]")).click();
-        wait(2000);
+    public void editJobPosition(RemoteWebDriver driver) throws InterruptedException {
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
+        wait(5000);
         driver.findElement(By.id("name")).clear();
         driver.findElement(By.id("name")).sendKeys("QA");
         driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
         wait(3000);
-        assertEquals("QA", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr[67]/td[3]")).getText());
+//        assertEquals("QA", driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).getText());
 
 
 

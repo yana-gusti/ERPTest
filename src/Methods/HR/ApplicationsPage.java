@@ -74,17 +74,17 @@ public class ApplicationsPage extends BaseTest {
     }
 
     public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
-        listBtn = driver.findElement(By.xpath("listBtn"));
+        listBtn = driver.findElement(By.id("listBtn"));
         listBtn.click();
     }
     public void viewAppDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
-        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[3]"));
+        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]"));
         choose_one.click();
     }
     public void removeApp(RemoteWebDriver driver) throws InterruptedException {
-        driver.findElement(By.xpath(".//*[@id='check_all']")).click();
+
         wait(1000);
-        deleteBtn = driver.findElement(By.id("top-bar-deleteBtn"));
+        deleteBtn = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]"));
         deleteBtn.click();
 
 
