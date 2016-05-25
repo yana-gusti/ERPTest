@@ -16,7 +16,8 @@ public class MoveThroughMenuSettings extends BaseTest {
         tabMenuItems.add("Users");
         tabMenuItems.add("Workflows");
         tabMenuItems.add("Profiles");
-        tabMenuItems.add("Employee");
+        tabMenuItems.add("settingsEmployee");
+        tabMenuItems.add("Accounting");
         tabMenuItems.add("Product Categories");
         executeTest();
     }

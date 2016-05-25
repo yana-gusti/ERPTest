@@ -1,4 +1,4 @@
-package Tests.Sales;
+package Tests.Sales.Companies;
 
 import Methods.Sales.CompaniesPage;
 

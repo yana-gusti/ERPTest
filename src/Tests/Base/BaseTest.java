@@ -58,8 +58,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
         }
 
-    //setting webdriver
-        setDriver(driver);
+
     driver.get(baseUrl);
     if(myBrowser.equals("chrome")){
         driver.manage().window().maximize();

@@ -15,7 +15,6 @@ public class MoveThroughMenuProject extends BaseTest {
         tabMenuItems.add("Projects");
         tabMenuItems.add("Dashboard Vacation");
         tabMenuItems.add("Tasks");
-        tabMenuItems.add("Dashboard");
         tabMenuItems.add("Jobs Dashboard");
         tabMenuItems.add("tCard");
         executeTest();

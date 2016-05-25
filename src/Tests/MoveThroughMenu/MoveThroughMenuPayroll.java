@@ -13,7 +13,6 @@ public class MoveThroughMenuPayroll extends BaseTest {
     public void MoveThroughMenuPayroll() throws InterruptedException, IOException {
         tabMenuItems.add("Payroll");
         tabMenuItems.add("Supplier Payments");
-        tabMenuItems.add("MonthHours");
         tabMenuItems.add("Holidays");
         tabMenuItems.add("Salary Report");
         tabMenuItems.add("Efficiency");

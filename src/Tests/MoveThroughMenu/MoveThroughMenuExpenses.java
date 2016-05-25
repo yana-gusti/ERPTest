@@ -14,6 +14,7 @@ public class MoveThroughMenuExpenses extends BaseTest {
         tabMenuItems.add("Expenses");
         tabMenuItems.add("Invoice");
         tabMenuItems.add("Expenses Payments");
+        tabMenuItems.add("MonthHours");
         executeTest();
     }
 }

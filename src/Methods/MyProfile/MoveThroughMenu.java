@@ -19,7 +19,7 @@ public class MoveThroughMenu extends BaseTest {
         WebElement element;
         element = driver.findElement(By.id(tabMenuItems.get(0)));
         element.click();
-        wait(2000);
+        wait(5000);
 
         for (int a=1; a<tabMenuItems.size(); a++) {
             try {

@@ -22,7 +22,6 @@ public class MoveThroughMenuSales extends BaseTest {
         tabMenuItems.add("Order");
         tabMenuItems.add("Invoice");
         tabMenuItems.add("Proforma");
-        tabMenuItems.add("Profit");
         tabMenuItems.add("Invoice Aging");
         tabMenuItems.add("Invoice Charts");
         executeTest();
