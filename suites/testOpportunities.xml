@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="5">
+    <test name="CorrectOpportunityChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateCorrectOpportunity"/>
+        </classes>
+    </test>
+    <test name="IncorrectOpportunityChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateIncorrectOpportunity"/>
+        </classes>
+    </test>
+    <test name="OpportunityWithBlankFieldChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateOpportunityWithBlankField"/>
+        </classes>
+    </test>
+    <test name="ShortOpportunityFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateShortOpportunity"/>
+        </classes>
+    </test>
+    <test name="DetailsOfOpportunityFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.DetailsOfOpportunity"/>
+        </classes>
+    </test>
+    <test name="OpportunityStageChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.OpportunityStage"/>
+        </classes>
+    </test>
+    <test name="RemoveOpportunityChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.RemoveOpportunity"/>
+        </classes>
+    </test>
+</suite>

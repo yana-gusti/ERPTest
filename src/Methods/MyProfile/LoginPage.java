@@ -42,7 +42,9 @@ public class LoginPage extends BaseTest{
         String login = "yana.gusti";
         String pass = "thinkmobiles2015";
         login(login, pass,  driver);
-
+        wait(3000);
+        driver.findElement(By.linkText("Persons")).click();
+        wait(3000);
         return new PersonsPage();
     }
 

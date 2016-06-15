@@ -181,15 +181,17 @@ public class PersonsPage extends BaseTest {
         return new BirthdaysPage();
     }
 
-    public void createCorrectPerson(String _firstName, String _lastName, RemoteWebDriver driver)
-    {
-
+    public void createCorrectPerson(String _firstName, String _lastName, RemoteWebDriver driver) throws InterruptedException {
+        wait(3000);
         createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
+        wait(3000);
         firstName = driver.findElement(By.id("firstName"));
         firstName.sendKeys(_firstName);
+        wait(3000);
         lastName = driver.findElement(By.id("lastName"));
         lastName.sendKeys(_lastName);
+        wait(3000);
         createPersonBtn  = driver.findElement(By.id("create-person-dialog"));
         createPersonBtn.click();
 
@@ -197,8 +199,10 @@ public class PersonsPage extends BaseTest {
 
 
     public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
+        wait(3000);
         listBtn = driver.findElement(By.id("listBtn"));
         listBtn.click();
+        wait(3000);
 
     }
 
@@ -208,13 +212,14 @@ public class PersonsPage extends BaseTest {
     }
 
     public void removePerson(RemoteWebDriver driver) throws InterruptedException {
+        wait(3000);
         listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();
-        wait(1000);
-        chooseToDelete = driver.findElement(By.xpath(".//*[@id='check_all']"));
-        chooseToDelete.click();
-        deleteBtn = driver.findElement(By.id("top-bar-deleteBtn"));
-        deleteBtn.click();
+        wait(3000);
+        driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[5]")).click();
+        wait(3000);
+        driver.findElement(By.id("top-bar-deleteBtn")).click();
+
 
     }
 
