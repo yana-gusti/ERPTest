@@ -27,11 +27,11 @@ public class CompaniesPageTests extends BaseTest {
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "!@#$";
-        companyPage.createCorrectCompany(companyName);
+        companyPage.createCorrectCompany(companyName, driver);
         wait(1000);
         alertAcept();
         wait(1000);
-        companyPage.cancel();
+        companyPage.cancel(driver);
         wait(1000);
         personsPage.logOut(driver);
     }
@@ -43,11 +43,11 @@ public class CompaniesPageTests extends BaseTest {
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "a";
-        companyPage.createCorrectCompany(companyName);
+        companyPage.createCorrectCompany(companyName, driver);
         wait(1000);
         alertAcept();
         wait(1000);
-        companyPage.cancel();
+        companyPage.cancel(driver);
         wait(1000);
         personsPage.logOut(driver);
     }
@@ -61,7 +61,7 @@ public class CompaniesPageTests extends BaseTest {
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "Test";
-        companyPage.createCorrectCompany(companyName);
+        companyPage.createCorrectCompany(companyName, driver);
         wait(1000);
         assertEquals("MS", getDriver().findElement(By.linkText("MS")).getText());
         wait(1000);
@@ -77,11 +77,11 @@ public class CompaniesPageTests extends BaseTest {
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
         String companyName = "";
-        companyPage.createCorrectCompany(companyName);
+        companyPage.createCorrectCompany(companyName, driver);
         wait(1000);
         alertAcept();
         wait(1000);
-        companyPage.cancel();
+        companyPage.cancel(driver);
         wait(1000);
         personsPage.logOut(driver);
 
@@ -95,9 +95,9 @@ public class CompaniesPageTests extends BaseTest {
         wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(1000);
-        companyPage.SwitchOnList();
+        companyPage.SwitchOnList(driver);
         wait(1000);
-        companyPage.viewCompanyDetails();
+        companyPage.viewCompanyDetails(driver);
         wait(1000);
         assertEquals("MS", getDriver().findElement(By.cssSelector("span[title=\"MS\"]")).getText());
         wait(1000);
@@ -111,11 +111,11 @@ public class CompaniesPageTests extends BaseTest {
         wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(seconds);
-        companyPage.SwitchOnList();
+        companyPage.SwitchOnList(driver);
         wait(1000);
-        companyPage.viewCompanyDetails();
+        companyPage.viewCompanyDetails(driver);
         wait(1000);
-        companyPage.editCompany();
+        companyPage.editCompany(driver);
         wait(1000);
 
         assertEquals("www.ua.com", getDriver().findElement(By.id("website")).getText());
@@ -132,11 +132,11 @@ public class CompaniesPageTests extends BaseTest {
         wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(1000);
-        companyPage.SwitchOnList();
+        companyPage.SwitchOnList(driver);
         wait(1000);
-        companyPage.viewCompanyDetails();
+        companyPage.viewCompanyDetails(driver);
         wait(1000);
-        companyPage.removeCompany();
+        companyPage.removeCompany(driver);
         wait(1000);
         alertAcept();
         wait(1000);

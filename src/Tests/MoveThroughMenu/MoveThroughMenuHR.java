@@ -18,7 +18,7 @@ public class MoveThroughMenuHR extends BaseTest {
         tabMenuItems.add("Birthdays");
         tabMenuItems.add("Vacation");
         tabMenuItems.add("Attendance");
-        tabMenuItems.add("HrDashboard");
+        tabMenuItems.add("HR Dashboard");
         executeTest();
     }
 }

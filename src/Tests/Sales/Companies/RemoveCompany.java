@@ -18,12 +18,12 @@ public class RemoveCompany extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(4000);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
-        wait(1000);
-        companyPage.SwitchOnList();
-        wait(1000);
-        companyPage.viewCompanyDetails();
-        wait(1000);
-        companyPage.removeCompany();
+        wait(4000);
+        companyPage.SwitchOnList(driver);
+        wait(4000);
+        companyPage.viewCompanyDetails(driver);
+        wait(4000);
+        companyPage.removeCompany(driver);
         wait(1000);
         alertAcept();
         wait(1000);

@@ -22,12 +22,12 @@ public class EditCompany extends BaseTest{
         wait(4000);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(4000);
-        companyPage.SwitchOnList();
-        wait(1000);
-        companyPage.viewCompanyDetails();
-        wait(1000);
-        companyPage.editCompany();
-        wait(1000);
+        companyPage.SwitchOnList(driver);
+        wait(4000);
+        companyPage.viewCompanyDetails(driver);
+        wait(4000);
+        companyPage.editCompany(driver);
+        wait(4000);
 
         assertEquals("www.ua.com", getDriver().findElement(By.id("website")).getText());
 

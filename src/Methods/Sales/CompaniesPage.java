@@ -5,6 +5,7 @@ import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 
@@ -32,47 +33,47 @@ public class CompaniesPage extends BaseTest {
     }
 
 
-    public void createCorrectCompany(String _companyName) throws InterruptedException {
+    public void createCorrectCompany(String _companyName, RemoteWebDriver driver) throws InterruptedException {
 
-        createBtn  = getDriver().findElement(By.xpath(".//*[@id='top-bar-createBtn']"));
+        createBtn  = driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']"));
         createBtn.click();
         wait(1000);
-        companyName = getDriver().findElement(By.xpath("MS"));
+        companyName = driver.findElement(By.xpath(".//*[@id='companyName']"));
         companyName.click();
         companyName.sendKeys(_companyName);
-        createCompanyBtn  = getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[1]"));
+        createCompanyBtn  = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]"));
         createCompanyBtn.click();
 
     }
 
 
 
-    public void SwitchOnList() throws InterruptedException {
-        listBtn = getDriver().findElement(By.xpath(".//*[@id='listBtn']"));
+    public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
+        listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();
 
     }
 
-    public void viewCompanyDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(".//*[@id='listTable']/tr/td[3]"));
+    public void viewCompanyDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
+        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]"));
         choose_one.click();
 
     }
-    public void editCompany(){
-        editCompany = getDriver().findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
+    public void editCompany(RemoteWebDriver driver){
+        editCompany = driver.findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
         editCompany.click();
-        getDriver().findElement(By.name("website")).clear();
-        getDriver().findElement(By.name("website")).sendKeys("www.ua.com");
-        getDriver().findElement(By.xpath("(//button[@type='button'])[2]")).click();
+        driver.findElement(By.name("website")).clear();
+        driver.findElement(By.name("website")).sendKeys("www.ua.com");
+        driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]")).click();
     }
 
-    public void removeCompany() throws InterruptedException, IOException {
+    public void removeCompany(RemoteWebDriver driver) throws InterruptedException, IOException {
 
-        deleteBtn = getDriver().findElement(By.id("top-bar-deleteBtn"));
+        deleteBtn = driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']"));
         deleteBtn.click();
     }
-    public void cancel() throws InterruptedException {
-        cancelBtn = getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[2]"));
+    public void cancel(RemoteWebDriver driver) throws InterruptedException {
+        cancelBtn = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]"));
         cancelBtn.click();
     }
 }

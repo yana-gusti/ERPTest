@@ -12,7 +12,7 @@ public class MoveThroughMenuSettings extends BaseTest {
     @Test
     public void MoveThroughMenuSettings() throws InterruptedException, IOException {
         tabMenuItems.add("Settings");
-        tabMenuItems.add("Groups");
+        tabMenuItems.add("Departments");
         tabMenuItems.add("Users");
         tabMenuItems.add("Workflows");
         tabMenuItems.add("Profiles");

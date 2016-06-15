@@ -15,7 +15,6 @@ public class MoveThroughMenuPayroll extends BaseTest {
         tabMenuItems.add("Supplier Payments");
         tabMenuItems.add("Holidays");
         tabMenuItems.add("Salary Report");
-        tabMenuItems.add("Efficiency");
         tabMenuItems.add("Bonus Type");
         tabMenuItems.add("Payroll Expenses");
         tabMenuItems.add("Payroll Payments");

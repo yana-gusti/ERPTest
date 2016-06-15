@@ -5,6 +5,7 @@ import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 
@@ -44,50 +45,45 @@ public class LeadsPage extends BaseTest {
 
 
 
-    public void createCorrectLead(String _leadName) throws InterruptedException {
+    public void createCorrectLead(String _leadName, RemoteWebDriver driver) throws InterruptedException {
 
-        createBtn  = getDriver().findElement(By.xpath(".//*[@id='top-bar-createBtn']"));
+        createBtn  = driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']"));
         createBtn.click();
         wait(1000);
-        leadName = getDriver().findElement(By.xpath("Test"));
+        leadName = driver.findElement(By.xpath(".//*[@id='name']"));
         leadName.click();
         leadName.sendKeys(_leadName);
-        wait(1000);
-        WebElement StageLink = getDriver().findElement(By.id("workflowsDd"));
-        StageLink.click();
-        WebElement SelectingStage = getDriver().findElement(By.id("52b4265cc033b7e25ac4f91c"));
-        SelectingStage.click();
-        createLeadBtn  = getDriver().findElement(By.xpath("(//button[@type='button'])[6]"));
+        createLeadBtn  = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]"));
         createLeadBtn.click();
     }
 
 
 
 
-    public void ChangeStage() throws InterruptedException {
-        getDriver().findElement(By.linkText("Open")).click();
-        getDriver().findElement(By.id("52b4265cc033b7e25ac4f91c")).click();
+    public void ChangeStage(RemoteWebDriver driver) throws InterruptedException {
+        driver.findElement(By.linkText("In Progress")).click();
+        driver.findElement(By.id("574443c824b1cdef660b775e")).click();
 
 
     }
 
-    public void viewLeadDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath(".//*[@id='listTable']/tr/td[3]"));
+    public void viewLeadDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
+        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[3]"));
         choose_one.click();
     }
 
-    public void removeLead() throws InterruptedException, IOException {
-        deleteBtn = getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[3]"));
-        deleteBtn.click();
+    public void removeLead(RemoteWebDriver driver) throws InterruptedException, IOException {
+        driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
+
     }
-    public void cancel() throws InterruptedException {
-        cancelBtn = getDriver().findElement(By.xpath("html/body/div[3]/div[3]/div/button[2]"));
-        cancelBtn.click();
+    public void cancel(RemoteWebDriver driver) throws InterruptedException {
+        driver.findElement(By.xpath("(//button[@type='button'])[7]")).click();
+
     }
 
-    public void convertToOpportunity(){
-        getDriver().findElement(By.id("convertToOpportunity")).click();
-        getDriver().findElement(By.xpath("(//button[@type='button'])[10]")).click();
+    public void convertToOpportunity(RemoteWebDriver driver){
+        driver.findElement(By.id("convertToOpportunity")).click();
+       driver.findElement(By.xpath("(//button[@type='button'])[10]")).click();
 
 
     }

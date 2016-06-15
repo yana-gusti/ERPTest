@@ -19,12 +19,9 @@ public class CreateIncorrectCompany extends BaseTest {
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
         wait(4000);
         String companyName = "!@#$";
-        companyPage.createCorrectCompany(companyName);
+        companyPage.createCorrectCompany(companyName, driver);
+        wait(4000);
+        companyPage.cancel(driver);
         wait(1000);
-        alertAcept();
-        wait(1000);
-        companyPage.cancel();
-        wait(1000);
-        personsPage.logOut(driver);
     }
 }

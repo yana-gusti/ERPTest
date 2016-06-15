@@ -18,9 +18,9 @@ public class MoveThroughMenuSales extends BaseTest {
         tabMenuItems.add("Persons");
         tabMenuItems.add("Companies");
         tabMenuItems.add("Dashboard");
-        tabMenuItems.add("Quotation");
-        tabMenuItems.add("Order");
-        tabMenuItems.add("Invoice");
+        tabMenuItems.add("Quotations");
+        tabMenuItems.add("Orders");
+        tabMenuItems.add("Invoices");
         tabMenuItems.add("Proforma");
         tabMenuItems.add("Invoice Aging");
         tabMenuItems.add("Invoice Charts");

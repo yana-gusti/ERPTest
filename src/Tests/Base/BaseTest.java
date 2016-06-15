@@ -120,7 +120,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
         Thread.sleep(milliSeconds);
     }
     public void alertAcept(){
-        getDriver().switchTo().alert().accept();
+        driver.switchTo().alert().accept();
 
     }
 
