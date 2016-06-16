@@ -31,12 +31,7 @@
             <class name="Tests.Sales.Persons.EditPerson"/>
         </classes>
     </test>
-    <test name="FiltersPersonChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Sales.Persons.FiltersPerson"/>
-        </classes>
-    </test>
+
     <test name="PersonsPageChrome" verbose="1" parallel="true">
         <parameter name="myBrowser" value="chrome" />
         <classes>
@@ -49,10 +44,5 @@
             <class name="Tests.Sales.Persons.RemovePerson"/>
         </classes>
     </test>
-    <test name="VerifyPersonPerPageChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Sales.Persons.VerifyPersonPerPage"/>
-        </classes>
-    </test>
+
 </suite>

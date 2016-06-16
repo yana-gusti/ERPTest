@@ -1,33 +1,347 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-
-<suite name="Tests" verbose="1">
-
-    <test name="Chrome_Tests">
-
+<suite name="ScheduleBusTest" parallel="tests" thread-count="5">
+    <test name="CorrectAppFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
         <classes>
-            <!--<class name="Tests.MyProfile.LoginPageTest" />-->
-            <!--<class name="Tests.MyProfile.MyProfilePageTest" />-->
-            <!--<class name="Tests.Sales.BonusTypePageTests" />-->
-            <class name="Tests.HR.EmployeesPageTest" />
-            <class name="Tests.HR.ApplicationsPageTest" />
-            <class name="Tests.HR.JobPositionsPageTest" />
-            <!--<class name="Tests.HR.BirthdaysPageTests" />-->
-            <!--<class name="Tests.Sales.PersonsPageTests" />-->
-            <!--<class name="Tests.Sales.CompaniesPageTests" />-->
-            <!--<class name="Tests.Sales.LeadsPageTests" />-->
-            <!--<class name="Tests.Sales.OpportunitiesPageTests" />-->
+            <class name="Tests.HR.Application.CorrectApp"/>
+        </classes>
+    </test>
+    <test name="IncorrectAppFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.Application.IncorrectApp"/>
+        </classes>
+    </test>
+    <test name="ShortAppChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Application.ShortApp"/>
+        </classes>
+    </test>
+    <test name="EmptyAppFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.Application.EmptyApp"/>
+        </classes>
+    </test>
+    <test name="DetailsOfAppFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.Application.DetailsOfApp"/>
+        </classes>
+    </test>
+    <test name="RemoveAppChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Application.RemoveApp"/>
+        </classes>
+    </test>
+    <test name="CorrectCompanyChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Companies.CreateCorrectCompany"/>
+        </classes>
+    </test>
+    <test name="EmptyCompanyChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Companies.CreateCompanyWithBlankField"/>
+        </classes>
+    </test>
+    <test name="RemoveCompanyChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Companies.RemoveCompany"/>
+        </classes>
+    </test>
+    <test name="IncorrectCompanyFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.CreateIncorrectCompany"/>
+        </classes>
+    </test>
+    <test name="ShortCompanyFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.CreateShortCompany"/>
+        </classes>
+    </test>
+    <test name="DetailsOfCompanyChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Companies.DetailsOfCompany"/>
+        </classes>
+    </test>
+    <test name="EditCompanyChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Companies.EditCompany"/>
+        </classes>
+    </test>
+    <test name="CorrectEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateCorrectEmployee"/>
+        </classes>
+    </test>
+    <test name="EmptyEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateEmptyEmployee"/>
+        </classes>
+    </test>
+    <test name="IncorrectEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateIncorrectEmployee"/>
+        </classes>
+    </test>
+    <test name="FilterEmployeesFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateNewFilterEmployees"/>
+        </classes>
+    </test>
+    <test name="ShortEmployeeFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.Employees.CreateShortEmployee"/>
+        </classes>
+    </test>
+    <test name="DetailsOfEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.DetailsOfEmployee"/>
+        </classes>
+    </test>
+    <test name="RemoveEmployeeChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.Employees.RemoveEmployee"/>
+        </classes>
+    </test>
+    <test name="CorrectJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateCorrectJob"/>
+        </classes>
+    </test>
+    <test name="EmptyJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateEmptyJob"/>
+        </classes>
+    </test>
+    <test name="IncorrectJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateIncorrectJob"/>
+        </classes>
+    </test>
+    <test name="ShortJobFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateShortJob"/>
+        </classes>
+    </test>
+    <test name="DetailsOfJobFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.HR.JobPosition.DetailsOfJob"/>
+        </classes>
+    </test>
+    <test name="EditJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.EditJob"/>
+        </classes>
+    </test>
+    <test name="RemoveJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.RemoveJob"/>
+        </classes>
+    </test>
+    <test name="CorrectLeadChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Leads.CorrectLead"/>
+        </classes>
+    </test>
+    <test name="DetailsOfLeadChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Leads.DetailsOfLead"/>
+        </classes>
+    </test>
+    <test name="FilterChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Leads.Filter"/>
+        </classes>
+    </test>
+    <test name="LeadWithBlankFieldFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.LeadWithBlankField"/>
+        </classes>
+    </test>
+    <test name="RemoveLeadFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.RemoveLead"/>
+        </classes>
+    </test>
+    <test name="ShortLeadChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Leads.ShortLead"/>
+        </classes>
+    </test>
+    <test name="ToOpportunityChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Leads.ToOpportunity"/>
+        </classes>
+    </test>
+    <test name="IncorrectLeadChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Leads.IncorrectLead"/>
+        </classes>
+    </test>
+    <test name="AccountingChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuAccounting"/>
+        </classes>
+    </test>
+    <test name="ExpensesChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuExpenses"/>
+        </classes>
+    </test>
+    <test name="HRChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuHR"/>
+        </classes>
+    </test>
+    <test name="PayrollFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuPayroll"/>
+        </classes>
+    </test>
+    <test name="ProjectFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuProject"/>
+        </classes>
+    </test>
+    <test name="PurchasesChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuPurchases"/>
+        </classes>
+    </test>
+    <test name="SalesChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuSales"/>
+        </classes>
+    </test>
+    <test name="SettingsChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.MoveThroughMenu.MoveThroughMenuSettings"/>
+        </classes>
+    </test>
+    <test name="CorrectOpportunityChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateCorrectOpportunity"/>
+        </classes>
+    </test>
+    <test name="IncorrectOpportunityChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateIncorrectOpportunity"/>
+        </classes>
+    </test>
+    <test name="OpportunityWithBlankFieldChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateOpportunityWithBlankField"/>
+        </classes>
+    </test>
+    <test name="ShortOpportunityFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.CreateShortOpportunity"/>
+        </classes>
+    </test>
+    <test name="DetailsOfOpportunityFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.DetailsOfOpportunity"/>
+        </classes>
+    </test>
+    <test name="OpportunityStageChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.OpportunityStage"/>
+        </classes>
+    </test>
+    <test name="RemoveOpportunityChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Opportunities.RemoveOpportunity"/>
+        </classes>
+    </test>
+    <test name="CorrectPersonChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.CreateCorrectPerson"/>
+        </classes>
+    </test>
+    <test name="IncorrectPersonChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.CreateIncorrectPerson"/>
+        </classes>
+    </test>
+    <test name="PersonWithBlankFieldsChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.CreatePersonWithBlankFields"/>
+        </classes>
+    </test>
+    <test name="DetailsOfPersonFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Persons.DetailsOfPerson"/>
+        </classes>
+    </test>
+    <test name="EditPersonFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Persons.EditPerson"/>
+        </classes>
+    </test>
 
-            <!--<class name="Tests.Project.ProjectPageTests" />-->
-            <!--<class name="Tests.Project.TasksPageTests" />-->
-            <!--<class name="Tests.Project.wTrackPageTests" />-->
-
-            <!--<class name="Tests.Settings.GroupPageTests" />-->
-            <!--<class name="Tests.Settings.UserPageTest" />-->
-            <!--<class name="Tests.Settings.WorkflowPageTests" />-->
-            <!--<class name="Tests.Settings.ProfilePageTests" />-->
-
+    <test name="PersonsPageChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.PersonsPageTests"/>
+        </classes>
+    </test>
+    <test name="RemovePersonFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Persons.RemovePerson"/>
         </classes>
     </test>
 </suite>

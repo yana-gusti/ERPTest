@@ -20,9 +20,7 @@ public class DetailsOfPerson extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
         personsPage.SwitchOnList(driver);
-        wait(1000);
+        wait(3000);
         personsPage.viewPersonDetails(driver);
-        wait(1000);
-        personsPage.logOut(driver);
     }
 }
