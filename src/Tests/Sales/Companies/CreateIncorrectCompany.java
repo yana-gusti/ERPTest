@@ -11,17 +11,18 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class CreateIncorrectCompany extends BaseTest {
+    Integer seconds=10000;
     @Test(groups = { "bad" })
     public void CreateIncorrectCompany() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(4000);
+        wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
-        wait(4000);
+        wait(seconds);
         String companyName = "!@#$";
         companyPage.createCorrectCompany(companyName, driver);
-        wait(4000);
+        wait(seconds);
         companyPage.cancel(driver);
-        wait(1000);
+        wait(seconds);
     }
 }

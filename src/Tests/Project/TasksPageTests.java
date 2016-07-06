@@ -12,7 +12,7 @@ import java.io.IOException;
  * Created by puzzlefacePC on 03.01.14.
  */
 public class TasksPageTests extends BaseTest {
-    Integer seconds = 1000;
+    Integer seconds = 10000;
 
 
 
@@ -138,7 +138,7 @@ public class TasksPageTests extends BaseTest {
 //        taskPage.removeTask();
 //        wait(1000);
 //        alertAcept();
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 

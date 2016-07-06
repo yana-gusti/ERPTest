@@ -15,7 +15,7 @@ import static org.testng.Assert.assertEquals;
  * Created by ��������� on 03.08.2015.
  */
 public class LoginPageTest extends BaseTest{
-    Integer seconds=3000;
+    Integer seconds=10000;
 
     @Test(groups = { "good" })
     public void positiveLogin () throws InterruptedException, IOException
@@ -23,7 +23,7 @@ public class LoginPageTest extends BaseTest{
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         assertEquals("yana.gusti", getDriver().findElement(By.id("userName")).getText());
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
     @Test(groups = { "bad" })

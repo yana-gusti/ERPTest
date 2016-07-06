@@ -11,24 +11,24 @@ import java.io.IOException;
  * Created by yana on 23.05.2016.
  */
 public class RemoveApp extends BaseTest {
+    Integer seconds=10000;
     @Test(groups = { "good" })
     public void RemoveApp() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
-        wait(3000);
+        wait(seconds);
         applicationsPage.SwitchOnList(driver);
-        wait(5000);
+        wait(seconds);
         applicationsPage.viewAppDetails(driver);
-        wait(1000);
+        wait(seconds);
         applicationsPage.removeApp(driver);
-        wait(1000);
+        wait(seconds);
         alertAcept();
-        wait(1000);
+        wait(seconds);
 //        assertEquals("1 - 1 of 1 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
 
-        wait(1000);
         personsPage.logOut(driver);
     }
 }

@@ -14,18 +14,19 @@ import static org.testng.Assert.assertEquals;
  * Created by yana on 25.05.2016.
  */
 public class CreateCorrectCompany extends BaseTest {
+    Integer seconds=10000;
     @Test(groups = { "good" })
     public void CreateCorrectCompany() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(4000);
+        wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
-        wait(4000);
+        wait(seconds);
         String companyName = "Test";
         companyPage.createCorrectCompany(companyName, driver);
-        wait(1000);
+        wait(seconds);
 //        assertEquals("MS", getDriver().findElement(By.linkText("MS")).getText());
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 }

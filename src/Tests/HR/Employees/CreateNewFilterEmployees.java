@@ -11,18 +11,19 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class CreateNewFilterEmployees extends BaseTest {
+    Integer seconds=10000;
     @Test(groups = {"good"})
     public void CreateNewFilterEmployees() throws InterruptedException, IOException {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
 //        wait(3000);
 //        String firstName = employeesPage.getProperty("firstName.remove");
 //        String lastName = employeesPage.getProperty("lastName.remove");
 //        employeesPage.createEmployee(firstName, lastName);
-        wait(5000);
+        wait(seconds);
         employeesPage.EmployeesFilter(driver);
-        wait(5000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 }

@@ -11,16 +11,16 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class EditJob extends BaseTest {
-
+    Integer seconds=10000;
     @Test(groups = { "good" })
     public void EditJob() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
-        wait(4000);
+        wait(seconds);
         jobPositionsPage.editJobPosition(driver);
-        wait(4000);
+        wait(seconds);
         personsPage.logOut(driver);
 
     }

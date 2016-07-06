@@ -11,19 +11,20 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class CreateShortJob extends BaseTest {
-
+    Integer seconds=10000;
     @Test(groups = { "bad" })
     public void CreateShortJob() throws InterruptedException, IOException
     {
+
         PersonsPage personsPage = GoToPersonsPage();
-        wait(1000);
+        wait();
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
-        wait(3000);
+        wait(seconds);
         String jobName = "a";
         jobPositionsPage.createJobPosition(jobName, driver);
-        wait(3000);
+        wait(seconds);
         jobPositionsPage.cancel(driver);
-        wait(6000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 

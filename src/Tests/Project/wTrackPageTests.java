@@ -13,14 +13,18 @@ import java.io.IOException;
  * Created by Yana on 31.08.2015.
  */
 public class wTrackPageTests extends BaseTest {
+    Integer seconds=10000;
 
     @Test(groups = { "good" })
 
     public void createwTrackItem() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
         WTrackPage wTrackPage = personsPage.switchToWTrack(driver);
+        wait(seconds);
         wTrackPage.createwTrackItem();
+        wait(seconds);
         personsPage.logOut(driver);
     }
 
@@ -29,8 +33,11 @@ public class wTrackPageTests extends BaseTest {
     public void editwTrackItem() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
         WTrackPage wTrackPage = personsPage.switchToWTrack(driver);
+        wait(seconds);
         wTrackPage.editwTrackItem();
+        wait(seconds);
         personsPage.logOut(driver);
     }
 
@@ -39,8 +46,11 @@ public class wTrackPageTests extends BaseTest {
     public void generateInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
         WTrackPage wTrackPage = personsPage.switchToWTrack(driver);
+        wait(seconds);
         InvoicePage invoicePage = wTrackPage.generateInvoice();
+        wait(seconds);
         personsPage.logOut(driver);
     }
 
@@ -49,8 +59,11 @@ public class wTrackPageTests extends BaseTest {
     public void kpayInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
         InvoicePage invoicePage = personsPage.switchToInvoice(driver);
+        wait(seconds);
         invoicePage.payInvoice();
+        wait(seconds);
         personsPage.logOut(driver);
     }
 
@@ -59,8 +72,11 @@ public class wTrackPageTests extends BaseTest {
     public void lpayInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
         CustomerPaymentsPage customerPaymentsPage = personsPage.switchToCustomerPaymentsPage(driver);
+        wait(seconds);
         customerPaymentsPage.payInvoice();
+        wait(seconds);
         personsPage.logOut(driver);
     }
 
@@ -69,8 +85,11 @@ public class wTrackPageTests extends BaseTest {
     public void mckeckInvoice() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
         InvoicePage invoicePage = personsPage.switchToInvoice(driver);
+        wait(seconds);
         invoicePage.checkPaidStatus();
+        wait(seconds);
         personsPage.logOut(driver);
     }
 

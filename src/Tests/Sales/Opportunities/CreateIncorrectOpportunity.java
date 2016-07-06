@@ -11,7 +11,7 @@ import java.io.IOException;
  * Created by yana on 15.06.2016.
  */
 public class CreateIncorrectOpportunity extends BaseTest {
-    Integer seconds=3000;
+    Integer seconds = 10000;
     @Test(groups = { "bad" })
     public void CreateIncorrectOpportunity() throws InterruptedException, IOException
     {
@@ -22,9 +22,9 @@ public class CreateIncorrectOpportunity extends BaseTest {
         String opportunityName = "!@#";
         //steps
         opportunityPage.createCorrectOpportunity(opportunityName, driver);
-        wait(3000);
+        wait(seconds);
         opportunityPage.cancel(driver);
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
 
     }

@@ -14,12 +14,13 @@ import static org.testng.Assert.assertEquals;
  * Created by ��������� on 03.08.2015.
  */
 public class MyProfilePageTest extends BaseTest {
+    Integer seconds=10000;
 
     @Test(groups = { "good" })
     public void changePassPositive () throws InterruptedException, IOException
     {
 
-        wait(3000);
+        wait(seconds);
         LoginPage loginPage = new LoginPage();
         String userName = "yana.gusti";
         String pass = "thinkmobiles2015";
@@ -27,15 +28,15 @@ public class MyProfilePageTest extends BaseTest {
         loginPage.login(userName, pass,driver);
         PersonsPage personsPage = new PersonsPage();
         MyProfilePage myProfilePage= personsPage.goToMyProfile(driver);
-        wait(3000);
+        wait(seconds);
         myProfilePage.changePass(pass, passNew);
         personsPage.logOut(driver);
-        wait(3000);
+        wait(seconds);
         loginPage.login(userName, passNew,driver);
-        wait(3000);
+        wait(seconds);
         PersonsPage personsPage1 = new PersonsPage();
         MyProfilePage myProfilePage1= personsPage1.goToMyProfile(driver);
-        wait(3000);
+        wait(seconds);
         myProfilePage1.changePass(passNew, pass);
         personsPage.logOut(driver);
     }
@@ -43,7 +44,7 @@ public class MyProfilePageTest extends BaseTest {
     @Test(groups = { "good" })
      public void changePassNegative () throws InterruptedException, IOException {
 
-        wait(3000);
+        wait(seconds);
         LoginPage loginPage = new LoginPage();
         String userName = "yana.gusti";
         String pass = "thinkmobiles2015";
@@ -51,7 +52,7 @@ public class MyProfilePageTest extends BaseTest {
         loginPage.login(userName, pass, driver);
         PersonsPage personsPage = new PersonsPage();
         MyProfilePage myProfilePage= personsPage.goToMyProfile(driver);
-        wait(3000);
+        wait(seconds);
         myProfilePage.changePass(pass, passNew);
 
     }
@@ -59,7 +60,7 @@ public class MyProfilePageTest extends BaseTest {
     @Test(groups = { "good" })
     public void changePassEmpty () throws InterruptedException, IOException {
 
-        wait(3000);
+        wait(seconds);
         LoginPage loginPage = new LoginPage();
         String userName = "yana.gusti";
         String pass = "thinkmobiles2015";
@@ -67,7 +68,7 @@ public class MyProfilePageTest extends BaseTest {
         loginPage.login(userName, pass, driver);
         PersonsPage personsPage = new PersonsPage();
         MyProfilePage myProfilePage= personsPage.goToMyProfile(driver);
-        wait(3000);
+        wait(seconds);
         myProfilePage.changePass(pass, passNew);
 
     }

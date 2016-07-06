@@ -11,19 +11,20 @@ import java.io.IOException;
  * Created by yana on 23.05.2016.
  */
 public class ShortApp extends BaseTest {
+    Integer seconds=10000;
     @Test(groups = { "bad" })
     public void CreateShortApp() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
-        wait(3000);
+        wait(seconds);
         String firstName = "a";
         String lastName = "a";
         applicationsPage.createApplication(firstName, lastName, driver);
-        wait(1000);
+        wait(seconds);
         applicationsPage.cancel(driver);
-        wait(6000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 }

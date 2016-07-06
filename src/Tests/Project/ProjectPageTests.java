@@ -14,7 +14,7 @@ import static org.testng.Assert.assertEquals;
  * Created by ��������� on 05.08.2015.
  */
 public class ProjectPageTests extends BaseTest {
-    int seconds=2000;
+    int seconds=10000;
     @Test(groups = { "good" })
     public void CreateCorrectProject() throws InterruptedException, IOException
     {

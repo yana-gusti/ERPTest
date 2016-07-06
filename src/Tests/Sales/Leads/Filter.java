@@ -18,7 +18,7 @@ public class Filter extends BaseTest {
 
     public void Filter() throws InterruptedException, IOException
     {
-        Integer seconds=3000;
+        Integer seconds=10000;
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);

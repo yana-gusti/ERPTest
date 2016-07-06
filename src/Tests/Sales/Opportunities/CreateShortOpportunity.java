@@ -24,9 +24,9 @@ public class CreateShortOpportunity extends BaseTest {
         String opportunityName = "a";
         //steps
         opportunityPage.createCorrectOpportunity(opportunityName, driver);
-        wait(3000);
+        wait(seconds);
         opportunityPage.cancel(driver);
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 }

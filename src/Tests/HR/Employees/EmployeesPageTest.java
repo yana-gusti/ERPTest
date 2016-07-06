@@ -17,23 +17,24 @@ import static org.testng.Assert.assertEquals;
  * To change this template use File | Settings | File Templates.
  */
 public class EmployeesPageTest extends BaseTest {
+    Integer seconds=10000;
 
     PersonsPage personsPage;
     @Test(groups = { "bad" })
     public void CreateIncorrectEmployee() throws InterruptedException, IOException
     {
         personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
-        wait(3000);
+        wait(seconds);
         String firstName = "!@#$";
         String lastName = "!@#$";
         employeesPage.createEmployee(firstName, lastName, driver);
-        wait(3000);
+        wait(seconds);
 //        alertAcept();
 //        wait(1000);
         employeesPage.cancel(driver);
-        wait(3000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 

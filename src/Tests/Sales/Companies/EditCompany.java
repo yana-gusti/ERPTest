@@ -14,22 +14,20 @@ import static org.testng.Assert.assertEquals;
  * Created by yana on 25.05.2016.
  */
 public class EditCompany extends BaseTest{
-
+    Integer seconds=10000;
     @Test(groups = { "good" })
     public void EditCompany() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(4000);
+        wait(seconds);
         CompaniesPage companyPage = personsPage.goToCompanies(driver);
-        wait(4000);
+        wait(seconds);
         companyPage.SwitchOnList(driver);
-        wait(4000);
+        wait(seconds);
         companyPage.viewCompanyDetails(driver);
-        wait(4000);
+        wait(seconds);
         companyPage.editCompany(driver);
-        wait(4000);
-
-        assertEquals("www.ua.com", getDriver().findElement(By.id("website")).getText());
+        wait(seconds);
 
         wait(1000);
         personsPage.logOut(driver);

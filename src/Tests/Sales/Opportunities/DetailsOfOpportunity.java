@@ -11,18 +11,19 @@ import java.io.IOException;
  * Created by yana on 15.06.2016.
  */
 public class DetailsOfOpportunity extends BaseTest {
+    Integer seconds = 10000;
     @Test(groups = { "good" })
 
     public void DetailsOfOpportunity() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         OpportunitiesPage opportunityPage = personsPage.switchToOpportunities(driver);
         opportunityPage.viewOpportunityDetails(driver);
-        wait(1000);
+        wait(seconds);
 //        assertEquals("MS", getDriver().findElement(By.id("name")).getAttribute("value"));
         opportunityPage.cancel(driver);
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
 
     }

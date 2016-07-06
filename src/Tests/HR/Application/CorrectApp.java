@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  * Created by yana on 23.05.2016.
  */
 public class CorrectApp extends BaseTest {
-
+    Integer seconds=10000;
 
 
 
@@ -28,14 +28,14 @@ public class CorrectApp extends BaseTest {
     public void CreateCorrectApp() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
-        wait(4000);
+        wait(seconds);
         String firstName = "test";
         String lastName = "test";
         applicationsPage.createApplication(firstName, lastName, driver);
-        wait(3000);
+        wait(seconds);
 //        assertEquals("Initial Qualification 1", getDriver().findElement(By.cssSelector("h2.columnName")).getText());
-        wait(1000);
+        wait(seconds);
     }
 }

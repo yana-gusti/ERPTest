@@ -13,19 +13,20 @@ import static org.testng.Assert.assertEquals;
  * Created by yana on 15.06.2016.
  */
 public class EditPerson extends BaseTest {
+    Integer seconds = 10000;
     @Test(groups = { "good" })
 
     public void EditPerson() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
 
         personsPage.SwitchOnList(driver);
-        wait(3000);
+        wait(seconds);
         personsPage.viewPersonDetails(driver);
-        wait(3000);
+        wait(seconds);
         personsPage.editPerson(driver);
-        wait(3000);
+        wait(seconds);
         personsPage.logOut(driver);
     }
 }

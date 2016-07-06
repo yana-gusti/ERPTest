@@ -10,18 +10,19 @@ import java.io.IOException;
  * Created by yana on 15.06.2016.
  */
 public class RemovePerson extends BaseTest {
+    Integer seconds = 10000;
     @Test(groups = { "good" })
 
     public void RemovePerson() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         personsPage.removePerson(driver);
-        wait(1000);
+        wait(seconds);
         alertAcept();
-        wait(1000);
+        wait(seconds);
 //        assertEquals("0", getDriver().findElement(By.id("grid-count")).getText());
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
 
     }

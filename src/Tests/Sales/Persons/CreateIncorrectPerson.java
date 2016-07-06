@@ -10,19 +10,20 @@ import java.io.IOException;
  * Created by yana on 15.06.2016.
  */
 public class CreateIncorrectPerson extends BaseTest {
+    Integer seconds = 10000;
     @Test(groups = { "bad" })
     public void CreateIncorrectPerson() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         String firstName = "!@#";
         String lastName = "!@#";
         personsPage.createCorrectPerson(firstName, lastName, driver);
-        wait(3000);
+        wait(seconds);
         personsPage.cancel(driver);
-        wait(1000);
+        wait(seconds);
         personsPage.logOut(driver);
-        wait(1000);
+        wait(seconds);
 
     }
 }

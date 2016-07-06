@@ -11,22 +11,23 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class CreateCorrectEmployee extends BaseTest {
+    Integer seconds=10000;
     @Test(groups = { "good" })
     public void CreateCorrectEmployee() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
 //        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
 //        wait(1000);
 //        String jobName = jobPositionsPage.getProperty("jobName.good");
 //        jobPositionsPage.createJobPosition(jobName);
-        wait(3000);
+
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
-        wait(3000);
+        wait(seconds);
         String firstName ="iana";
         String lastName = "gusti";
         employeesPage.createEmployee(firstName, lastName, driver);
-        wait(3000);
+        wait(seconds);
         personsPage.logOut(driver);
 
     }
