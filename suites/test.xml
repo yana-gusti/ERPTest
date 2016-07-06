@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="ScheduleBusTest" parallel="tests" thread-count="5">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="7">
     <test name="CorrectAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.CorrectApp"/>
         </classes>
     </test>
     <test name="IncorrectAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.IncorrectApp"/>
         </classes>
@@ -20,13 +20,13 @@
         </classes>
     </test>
     <test name="EmptyAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.EmptyApp"/>
         </classes>
     </test>
     <test name="DetailsOfAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.DetailsOfApp"/>
         </classes>
@@ -56,13 +56,13 @@
         </classes>
     </test>
     <test name="IncorrectCompanyFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Companies.CreateIncorrectCompany"/>
         </classes>
     </test>
     <test name="ShortCompanyFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Companies.CreateShortCompany"/>
         </classes>
@@ -98,13 +98,13 @@
         </classes>
     </test>
     <test name="FilterEmployeesFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Employees.CreateNewFilterEmployees"/>
         </classes>
     </test>
     <test name="ShortEmployeeFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Employees.CreateShortEmployee"/>
         </classes>
@@ -140,13 +140,13 @@
         </classes>
     </test>
     <test name="ShortJobFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.JobPosition.CreateShortJob"/>
         </classes>
     </test>
     <test name="DetailsOfJobFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.JobPosition.DetailsOfJob"/>
         </classes>
@@ -182,13 +182,13 @@
         </classes>
     </test>
     <test name="LeadWithBlankFieldFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Leads.LeadWithBlankField"/>
         </classes>
     </test>
     <test name="RemoveLeadFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Leads.RemoveLead"/>
         </classes>
@@ -230,13 +230,13 @@
         </classes>
     </test>
     <test name="PayrollFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.MoveThroughMenu.MoveThroughMenuPayroll"/>
         </classes>
     </test>
     <test name="ProjectFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.MoveThroughMenu.MoveThroughMenuProject"/>
         </classes>
@@ -278,13 +278,13 @@
         </classes>
     </test>
     <test name="ShortOpportunityFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Opportunities.CreateShortOpportunity"/>
         </classes>
     </test>
     <test name="DetailsOfOpportunityFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Opportunities.DetailsOfOpportunity"/>
         </classes>
@@ -320,13 +320,13 @@
         </classes>
     </test>
     <test name="DetailsOfPersonFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Persons.DetailsOfPerson"/>
         </classes>
     </test>
     <test name="EditPersonFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Persons.EditPerson"/>
         </classes>
@@ -339,7 +339,7 @@
         </classes>
     </test>
     <test name="RemovePersonFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Persons.RemovePerson"/>
         </classes>

@@ -20,13 +20,13 @@
         </classes>
     </test>
     <test name="FilterEmployeesFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Employees.CreateNewFilterEmployees"/>
         </classes>
     </test>
     <test name="ShortEmployeeFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.HR.Employees.CreateShortEmployee"/>
         </classes>

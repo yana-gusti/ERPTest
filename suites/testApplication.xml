@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="ScheduleBusTest" parallel="tests" thread-count="5">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="6">
     <test name="CorrectAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.CorrectApp"/>
         </classes>
     </test>
     <test name="IncorrectAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.IncorrectApp"/>
         </classes>
@@ -20,13 +20,13 @@
         </classes>
     </test>
     <test name="EmptyAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.EmptyApp"/>
         </classes>
     </test>
     <test name="DetailsOfAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.Application.DetailsOfApp"/>
         </classes>

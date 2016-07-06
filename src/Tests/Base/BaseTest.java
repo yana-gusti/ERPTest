@@ -108,7 +108,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
     public PersonsPage GoToPersonsPage()throws InterruptedException, IOException {
 
-        wait(10000);
+        wait(60000);
         PersonsPage personsPage = new PersonsPage();
 //        LoginPage loginPage = new LoginPage();
 //        PersonsPage personsPage = loginPage.loginPositive(driver);
