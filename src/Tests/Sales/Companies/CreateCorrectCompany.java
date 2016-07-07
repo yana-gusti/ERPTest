@@ -14,7 +14,7 @@ import static org.testng.Assert.assertEquals;
  * Created by yana on 25.05.2016.
  */
 public class CreateCorrectCompany extends BaseTest {
-    Integer seconds=10000;
+    Integer seconds=3000;
     @Test(groups = { "good" })
     public void CreateCorrectCompany() throws InterruptedException, IOException
     {

@@ -11,7 +11,7 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class CreateShortCompany extends BaseTest {
-    Integer seconds=10000;
+    Integer seconds=3000;
     @Test(groups = { "bad" })
     public void CreateShortCompany() throws InterruptedException, IOException
     {

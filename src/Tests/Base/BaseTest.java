@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
  * To change this template use File | Settings | File Templates.
  */
 public class BaseTest {
-    public static String baseUrl = "http://demo.easyerp.com";
+    public static String baseUrl = "http://192.168.88.88:8089";
 
     //ThreadLocal will keep local copy of driver
     public RemoteWebDriver driver;
@@ -108,7 +108,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
     public PersonsPage GoToPersonsPage()throws InterruptedException, IOException {
 
-        wait(60000);
+        wait(10000);
         PersonsPage personsPage = new PersonsPage();
 //        LoginPage loginPage = new LoginPage();
 //        PersonsPage personsPage = loginPage.loginPositive(driver);

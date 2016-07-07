@@ -68,7 +68,16 @@ public class ApplicationsPage extends BaseTest {
         WebElement choose_birthday=driver.findElement(By.linkText("13"));
         choose_birthday.click();
         wait(1000);
-
+        driver.findElement(By.linkText("Personal Information")).click();
+        wait(1000);
+        driver.findElement(By.id("genderDd")).click();
+        wait(1000);
+        driver.findElement(By.id("female")).click();
+        wait(1000);
+        driver.findElement(By.id("maritalDd")).click();
+        wait(1000);
+        driver.findElement(By.id("married")).click();
+        wait(1000);
         createAppBtn  = driver.findElement(By.xpath("(//button[@type='button'])[2]"));
         createAppBtn.click();
     }
