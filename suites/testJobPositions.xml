@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="ScheduleBusTest" parallel="tests" thread-count="5">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="1">
     <test name="CorrectJobChrome" verbose="1" parallel="true">
         <parameter name="myBrowser" value="chrome" />
         <classes>
@@ -20,13 +20,13 @@
         </classes>
     </test>
     <test name="ShortJobFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.JobPosition.CreateShortJob"/>
         </classes>
     </test>
     <test name="DetailsOfJobFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.HR.JobPosition.DetailsOfJob"/>
         </classes>

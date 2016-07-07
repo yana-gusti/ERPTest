@@ -11,7 +11,7 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class RemoveEmployee extends BaseTest {
-    Integer seconds=10000;
+    Integer seconds=4000;
     @Test(groups = { "good" })
     public void RemoveEmployee() throws InterruptedException, IOException
     {
