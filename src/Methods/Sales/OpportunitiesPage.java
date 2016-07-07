@@ -53,8 +53,8 @@ public class OpportunitiesPage extends BaseTest {
     public void viewOpportunityDetails( RemoteWebDriver driver) throws IOException, InterruptedException {
         listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();
-        wait(1000);
-        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[4]"));
+        wait(4000);
+        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[4]"));
         choose_one.click();
 
 
