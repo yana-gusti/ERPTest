@@ -2,6 +2,7 @@ package Tests.Sales.Persons;
 
 import Methods.Sales.PersonsPage;
 import Tests.Base.BaseTest;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -15,6 +16,8 @@ public class CreateIncorrectPerson extends BaseTest {
     public void CreateIncorrectPerson() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
+        wait(seconds);
+        driver.findElement(By.linkText("Persons")).click();
         wait(seconds);
         String firstName = "!@#";
         String lastName = "!@#";

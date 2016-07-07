@@ -182,6 +182,7 @@ public class PersonsPage extends BaseTest {
     }
 
     public void createCorrectPerson(String _firstName, String _lastName, RemoteWebDriver driver) throws InterruptedException {
+
         wait(3000);
         createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();

@@ -110,6 +110,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
         wait(10000);
         PersonsPage personsPage = new PersonsPage();
+
 //        LoginPage loginPage = new LoginPage();
 //        PersonsPage personsPage = loginPage.loginPositive(driver);
         return personsPage;

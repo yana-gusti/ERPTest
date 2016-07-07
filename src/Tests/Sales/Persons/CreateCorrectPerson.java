@@ -19,6 +19,7 @@ public class CreateCorrectPerson extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
+        driver.findElement(By.linkText("Persons")).click();
         wait(seconds);
         String firstName = "qwe";
         String lastName = "qwe";

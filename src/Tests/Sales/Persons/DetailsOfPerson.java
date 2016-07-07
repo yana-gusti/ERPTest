@@ -20,6 +20,8 @@ public class DetailsOfPerson extends BaseTest {
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
+        driver.findElement(By.linkText("Persons")).click();
+        wait(seconds);
         personsPage.SwitchOnList(driver);
         wait(seconds);
         personsPage.viewPersonDetails(driver);
