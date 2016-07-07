@@ -224,9 +224,10 @@ public class PersonsPage extends BaseTest {
 
     }
 
-    public void editPerson(RemoteWebDriver driver){
+    public void editPerson(RemoteWebDriver driver) throws InterruptedException {
         editPerson =driver.findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
         editPerson.click();
+        wait(3000);
        driver.findElement(By.id("emailInput")).clear();
         driver.findElement(By.id("emailInput")).sendKeys("yana@mail.ru");
         driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
