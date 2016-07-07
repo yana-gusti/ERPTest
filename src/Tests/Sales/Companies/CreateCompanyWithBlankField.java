@@ -24,8 +24,6 @@ public class CreateCompanyWithBlankField extends BaseTest {
         companyPage.createCorrectCompany(companyName, driver);
         wait(seconds);
         companyPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 }

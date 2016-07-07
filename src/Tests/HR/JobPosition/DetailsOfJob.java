@@ -22,9 +22,6 @@ public class DetailsOfJob extends BaseTest {
         jobPositionsPage.viewJobDetails(driver);
         wait(seconds);
         jobPositionsPage.cancel(driver);
-//        assertEquals("QA", getDriver().findElement(By.cssSelector("h3.left")).getText());
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 }

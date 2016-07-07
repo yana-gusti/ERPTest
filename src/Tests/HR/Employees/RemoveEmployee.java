@@ -35,7 +35,5 @@ public class RemoveEmployee extends BaseTest {
 //        jobPositionsPage.removeJobPosition();
 //        wait(1000);
 //        alertAcept();
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

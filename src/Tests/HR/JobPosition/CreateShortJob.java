@@ -24,8 +24,6 @@ public class CreateShortJob extends BaseTest {
         jobPositionsPage.createJobPosition(jobName, driver);
         wait(seconds);
         jobPositionsPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 
 }

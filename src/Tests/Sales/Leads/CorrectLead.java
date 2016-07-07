@@ -22,10 +22,5 @@ public class CorrectLead extends BaseTest {
         String leadsName = "MS";
         //steps
         leadsPage.createCorrectLead(leadsName, driver);
-//        assertEquals("MS", getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
-
-        wait(5000);
-
-        personsPage.logOut(driver);
     }
 }

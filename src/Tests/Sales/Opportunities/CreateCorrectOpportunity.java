@@ -22,10 +22,5 @@ public class CreateCorrectOpportunity extends BaseTest {
         String opportunityName = "Test";
         //steps
         opportunityPage.createCorrectOpportunity(opportunityName, driver);
-
-//        assertEquals("New 2", getDriver().findElement(By.cssSelector("div.columnNameDiv.new > h2.columnName")).getText());
-
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

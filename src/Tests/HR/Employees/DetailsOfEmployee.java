@@ -30,7 +30,5 @@ public class DetailsOfEmployee extends BaseTest {
 //        assertEquals("iana", getDriver().findElement(By.xpath(".//*[@id='employeeForm']/div[2]/div[1]/div[2]/div[1]/dl/dd[1]")).getText());
 
         employeesPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

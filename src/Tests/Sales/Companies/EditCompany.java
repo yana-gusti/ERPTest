@@ -27,9 +27,5 @@ public class EditCompany extends BaseTest{
         companyPage.viewCompanyDetails(driver);
         wait(seconds);
         companyPage.editCompany(driver);
-        wait(seconds);
-
-        wait(1000);
-        personsPage.logOut(driver);
     }
 }

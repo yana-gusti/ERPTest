@@ -27,8 +27,6 @@ public class CreateCorrectEmployee extends BaseTest {
         String firstName ="iana";
         String lastName = "gusti";
         employeesPage.createEmployee(firstName, lastName, driver);
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 }

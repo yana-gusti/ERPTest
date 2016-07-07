@@ -22,9 +22,5 @@ public class RemoveJob extends BaseTest {
         jobPositionsPage.removeJobPosition(driver);
         wait(seconds);
         alertAcept();
-        wait(seconds);
-//        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
-//        wait(1000);
-        personsPage.logOut(driver);
     }
 }

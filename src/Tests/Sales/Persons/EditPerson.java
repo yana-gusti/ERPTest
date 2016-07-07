@@ -27,7 +27,5 @@ public class EditPerson extends BaseTest {
         personsPage.viewPersonDetails(driver);
         wait(seconds);
         personsPage.editPerson(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

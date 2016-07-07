@@ -23,10 +23,5 @@ public class RemovePerson extends BaseTest {
         personsPage.removePerson(driver);
         wait(seconds);
         alertAcept();
-        wait(seconds);
-//        assertEquals("0", getDriver().findElement(By.id("grid-count")).getText());
-        wait(seconds);
-        personsPage.logOut(driver);
-
     }
 }

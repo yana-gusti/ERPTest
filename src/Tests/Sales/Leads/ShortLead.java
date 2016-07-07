@@ -23,7 +23,5 @@ public class ShortLead extends BaseTest {
         leadsPage.createCorrectLead(leadsName, driver);
         wait(4000);
         leadsPage.cancel(driver);
-        wait(3000);
-        personsPage.logOut(driver);
     }
 }

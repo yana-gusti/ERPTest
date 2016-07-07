@@ -20,8 +20,6 @@ public class EditJob extends BaseTest {
         JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition(driver);
         wait(seconds);
         jobPositionsPage.editJobPosition(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 

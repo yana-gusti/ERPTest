@@ -24,10 +24,6 @@ public class Filter extends BaseTest {
         LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(1000);
         leadsPage.ChangeStage(driver);
-        wait(1000);
-//        assertEquals("1 - 0 of 1 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
-        wait(1000);
-        personsPage.logOut(driver);
 
     }
 

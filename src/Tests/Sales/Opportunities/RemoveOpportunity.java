@@ -24,10 +24,6 @@ public class RemoveOpportunity extends BaseTest {
         opportunityPage.removeOpportunity(driver);
         wait(seconds);
         alertAcept();
-//        String contentHolder = opportunityPage.getProperty("content-holder.value");
-//        assertEquals("0 - 0 of 0 items", contentHolder);
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 

@@ -35,7 +35,5 @@ public class CorrectApp extends BaseTest {
         String lastName = "test";
         applicationsPage.createApplication(firstName, lastName, driver);
         wait(seconds);
-//        assertEquals("Initial Qualification 1", getDriver().findElement(By.cssSelector("h2.columnName")).getText());
-        wait(seconds);
     }
 }

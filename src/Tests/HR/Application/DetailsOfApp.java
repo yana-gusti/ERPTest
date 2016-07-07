@@ -28,7 +28,5 @@ public class DetailsOfApp extends BaseTest {
 //        assertEquals("gusti", getDriver().findElement(By.id("last")).getAttribute("value"));
 //        wait(1000);
         applicationsPage.cancelInDetails(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

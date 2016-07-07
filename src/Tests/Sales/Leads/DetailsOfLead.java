@@ -23,9 +23,6 @@ public class DetailsOfLead extends BaseTest {
         leadsPage.viewLeadDetails(driver);
         wait(1000);
         leadsPage.cancel(driver);
-//        assertEquals("MS", getDriver().findElement(By.cssSelector("h2")).getText());
-        wait(2000);
-        personsPage.logOut(driver);
     }
 
 }

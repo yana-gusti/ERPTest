@@ -27,7 +27,5 @@ public class IncorrectLead extends BaseTest {
         leadsPage.createCorrectLead(leadName, driver);
         wait(4000);
         leadsPage.cancel(driver);
-        wait(3000);
-        personsPage.logOut(driver);
     }
 }

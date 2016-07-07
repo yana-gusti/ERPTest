@@ -23,8 +23,6 @@ public class DetailsOfOpportunity extends BaseTest {
         wait(seconds);
 //        assertEquals("MS", getDriver().findElement(By.id("name")).getAttribute("value"));
         opportunityPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 }

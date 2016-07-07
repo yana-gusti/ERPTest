@@ -23,7 +23,5 @@ public class CreateNewFilterEmployees extends BaseTest {
 //        employeesPage.createEmployee(firstName, lastName);
         wait(seconds);
         employeesPage.EmployeesFilter(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

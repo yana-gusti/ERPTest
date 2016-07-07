@@ -26,7 +26,5 @@ public class CreateEmptyEmployee extends BaseTest {
 //        alertAcept();
 //        wait(1000);
         employeesPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

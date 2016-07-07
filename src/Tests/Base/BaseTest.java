@@ -29,6 +29,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class BaseTest {
     public static String baseUrl = "http://192.168.88.88:8089";
+    PersonsPage personsPage;
 
     //ThreadLocal will keep local copy of driver
     public RemoteWebDriver driver;
@@ -77,6 +78,14 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
     @AfterTest(groups = { "good", "bad" })
     public void after() {
+//        try {
+//            wait(3000);
+//            personsPage.logOut(driver);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         driver.close();
     }
 
@@ -109,7 +118,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
     public PersonsPage GoToPersonsPage()throws InterruptedException, IOException {
 
         wait(10000);
-        PersonsPage personsPage = new PersonsPage();
+        personsPage = new PersonsPage();
 
 //        LoginPage loginPage = new LoginPage();
 //        PersonsPage personsPage = loginPage.loginPositive(driver);

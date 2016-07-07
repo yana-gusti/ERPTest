@@ -24,7 +24,5 @@ public class EmptyApp extends BaseTest {
         applicationsPage.createApplication( firstName, lastName, driver);
         wait(seconds);
         applicationsPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

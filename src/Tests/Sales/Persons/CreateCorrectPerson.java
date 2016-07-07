@@ -25,10 +25,6 @@ public class CreateCorrectPerson extends BaseTest {
         String lastName = "qwe";
         //steps
         personsPage.createCorrectPerson(firstName, lastName, driver);
-        wait(seconds);
-//        assertEquals("iana gusti", getDriver().findElement(By.cssSelector("a.gotoForm.title > span")).getText());
-
-        personsPage.logOut(driver);
 
     }
 }

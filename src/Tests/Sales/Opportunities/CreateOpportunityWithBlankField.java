@@ -26,8 +26,6 @@ public class CreateOpportunityWithBlankField extends BaseTest {
         opportunityPage.createCorrectOpportunity(opportunityName, driver);
         wait(seconds);
         opportunityPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 }

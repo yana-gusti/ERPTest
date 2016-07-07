@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
-    <!--<test name="CorrectPersonChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.Sales.Persons.CreateCorrectPerson"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="IncorrectPersonChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.Sales.Persons.CreateIncorrectPerson"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="PersonWithBlankFieldsChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.Sales.Persons.CreatePersonWithBlankFields"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="DetailsOfPersonFirefox" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome"/>-->
-        <!--<classes>-->
-            <!--<class name="Tests.Sales.Persons.DetailsOfPerson"/>-->
-        <!--</classes>-->
-    <!--</test>-->
+    <test name="CorrectPersonChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.CreateCorrectPerson"/>
+        </classes>
+    </test>
+    <test name="IncorrectPersonChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.CreateIncorrectPerson"/>
+        </classes>
+    </test>
+    <test name="PersonWithBlankFieldsChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.CreatePersonWithBlankFields"/>
+        </classes>
+    </test>
+    <test name="DetailsOfPersonFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome"/>
+        <classes>
+            <class name="Tests.Sales.Persons.DetailsOfPerson"/>
+        </classes>
+    </test>
     <test name="EditPersonFirefox" verbose="1" parallel="true">
         <parameter name="myBrowser" value="chrome" />
         <classes>
@@ -32,17 +32,17 @@
         </classes>
     </test>
 
-    <!--<test name="PersonsPageChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.Sales.Persons.PersonsPageTests"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="RemovePersonFirefox" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.Sales.Persons.RemovePerson"/>-->
-        <!--</classes>-->
-    <!--</test>-->
+    <test name="PersonsPageChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.PersonsPageTests"/>
+        </classes>
+    </test>
+    <test name="RemovePersonFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Sales.Persons.RemovePerson"/>
+        </classes>
+    </test>
 
 </suite>

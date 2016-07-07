@@ -30,8 +30,6 @@ public class LeadsPageTests extends BaseTest {
         leadsPage.createCorrectLead(leadName, driver);
         wait(4000);
         leadsPage.cancel(driver);
-        wait(1000);
-        personsPage.logOut(driver);
     }
     @Test(groups = { "bad" })
     public void CreateShortLead() throws InterruptedException, IOException

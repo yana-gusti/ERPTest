@@ -13,8 +13,7 @@ import java.io.IOException;
 public class RemoveApp extends BaseTest {
     Integer seconds=10000;
     @Test(groups = { "good" })
-    public void RemoveApp() throws InterruptedException, IOException
-    {
+    public void RemoveApp() throws InterruptedException, IOException {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         ApplicationsPage applicationsPage = personsPage.switchToApplication(driver);
@@ -26,9 +25,5 @@ public class RemoveApp extends BaseTest {
         applicationsPage.removeApp(driver);
         wait(seconds);
         alertAcept();
-        wait(seconds);
-//        assertEquals("1 - 1 of 1 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
-
-        personsPage.logOut(driver);
     }
 }

@@ -26,10 +26,6 @@ public class DetailsOfCompany extends BaseTest {
         companyPage.SwitchOnList(driver);
         wait(seconds);
         companyPage.viewCompanyDetails(driver);
-        wait(seconds);
-//        assertEquals("MS", getDriver().findElement(By.cssSelector("span[title=\"MS\"]")).getText());
-        wait(seconds);
-        personsPage.logOut(driver);
 
     }
 }

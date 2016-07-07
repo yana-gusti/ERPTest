@@ -27,8 +27,5 @@ public class RemoveCompany extends BaseTest {
         companyPage.removeCompany(driver);
         wait(seconds);
         alertAcept();
-        wait(seconds);
-//        assertEquals("0", getDriver().findElement(By.id("grid-count")).getText());
-        personsPage.logOut(driver);
     }
 }

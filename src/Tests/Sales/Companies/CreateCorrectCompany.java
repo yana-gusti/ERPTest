@@ -24,9 +24,5 @@ public class CreateCorrectCompany extends BaseTest {
         wait(seconds);
         String companyName = "Test";
         companyPage.createCorrectCompany(companyName, driver);
-        wait(seconds);
-//        assertEquals("MS", getDriver().findElement(By.linkText("MS")).getText());
-        wait(seconds);
-        personsPage.logOut(driver);
     }
 }

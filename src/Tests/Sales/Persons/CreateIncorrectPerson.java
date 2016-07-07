@@ -24,9 +24,5 @@ public class CreateIncorrectPerson extends BaseTest {
         personsPage.createCorrectPerson(firstName, lastName, driver);
         wait(seconds);
         personsPage.cancel(driver);
-        wait(seconds);
-        personsPage.logOut(driver);
-        wait(seconds);
-
     }
 }

@@ -25,10 +25,6 @@ public class RemoveLead extends BaseTest {
         leadsPage.removeLead(driver);
         wait(1000);
         alertAcept();
-        wait(1000);
-//        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
-        wait(1000);
-        personsPage.logOut(driver);
 
     }
 }
