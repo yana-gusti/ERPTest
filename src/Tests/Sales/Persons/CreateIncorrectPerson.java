@@ -10,7 +10,7 @@ import java.io.IOException;
  * Created by yana on 15.06.2016.
  */
 public class CreateIncorrectPerson extends BaseTest {
-    Integer seconds = 10000;
+    Integer seconds = 3000;
     @Test(groups = { "bad" })
     public void CreateIncorrectPerson() throws InterruptedException, IOException
     {

@@ -15,9 +15,9 @@ public class ShortLead extends BaseTest {
     public void CreateShortLead() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
-        wait(10000);
+        wait(3000);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);
-        wait(10000);
+        wait(3000);
         String leadsName = "a";
         //steps
         leadsPage.createCorrectLead(leadsName, driver);

@@ -11,7 +11,7 @@ import java.io.IOException;
  * Created by yana on 15.06.2016.
  */
 public class OpportunityStage extends BaseTest {
-    Integer seconds = 10000;
+    Integer seconds = 3000;
     @Test(groups = { "good" })
 
     public void OpportunityStage() throws InterruptedException, IOException
