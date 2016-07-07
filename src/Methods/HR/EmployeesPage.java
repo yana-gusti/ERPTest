@@ -74,7 +74,7 @@ public class EmployeesPage extends BaseTest {
         wait(1000);
         driver.findElement(By.id("projectManagerDD")).click();
         wait(1000);
-        driver.findElement(By.id("564dac3e9b85f8b16b574fea")).click();
+        driver.findElement(By.id("55b92ad221e4b7c40f000062")).click();
         wait(1000);
         driver.findElement(By.id("jobTypeDd")).click();
         wait(1000);
