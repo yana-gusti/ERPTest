@@ -11,8 +11,6 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class CreateShortEmployee extends BaseTest {
-    Integer seconds=4000;
-
     @Test(groups = { "bad" })
     public void CreateShortEmployee() throws InterruptedException, IOException
     {

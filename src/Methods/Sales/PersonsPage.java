@@ -23,7 +23,6 @@ import java.io.IOException;
  */
 public class PersonsPage extends BaseTest {
     private WebElement userName;
-    private WebElement logOut;
     private WebElement myProfile;
     private WebElement companyLink;
     private WebElement leadLink;
@@ -31,45 +30,18 @@ public class PersonsPage extends BaseTest {
     private WebElement applicationLink;
     private WebElement jobPositionLink;
     private WebElement BirthdayPageOpen;
-    private WebElement CurrentPerson;
-    private WebElement NoteArea;
-    private WebElement AddTittleLink;
-    private WebElement NoteTitleArea;
-    private WebElement ADDNote;
-    private WebElement Attachment;
-    private WebElement FirstNameFilterPerson;
-    private WebElement LastNameFilterPerson;
-    private WebElement PhoneFilterPerson;
-    private WebElement EmailFilterPerson;
     private WebElement createBtn;
     private WebElement firstName;
     private WebElement lastName;
     private WebElement createPersonBtn;
-    public WebElement chooseToDelete;
     public WebElement listBtn;
-    public WebElement deleteBtn;
     public WebElement choose_one;
     public WebElement editPerson;
-    public WebElement PerPageItems;
     public WebElement Per5PageItem;
-    public WebElement PagesListButton;
     public WebElement SelectPages;
-    private WebElement CountryFilterPerson;
-    int seconds=2000;
+//    public  String arrowXpath = "sidebar_toggler" ;
 
 
-    public PersonsPage()throws IOException
-    {
-        super();
-    }
-
-    public void logOut(RemoteWebDriver driver) throws InterruptedException, IOException
-    {
-        userName  = driver.findElement(By.id("userName"));
-        userName.click();
-        logOut = driver.findElement(By.linkText("Logout"));
-        logOut.click();
-    }
 
     public MyProfilePage goToMyProfile(RemoteWebDriver driver){
 
@@ -77,122 +49,133 @@ public class PersonsPage extends BaseTest {
         userName.click();
         myProfile = driver.findElement(By.linkText("My profile"));
         myProfile.click();
+//        driver.findElement(By.className(arrowXpath)).click();
+
 
         return new MyProfilePage();
     }
 
 
     public CompaniesPage goToCompanies(RemoteWebDriver driver) throws InterruptedException {
+
         companyLink = driver.findElement(By.linkText("Companies"));
         companyLink.click();
-        wait(3000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
         return new CompaniesPage();
     }
     public LeadsPage switchToLeads(RemoteWebDriver driver) throws InterruptedException {
         leadLink = driver.findElement(By.linkText("Leads"));
         leadLink.click();
-        wait(3000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new LeadsPage();
     }
 
-//    public BonusTypePage switchToBonusType() throws InterruptedException {
-//        leadLink = getDriver().findElement(By.linkText("BonusType"));
-//        leadLink.click();
-//        wait(3000);
-//        return new BonusTypePage();
-//    }
 
     public OpportunitiesPage switchToOpportunities(RemoteWebDriver driver) throws InterruptedException {
         leadLink = driver.findElement(By.linkText("Opportunities"));
         leadLink.click();
-        wait(3000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new OpportunitiesPage();
     }
-    public InvoicePage switchToInvoice(RemoteWebDriver driver) throws InterruptedException {
-        leadLink = driver.findElement(By.linkText("Invoice"));
-        leadLink.click();
-        wait(3000);
-        return new InvoicePage();
-    }
+
     public CustomerPaymentsPage switchToCustomerPaymentsPage(RemoteWebDriver driver) throws InterruptedException {
-        wait(3000);
+
         leadLink = driver.findElement(By.linkText("Accounting"));
         leadLink.click();
-        wait(3000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new CustomerPaymentsPage();
     }
     public WTrackPage switchToWTrack(RemoteWebDriver driver) throws InterruptedException {
-        driver.findElement(By.id("Project")).click();
-        wait(3000);
+        driver.findElement(By.linkText("Project")).click();
+        wait(seconds);
         driver.findElement(By.linkText("wTrack")).click();
 
-        wait(3000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new WTrackPage();
     }
     public ProjectPage switchToProject(RemoteWebDriver driver) throws InterruptedException {
-        driver.findElement(By.id("Project")).click();
+        driver.findElement(By.linkText("Project")).click();
 
-        wait(3000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new ProjectPage();
     }
     public TasksPage switchToTask(RemoteWebDriver driver) throws InterruptedException {
-        WebElement project = driver.findElement(By.id("Project"));
+        WebElement project = driver.findElement(By.linkText("Project"));
         project.click();
-        wait(1000);
+        wait(seconds);
         WebElement taskLink = driver.findElement(By.linkText("Tasks"));
         taskLink.click();
-        wait(2000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new TasksPage();
     }
 
     public ApplicationsPage switchToApplication(RemoteWebDriver driver) throws InterruptedException {
-        HR = driver.findElement(By.id("HR"));
+        HR = driver.findElement(By.linkText("HR"));
         HR.click();
-        wait(2000);
-        applicationLink = driver.findElement(By.xpath(".//*[@id='43']/a"));
+        wait(seconds);
+        applicationLink = driver.findElement(By.linkText("Applications"));
         applicationLink.click();
-        wait(2000);
+        wait(seconds);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new ApplicationsPage();
     }
 
     public EmployeesPage switchToEmployee(RemoteWebDriver driver) throws InterruptedException {
-        HR = driver.findElement(By.id("HR"));
+        HR = driver.findElement(By.linkText("HR"));
         HR.click();
-        wait(2000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new EmployeesPage();
     }
 
     public JobPositionsPage switchToJobPosition(RemoteWebDriver driver) throws InterruptedException {
-        HR = driver.findElement(By.id("HR"));
+        HR = driver.findElement(By.linkText("HR"));
         HR.click();
-        wait(3000);
-        jobPositionLink = driver.findElement(By.xpath(".//*[@id='14']/a"));
+        wait(seconds);
+        jobPositionLink = driver.findElement(By.linkText("Job Positions"));
         jobPositionLink.click();
-        wait(5000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new JobPositionsPage();
     }
     public BirthdaysPage switchToBirthdays(RemoteWebDriver driver) throws InterruptedException {
-        HR = driver.findElement(By.id("HR"));
+        HR = driver.findElement(By.linkText("HR"));
         HR.click();
-        wait(1000);
-        BirthdayPageOpen=driver.findElement(By.xpath(".//*[@id='52']/a"));
+        wait(seconds);
+        BirthdayPageOpen=driver.findElement(By.xpath("Birthdays"));
         BirthdayPageOpen.click();
-        wait(2000);
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
         return new BirthdaysPage();
     }
 
     public void createCorrectPerson(String _firstName, String _lastName, RemoteWebDriver driver) throws InterruptedException {
 
-        wait(3000);
         createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
-        wait(3000);
+        wait(seconds);
         firstName = driver.findElement(By.id("firstName"));
         firstName.sendKeys(_firstName);
-        wait(3000);
         lastName = driver.findElement(By.id("lastName"));
         lastName.sendKeys(_lastName);
-        wait(3000);
         createPersonBtn  = driver.findElement(By.id("create-person-dialog"));
         createPersonBtn.click();
 
@@ -200,10 +183,9 @@ public class PersonsPage extends BaseTest {
 
 
     public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
-        wait(3000);
+
         listBtn = driver.findElement(By.id("listBtn"));
         listBtn.click();
-        wait(3000);
 
     }
 
@@ -213,12 +195,11 @@ public class PersonsPage extends BaseTest {
     }
 
     public void removePerson(RemoteWebDriver driver) throws InterruptedException {
-        wait(3000);
+
         listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();
-        wait(3000);
+        wait(seconds);
         driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[5]")).click();
-        wait(3000);
         driver.findElement(By.id("top-bar-deleteBtn")).click();
 
 
@@ -227,7 +208,7 @@ public class PersonsPage extends BaseTest {
     public void editPerson(RemoteWebDriver driver) throws InterruptedException {
         editPerson =driver.findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
         editPerson.click();
-        wait(3000);
+        wait(seconds);
        driver.findElement(By.id("emailInput")).clear();
         driver.findElement(By.id("emailInput")).sendKeys("yana@mail.ru");
         driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();

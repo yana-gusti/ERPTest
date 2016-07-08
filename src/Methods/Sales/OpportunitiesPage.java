@@ -17,18 +17,12 @@ public class OpportunitiesPage extends BaseTest {
 
     public WebElement logOut;
     public WebElement createBtn;
-    public WebElement opportunityName;
-    public WebElement createOpportBtn;
-    public WebElement chooseToDelete;
     public WebElement listBtn;
-    public WebElement deleteBtn;
-    public WebElement cancelBtn;
     public WebElement choose_one;
     public WebElement Target;
     public WebElement Source;
     public WebElement SelectCurrentStage;
     public WebElement SelectStage;
-    Integer seconds = 1000;
 
 
     public OpportunitiesPage()
@@ -39,21 +33,19 @@ public class OpportunitiesPage extends BaseTest {
 
 
     public void createCorrectOpportunity(String _opportunityName, RemoteWebDriver driver) throws InterruptedException {
-        wait(3000);
+
         driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']")).click();
-        wait(2000);
+        wait(seconds);
         driver.findElement(By.xpath(".//*[@id='name']")).clear();
         driver.findElement(By.xpath(".//*[@id='name']")).sendKeys(_opportunityName);
-        wait(2000);
         driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]")).click();
-        wait(2000);
 
     }
 
     public void viewOpportunityDetails( RemoteWebDriver driver) throws IOException, InterruptedException {
         listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();
-        wait(4000);
+        wait(seconds);
         choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[4]"));
         choose_one.click();
 
@@ -62,7 +54,7 @@ public class OpportunitiesPage extends BaseTest {
 
     public void removeOpportunity( RemoteWebDriver driver) throws InterruptedException, IOException {
         driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[4]")).click();
-        wait(2000);
+        wait(seconds);
         driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
 
     }

@@ -13,7 +13,7 @@ import static org.testng.Assert.assertEquals;
  * Created by yana on 15.06.2016.
  */
 public class DetailsOfPerson extends BaseTest {
-    Integer seconds = 3000;
+
     @Test(groups = { "good" })
 
     public void DetailsOfPerson() throws InterruptedException, IOException

@@ -13,9 +13,8 @@ public class MoveThroughMenuProject extends BaseTest {
     public void MoveThroughMenuProject() throws InterruptedException, IOException {
         tabMenuItems.add("Project");
         tabMenuItems.add("Projects");
-        tabMenuItems.add("Dashboard Vacation");
+        tabMenuItems.add("Dashboard");
         tabMenuItems.add("Tasks");
-        tabMenuItems.add("Jobs Dashboard");
         tabMenuItems.add("Time Card");
         executeTest();
     }

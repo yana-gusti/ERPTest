@@ -11,7 +11,6 @@ import java.io.IOException;
  * Created by yana on 23.05.2016.
  */
 public class EmptyApp extends BaseTest {
-    Integer seconds=10000;
     @Test(groups = { "bad" })
     public void CreateEmptyApp() throws InterruptedException, IOException
     {

@@ -12,9 +12,9 @@ public class MoveThroughMenuExpenses extends BaseTest {
     @Test
     public void MoveThroughMenuExpenses() throws InterruptedException, IOException {
         tabMenuItems.add("Expenses");
-        tabMenuItems.add("Invoice");
+        tabMenuItems.add("Cost Center");
+        tabMenuItems.add("Expenses");
         tabMenuItems.add("Expenses Payments");
-        tabMenuItems.add("MonthHours");
         executeTest();
     }
 }

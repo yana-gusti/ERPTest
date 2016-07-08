@@ -11,7 +11,6 @@ import java.io.IOException;
  * Created by yana on 23.05.2016.
  */
 public class RemoveApp extends BaseTest {
-    Integer seconds=10000;
     @Test(groups = { "good" })
     public void RemoveApp() throws InterruptedException, IOException {
         PersonsPage personsPage = GoToPersonsPage();
@@ -25,5 +24,6 @@ public class RemoveApp extends BaseTest {
         applicationsPage.removeApp(driver);
         wait(seconds);
         alertAcept();
+        wait(seconds);
     }
 }

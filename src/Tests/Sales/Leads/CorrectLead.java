@@ -14,7 +14,7 @@ public class CorrectLead extends BaseTest {
     @Test(groups = { "good" })
     public void CreateCorrectLead() throws InterruptedException, IOException
     {
-        Integer seconds=3000;
+
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);

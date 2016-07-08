@@ -10,14 +10,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * Created by ��������� on 21.08.2015.
  */
 public class BonusTypePage extends BaseTest {
-    RemoteWebDriver driver = getDriver();
 
 
-    public BonusTypePage(){
-        super();
-    }
-
-    public void createBonusType(){
+    public void createBonusType(RemoteWebDriver driver){
         driver.findElement(By.id("top-bar-createBtn")).click();
         driver.findElement(By.cssSelector("td.editable")).click();
         driver.findElement(By.cssSelector("input.editing")).click();

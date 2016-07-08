@@ -28,8 +28,8 @@ import java.util.concurrent.TimeUnit;
  * To change this template use File | Settings | File Templates.
  */
 public class BaseTest {
-    public static String baseUrl = "http://192.168.88.88:8089";
-    PersonsPage personsPage;
+    public static String baseUrl = "http://testdemo.easyerp.com/";
+    public static Integer seconds = 5000;
 
     //ThreadLocal will keep local copy of driver
     public RemoteWebDriver driver;
@@ -77,21 +77,23 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
 
     @AfterTest(groups = { "good", "bad" })
-    public void after() {
-//        try {
-//            wait(3000);
-//            personsPage.logOut(driver);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        driver.close();
+    public void after() throws InterruptedException, IOException {
+        wait(seconds);
+            logOut(driver);
+            driver.close();
+    }
+    public void logOut(RemoteWebDriver driver) throws InterruptedException, IOException
+    {
+//        driver.findElement(By.xpath(".//*[@id='submenu-holder']/div[2]")).click();
+//        wait(seconds);
+        driver.findElement(By.id("userName")).click();
+        wait(seconds);
+        driver.findElement(By.linkText("Logout")).click();
     }
 
     public void executeTest() throws InterruptedException, IOException {
         GoToPersonsPage();
-        wait(3000);
+        wait(seconds);
         MoveThroughMenu moveThroughMenu = new MoveThroughMenu();
         moveThroughMenu.MoveThroughMenu(driver, tabMenuItems);
         tabMenuItems.clear();
@@ -111,17 +113,13 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
         driver = _driver;
     }
 
-
-
-
-
     public PersonsPage GoToPersonsPage()throws InterruptedException, IOException {
 
-        wait(10000);
-        personsPage = new PersonsPage();
+        wait(seconds);
+//        personsPage = new PersonsPage();
 
-//        LoginPage loginPage = new LoginPage();
-//        PersonsPage personsPage = loginPage.loginPositive(driver);
+        LoginPage loginPage = new LoginPage();
+        PersonsPage personsPage = loginPage.loginPositive(driver);
         return personsPage;
     }
 
@@ -138,7 +136,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
     public void waitForProgressBar(WebDriver driver, String text) throws InterruptedException {
         WebDriverWait webDriverWait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='loading']")));
-        wait(5000);
+        wait(seconds);
         try {
             Assert.assertEquals(driver.findElement(By.xpath(".//*[@id='top-bar']/h3")).getText(), text);
         }catch (Exception e){

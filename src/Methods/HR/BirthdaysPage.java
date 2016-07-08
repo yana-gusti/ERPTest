@@ -13,16 +13,13 @@ public class BirthdaysPage extends BaseTest {
     public WebElement CreatedPerson;
     public WebElement GetPersonalInfo;
 
-    public BirthdaysPage(){
-        super();
-    }
 
     public void CheckBirthdays() throws InterruptedException {
         CreatedPerson=getDriver().findElement(By.cssSelector(".top>a"));
         CreatedPerson.click();
-        wait(2000);
+        wait(seconds);
         GetPersonalInfo=getDriver().findElement(By.linkText("Personal Information"));
         GetPersonalInfo.click();
-        wait(2000);
+        wait(seconds);
     }
 }

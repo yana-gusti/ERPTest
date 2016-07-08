@@ -44,12 +44,7 @@ public class ApplicationsPage extends BaseTest {
     public WebElement ContractSingnetBox;
     public WebElement ContractEndBox;
     public WebElement Refused;
-    Integer seconds = 1000;
 
-    public ApplicationsPage()
-    {
-        super();
-    }
 
 
 
@@ -62,22 +57,22 @@ public class ApplicationsPage extends BaseTest {
         lastName.sendKeys(_lastName);
         WebElement birthday=driver.findElement(By.id("dateBirth"));
         birthday.click();
-        wait(3000);
+        wait(seconds);
         driver.findElement(By.linkText("Prev")).click();
-        wait(1000);
+        wait(seconds);
         WebElement choose_birthday=driver.findElement(By.linkText("13"));
         choose_birthday.click();
-        wait(1000);
+        wait(seconds);
         driver.findElement(By.linkText("Personal Information")).click();
-        wait(1000);
+        wait(seconds);
         driver.findElement(By.id("genderDd")).click();
-        wait(1000);
+        wait(seconds);
         driver.findElement(By.id("female")).click();
-        wait(1000);
+        wait(seconds);
         driver.findElement(By.id("maritalDd")).click();
-        wait(1000);
+        wait(seconds);
         driver.findElement(By.id("married")).click();
-        wait(1000);
+        wait(seconds);
         createAppBtn  = driver.findElement(By.xpath("(//button[@type='button'])[2]"));
         createAppBtn.click();
     }
@@ -87,12 +82,11 @@ public class ApplicationsPage extends BaseTest {
         listBtn.click();
     }
     public void viewAppDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
-        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]"));
+        choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[6]"));
         choose_one.click();
     }
     public void removeApp(RemoteWebDriver driver) throws InterruptedException {
 
-        wait(1000);
         deleteBtn = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]"));
         deleteBtn.click();
 

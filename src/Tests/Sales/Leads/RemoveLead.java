@@ -15,15 +15,15 @@ public class RemoveLead extends BaseTest {
 
     public void RemoveLead() throws InterruptedException, IOException
     {
-        Integer seconds=3000;
+
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         leadsPage.viewLeadDetails(driver);
-        wait(3000);
+        wait(seconds);
         leadsPage.removeLead(driver);
-        wait(1000);
+        wait(seconds);
         alertAcept();
 
     }

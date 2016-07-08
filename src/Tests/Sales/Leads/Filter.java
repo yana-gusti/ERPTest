@@ -18,11 +18,11 @@ public class Filter extends BaseTest {
 
     public void Filter() throws InterruptedException, IOException
     {
-        Integer seconds=3000;
+
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);
-        wait(1000);
+        wait(seconds);
         leadsPage.ChangeStage(driver);
 
     }

@@ -11,7 +11,7 @@ import java.io.IOException;
  * Created by yana on 15.06.2016.
  */
 public class CreateShortOpportunity extends BaseTest {
-    Integer seconds=3000;
+
 
     @Test(groups = { "bad" })
     public void CreateShortOpportunity() throws InterruptedException, IOException

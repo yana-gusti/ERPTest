@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by ��������� on 03.08.2015.
@@ -17,34 +18,28 @@ public class LoginPage extends BaseTest{
     public WebElement userName;
     public WebElement password;
     public WebElement loginButton;
-    int sec = 4000;
-
-
-
-    public LoginPage() throws IOException
-    {
-        super();
-    }
 
     public void login(String _login, String _password, RemoteWebDriver driver) throws InterruptedException {
-        wait(sec);
-        new Select(driver.findElement(By.xpath(".//*[@id='dbs']"))).selectByVisibleText("sergey (144.76.56.111)");
-        userName = driver.findElement(By.id("ulogin"));
+        wait(seconds);
+        driver.findElement(By.id("selectedDb")).click();
+        WebElement dbItem = driver.findElement(By.xpath("//*[@data-id='sergey']"));
+        dbItem.click();
+
+        userName = driver.findElement(By.xpath(".//*[@id='loginForm']/div[1]/div[1]/input"));
         password = driver.findElement(By.id("upass"));
         userName.sendKeys(_login);
         password.sendKeys(_password);
-        loginButton = driver.findElement(By.xpath(".//*[@id='loginForm']/fieldset/a"));
+        loginButton = driver.findElement(By.linkText("Sign In"));
         loginButton.click();
-        wait(sec);
+
     }
 
     public PersonsPage loginPositive( RemoteWebDriver driver) throws IOException, InterruptedException {
         String login = "yana.gusti";
         String pass = "thinkmobiles2015";
         login(login, pass,  driver);
-        wait(4000);
+        wait(seconds);
         driver.findElement(By.linkText("Persons")).click();
-        wait(3000);
         return new PersonsPage();
     }
 

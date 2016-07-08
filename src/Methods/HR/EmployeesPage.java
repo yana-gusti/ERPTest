@@ -33,53 +33,37 @@ public class EmployeesPage extends BaseTest {
     public WebElement birthday;
     public WebElement choose_birthday;
 
-    public EmployeesPage()
-    {
-        super();
-    }
+
 
 
     public void createEmployee(String _firstName, String _lastName, RemoteWebDriver driver) throws InterruptedException {
-        wait(3000);
         createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
-        wait(3000);
         firstName = driver.findElement(By.id("first"));
         firstName.sendKeys(_firstName);
-        wait(1000);
         lastName = driver.findElement(By.id("last"));
         lastName.sendKeys(_lastName);
-        wait(5000);
         birthday=driver.findElement(By.id("dateBirth"));
         birthday.click();
-        wait(1000);
+        wait(seconds);
         driver.findElement(By.linkText("Prev")).click();
-        wait(1000);
+        wait(seconds);
         choose_birthday=driver.findElement(By.linkText("13"));
         choose_birthday.click();
-        wait(1000);
+        wait(seconds);
 //        driver.findElement(By.xpath(".//*[@id='jobPositionDd']")).click();
 //        wait(1000);
 //        driver.findElement(By.className("newSelectList")).findElement(By.xpath("./li[2]")).click();
 //        wait(1000);
         driver.findElement(By.linkText("Job")).click();
-        wait(1000);
         driver.findElement(By.id("jobPositionDd")).click();
-        wait(1000);
         driver.findElement(By.id("56e6b8b9701f50ac4d0a4974")).click();
-        wait(1000);
         driver.findElement(By.id("departmentsDd")).click();
-        wait(1000);
         driver.findElement(By.id("55b92ace21e4b7c40f000012")).click();
-        wait(1000);
         driver.findElement(By.id("projectManagerDD")).click();
-        wait(1000);
         driver.findElement(By.id("55b92ad221e4b7c40f000062")).click();
-        wait(1000);
         driver.findElement(By.id("jobTypeDd")).click();
-        wait(1000);
         driver.findElement(By.id("fullTime")).click();
-        wait(1000);
         createAppBtn  = driver.findElement(By.id("createBtnDialog"));
         createAppBtn.click();
 
@@ -109,17 +93,17 @@ public class EmployeesPage extends BaseTest {
 
     public void switchOnFired(RemoteWebDriver driver) throws InterruptedException {
         driver.findElement(By.cssSelector(".arrow")).click();
-        wait(2000);
+
         driver.findElement(By.className("newSelectList")).findElement(By.xpath("./li[2]")).click();
-        wait(2000);
+
 
 
     }
     public void EmployeesFilter(RemoteWebDriver driver) throws InterruptedException, IOException {
         driver.findElement(By.id("listBtn")).click();
-        wait(5000);
+        wait(seconds);
         driver.findElement(By.linkText("A")).click();
-        wait(5000);
+        wait(seconds);
         driver.findElement(By.linkText("G")).click();
 
     }

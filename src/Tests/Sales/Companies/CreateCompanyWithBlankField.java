@@ -11,7 +11,7 @@ import java.io.IOException;
  * Created by yana on 25.05.2016.
  */
 public class CreateCompanyWithBlankField extends BaseTest {
-    Integer seconds=3000;
+
     @Test(groups = { "bad" })
 
     public void CreateCompanyWithBlankField() throws InterruptedException, IOException

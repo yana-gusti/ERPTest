@@ -17,9 +17,6 @@ public class ProjectPage extends BaseTest {
     RemoteWebDriver driver = getDriver();
 
 
-    public ProjectPage(){
-        super();
-    }
 
     public void createProject(String _projectName) throws InterruptedException {
         WebElement createBtn =  driver.findElement(By.id("top-bar-createBtn"));
@@ -29,16 +26,6 @@ public class ProjectPage extends BaseTest {
         projectName.sendKeys(_projectName);
         driver.findElement(By.id("projectShortDesc")).clear();
         driver.findElement(By.id("projectShortDesc")).sendKeys("Test");
-
-//        WebElement projectManager = driver.findElement(By.id("projectManagerDD"));
-//        projectManager.click();
-//
-//        for (int i=1; i<13; i++){
-//            driver.findElement(By.linkText("Next>")).click();
-//        }
-//
-//        WebElement chooseManager = driver.findElement(By.id("55b92ad221e4b7c40f000063"));
-//        chooseManager.click();
         WebElement projectType = driver.findElement(By.id("projectTypeDD"));
         projectType.click();
         driver.findElement(By.id("qa")).click();
@@ -46,17 +33,14 @@ public class ProjectPage extends BaseTest {
     }
 
     public void switchToList() throws InterruptedException {
-        wait(1000);
+
         driver.findElement(By.id("listBtn")).click();
-        wait(1000);
     }
 
     public void removeAllProjects() throws InterruptedException {
-        wait(1000);
+
         driver.findElement(By.id("check_all")).click();
-        wait(1000);
         driver.findElement(By.id("top-bar-deleteBtn")).click();
-        wait(1000);
         alertAcept();
 
     }

@@ -14,29 +14,10 @@ import java.io.IOException;
  */
 public class LeadsPage extends BaseTest {
 
-    private WebElement userName;
-    private WebElement logOut;
     private WebElement createBtn;
     private WebElement leadName;
-    private WebElement workflow;
     private WebElement createLeadBtn;
-    public WebElement chooseToDelete;
-    public WebElement personNameView;
-    public WebElement filterListBtn;
-    public WebElement stage;
-    public WebElement wrapper;
-    public WebElement deleteBtn;
-    public WebElement cancelBtn;
     public WebElement choose_one;
-    public WebElement ArrowButton;
-    public WebElement UndefinedCheckBox;
-    public WebElement DraftCheckBox;
-    public WebElement CancelledCheckBox;
-    public WebElement OpenCheckBox;
-    public WebElement InProgressCheckBox;
-    public WebElement ClosedCheckBox;
-    public WebElement ClickAnywhere;
-    Integer seconds=1000;
 
     public LeadsPage()
     {
@@ -49,7 +30,7 @@ public class LeadsPage extends BaseTest {
 
         createBtn  = driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']"));
         createBtn.click();
-        wait(1000);
+        wait(seconds);
         leadName = driver.findElement(By.xpath(".//*[@id='name']"));
         leadName.click();
         leadName.sendKeys(_leadName);

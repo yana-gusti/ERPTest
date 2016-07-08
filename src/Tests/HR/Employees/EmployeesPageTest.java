@@ -17,8 +17,6 @@ import static org.testng.Assert.assertEquals;
  * To change this template use File | Settings | File Templates.
  */
 public class EmployeesPageTest extends BaseTest {
-    Integer seconds=4000;
-
     PersonsPage personsPage;
     @Test(groups = { "bad" })
     public void CreateIncorrectEmployee() throws InterruptedException, IOException

@@ -15,13 +15,13 @@ public class ToOpportunity extends BaseTest {
 
     public void ToOpportunity() throws InterruptedException, IOException
     {
-        Integer seconds=3000;
+
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         leadsPage.viewLeadDetails(driver);
-        wait(1000);
+        wait(seconds);
         leadsPage.convertToOpportunity(driver);
 
     }

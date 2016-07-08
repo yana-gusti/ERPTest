@@ -14,7 +14,7 @@ import static org.testng.Assert.assertEquals;
  * Created by yana on 25.05.2016.
  */
 public class EditCompany extends BaseTest{
-    Integer seconds=3000;
+
     @Test(groups = { "good" })
     public void EditCompany() throws InterruptedException, IOException
     {

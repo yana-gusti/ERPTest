@@ -15,7 +15,7 @@ import static org.testng.Assert.assertEquals;
  * Created by puzzlefacePC on 02.01.14.
  */
 public class CompaniesPageTests extends BaseTest {
-    Integer seconds=3000;
+
 
 
 

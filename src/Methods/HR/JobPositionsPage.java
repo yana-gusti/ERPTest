@@ -28,22 +28,15 @@ public class JobPositionsPage extends BaseTest {
     public WebElement logOut;
     public WebElement listBtn;
     public WebElement choose_one;
-    public WebElement deleteBtn;
-    public WebElement createFired;
-    public WebElement editJob;
-    public WebElement department;
-    private WebDriver driver = getDriver();
-
 
 
 
     public void createJobPosition(String _jobName, RemoteWebDriver driver) throws InterruptedException {
         createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
-        wait(3000);
+        wait(seconds);
         jobName = driver.findElement(By.id("name"));
         jobName.sendKeys(_jobName);
-        wait(2000);
         createAppBtn  = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]"));
         createAppBtn.click();
     }
@@ -55,9 +48,8 @@ public class JobPositionsPage extends BaseTest {
 
     }
     public void removeJobPosition(RemoteWebDriver driver) throws InterruptedException {
-        wait(2000);
+
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
-        wait(2000);
        driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]")).click();
 
 
@@ -69,14 +61,10 @@ public class JobPositionsPage extends BaseTest {
 
     public void editJobPosition(RemoteWebDriver driver) throws InterruptedException {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
-        wait(5000);
+        wait(seconds);
         driver.findElement(By.id("name")).clear();
         driver.findElement(By.id("name")).sendKeys("QA");
         driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
-        wait(3000);
-//        assertEquals("QA", driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).getText());
-
-
 
     }
 

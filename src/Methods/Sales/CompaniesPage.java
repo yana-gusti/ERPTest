@@ -27,17 +27,13 @@ public class CompaniesPage extends BaseTest {
     public WebElement choose_one;
     public WebElement editCompany;
 
-    public CompaniesPage()
-    {
-        super();
-    }
 
 
     public void createCorrectCompany(String _companyName, RemoteWebDriver driver) throws InterruptedException {
 
         createBtn  = driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']"));
         createBtn.click();
-        wait(1000);
+        wait(seconds);
         companyName = driver.findElement(By.xpath(".//*[@id='companyName']"));
         companyName.click();
         companyName.sendKeys(_companyName);

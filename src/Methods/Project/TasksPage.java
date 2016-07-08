@@ -29,16 +29,6 @@ public class TasksPage extends BaseTest {
     public WebElement Target;
     public WebElement Source;
     public WebElement KarbanViewButton;
-    public WebElement ArrowButton;
-    public WebElement UndefinedCheckBox;
-    public WebElement NewCheckBox;
-    public WebElement InProgressCheckBox;
-    public WebElement FixedCheckBox;
-    public WebElement TestingCheckBox;
-    public WebElement DoneCheckBox;
-    public WebElement CancelledCheckBox;
-    public WebElement ClickAnywhere;
-    Integer seconds = 1000;
 
     public TasksPage()
     {
@@ -51,26 +41,17 @@ public class TasksPage extends BaseTest {
 
         createBtn  = getDriver().findElement(By.id("top-bar-createBtn"));
         createBtn.click();
-        wait(1000);
+        wait(seconds);
         Summary = getDriver().findElement(By.id("summaryTask"));
         Summary.click();
         Summary.sendKeys(_Summary);
-        wait(1000);
         WebElement StageSelector = getDriver().findElement(By.id("workflowsDd"));
         StageSelector.click();
-        wait(seconds);
         WebElement SelectingStage = getDriver().findElement(By.id("528ce35af3f67bc40b000010"));
         SelectingStage.click();
-        wait(seconds);
         getDriver().findElement(By.xpath("(//button[@type='button'])[6]")).click();
 
     }
-
-
-
-
-
-
 
     public void viewTaskDetails() throws IOException, InterruptedException {
         choose_one = getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]"));
@@ -79,26 +60,22 @@ public class TasksPage extends BaseTest {
 
     public void removeTask() throws InterruptedException, IOException {
         getDriver().findElement(By.id("check_all")).click();
-        wait(1000);
         getDriver().findElement(By.id("top-bar-deleteBtn")).click();
 
     }
     public void cancel() throws InterruptedException {
         cancelBtn = getDriver().findElement(By.xpath("(//button[@type='button'])[7]"));
-
         cancelBtn.click();
     }
     public void SwitchToKarbanView() throws InterruptedException {
         KarbanViewButton=getDriver().findElement(By.id("kanbanBtn"));
         KarbanViewButton.click();
-        wait(seconds);
     }
     public void DragDropToInProgress() throws InterruptedException {
-        wait(seconds);
+
         Source=getDriver().findElement(By.cssSelector(".task-header"));
         Target=getDriver().findElement(By.xpath(".//*[@id='528ce131f3f67bc40b00000d']"));
         new Actions(getDriver()).dragAndDrop(Source, Target).perform();
-        wait(seconds);
     }
 
 }

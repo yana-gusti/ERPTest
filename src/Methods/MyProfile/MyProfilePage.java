@@ -23,7 +23,7 @@ public class MyProfilePage extends BaseTest {
         super();
     }
     public void changePass (String pass, String passNew) throws InterruptedException {
-        wait(3000);
+
         changePassBtn = driver.findElement(By.cssSelector("input.changePassword"));
         changePassBtn.click();
         oldPass=driver.findElement(By.id("old_password"));

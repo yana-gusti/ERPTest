@@ -14,7 +14,6 @@ import static org.testng.Assert.assertEquals;
  * Created by ��������� on 03.08.2015.
  */
 public class MyProfilePageTest extends BaseTest {
-    Integer seconds=10000;
 
     @Test(groups = { "good" })
     public void changePassPositive () throws InterruptedException, IOException

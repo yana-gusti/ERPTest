@@ -15,7 +15,7 @@ public class DetailsOfLead extends BaseTest {
 
     public void DetailsOfLead() throws InterruptedException, IOException
     {
-        Integer seconds=3000;
+
         PersonsPage personsPage = GoToPersonsPage();
         wait(3000);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);

@@ -20,7 +20,6 @@ import java.util.concurrent.TimeUnit;
  * Created by yana on 23.05.2016.
  */
 public class CorrectApp extends BaseTest {
-    Integer seconds=10000;
 
 
 
