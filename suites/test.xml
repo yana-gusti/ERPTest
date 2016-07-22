@@ -386,4 +386,112 @@
             <class name="Tests.Project.Tasks.RemoveTask"/>
         </classes>
     </test>
+    <test name="CorrectProjectChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateCorrectProject"/>
+        </classes>
+    </test>
+    <test name="IncorrectProjectChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateIncorrectProject"/>
+        </classes>
+    </test>
+    <test name="EmptyProjectChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateEmptyProject"/>
+        </classes>
+    </test>
+    <test name="WithAttachChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateProjectWithAttachment"/>
+        </classes>
+    </test>
+    <test name="CreateTimeCardChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateTimeCard"/>
+        </classes>
+    </test>
+    <test name="CreateQuotationChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateQuotation"/>
+        </classes>
+    </test>
+    <test name="CreateProformaChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateProforma"/>
+        </classes>
+    </test>
+    <test name="ApproveProformaChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.ApproveProforma"/>
+        </classes>
+    </test>
+    <test name="PayProformaChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.PayProforma"/>
+        </classes>
+    </test>
+    <test name="DeletePaymentChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.DeletePayment"/>
+        </classes>
+    </test>
+    <test name="DeleteProformaChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.DeleteProforma"/>
+        </classes>
+    </test>
+    <test name="ConfirmOrderChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.ConfirmOrder"/>
+        </classes>
+    </test>
+    <test name="ReceriveInvoiceChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.ReceiveInvoice"/>
+        </classes>
+    </test>
+    <test name="ApproveInvoiceChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.ApproveInvoice"/>
+        </classes>
+    </test>
+    <test name="PayInvoiceChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.PayInvoice"/>
+        </classes>
+    </test>
+    <test name="DeletePayment2Chrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.DeletePayment"/>
+        </classes>
+    </test>
+    <test name="DeleteInvoiceChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.DeleteInvoice"/>
+        </classes>
+    </test>
+    <test name="DeleteOrderChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.DeleteOrder"/>
+        </classes>
+    </test>
 </suite>

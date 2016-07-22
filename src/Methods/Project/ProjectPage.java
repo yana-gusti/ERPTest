@@ -112,4 +112,179 @@ public class ProjectPage extends BaseTest {
         assertEquals(driver.findElement(By.cssSelector("td.total.dollar")).getText(), "200.00");
 
     }
+
+    public void createProforma(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        driver.findElement(By.id("quotationsTab")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//tbody[@id='listTableQuotation']/tr/td[3]")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("button.createProforma")).click();
+        wait(seconds);
+        driver.findElement(By.id("due_date")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("span.ui-icon.ui-icon-circle-triangle-e")).click();
+        driver.findElement(By.linkText("1")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("(//button[@type='button'])[26]")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//tbody[@id='listTable']/tr[2]/td[4]")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("button.btn.approve")).getText(), "Approve");
+
+
+
+    }
+
+    public void approveProforma(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.id("proformaTab")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("(//tbody[@id='listTable']/tr/td[3])[2]")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("button.btn.approve")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.xpath("(//tbody[@id='listTable']/tr/td[11])[2]")).getText(), "Unpaid");
+
+
+    }
+    public void payProforma(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.id("proformaTab")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("(//tbody[@id='listTable']/tr/td[3])[2]")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("button.btn.newPayment")).click();
+        wait(seconds);
+        driver.findElement(By.id("paymentMethod")).click();
+        wait(seconds);
+        driver.findElement(By.id("565f2e05ab70d49024242e10")).click();
+        wait(seconds);
+        driver.findElement(By.id("create-payment-dialog")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("#paymentsTab > span")).getText(), "(1)");
+    }
+    public void deletePayment(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.id("paymentsTab")).click();
+        wait(seconds);
+        driver.findElement(By.id("checkAll_payments")).click();
+
+        wait(seconds);
+        driver.findElement(By.id("removePayment")).click();
+        wait(seconds);
+        driver.switchTo().alert().accept();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("#paymentsTab > span")).getText(), "(0)");
+    }
+
+    public void deleteProforma(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.id("proformaTab")).click();
+        wait(seconds);
+        driver.findElement(By.xpath(".//*[@id='checkAll_proforma']")).click();
+        wait(seconds);
+        driver.findElement(By.id("removeProforma")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("#proformaTab > span")).getText(), "(0)");
+
+    }
+    public void confirmOrder(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.id("quotationsTab")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//tbody[@id='listTableQuotation']/tr/td[3]")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("button.confirmOrder")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("(//button[@type='button'])[26]")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("#ordersTab > span")).getText(), "(1)");
+    }
+    public void receiveInvoice(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.cssSelector("#ordersTab > span")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//tbody[@id='orderTable']/tr/td[3]")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("button.btn.receiveInvoice")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("button.btn.approve")).getText(), "Approve");
+    }
+    public void approveInvoice(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        driver.findElement(By.linkText("CRM")).click();
+        wait(seconds);
+        driver.findElement(By.linkText("Invoices")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).click();
+
+        wait(seconds);
+        driver.findElement(By.id("due_date")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("span.ui-icon.ui-icon-circle-triangle-e")).click();
+        wait(seconds);
+        driver.findElement(By.linkText("1")).click();
+        wait(seconds);
+        driver.findElement(By.cssSelector("button.btn.approve")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("span.unpaid")).getText(), "Unpaid");
+
+    }
+
+    public void payInvoice(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        driver.findElement(By.linkText("CRM")).click();
+        wait(seconds);
+        driver.findElement(By.linkText("Invoices")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).click();
+
+        wait(seconds);
+        driver.findElement(By.cssSelector("button.btn.newPayment")).click();
+        wait(seconds);
+        driver.findElement(By.id("paymentMethod")).click();
+        wait(seconds);
+        driver.findElement(By.id("565f2e05ab70d49024242e10")).click();
+        wait(seconds);
+        driver.findElement(By.id("create-payment-dialog")).click();
+
+
+    }
+
+    public void deleteInvoice(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.id("invoicesTab")).click();
+        wait(seconds);
+        driver.findElement(By.xpath(".//*[@id='checkAll_invoice']")).click();
+        wait(seconds);
+        driver.findElement(By.id("removeInvoice")).click();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("#invoicesTab > span")).getText(), "(0)");
+    }
+
+    public void deleteOrder(RemoteWebDriver driver) throws InterruptedException {
+        openProject(driver);
+        wait(seconds);
+        driver.findElement(By.id("ordersTab")).click();
+        wait(seconds);
+        driver.findElement(By.xpath(".//*[@id='checkAll_orders']")).click();
+        wait(seconds);
+        driver.findElement(By.id("removeOrder")).click();
+        wait(seconds);
+        driver.switchTo().alert().accept();
+        wait(seconds);
+        assertEquals(driver.findElement(By.cssSelector("#ordersTab > span")).getText(), "(0)");
+
+
+    }
 }
