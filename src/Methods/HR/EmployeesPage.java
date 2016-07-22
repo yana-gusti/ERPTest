@@ -37,12 +37,15 @@ public class EmployeesPage extends BaseTest {
 
 
     public void createEmployee(String _firstName, String _lastName, RemoteWebDriver driver) throws InterruptedException {
-        createBtn  = driver.findElement(By.id("top-bar-createBtn"));
-        createBtn.click();
-        firstName = driver.findElement(By.id("first"));
-        firstName.sendKeys(_firstName);
-        lastName = driver.findElement(By.id("last"));
-        lastName.sendKeys(_lastName);
+        driver.findElement(By.id("top-bar-createBtn")).click();
+
+        wait(seconds);
+        driver.findElement(By.id("first")).clear();
+        driver.findElement(By.id("first")).sendKeys(_firstName);
+
+        driver.findElement(By.id("last")).clear();
+        driver.findElement(By.id("last")).sendKeys(_lastName);
+        wait(seconds);
         birthday=driver.findElement(By.id("dateBirth"));
         birthday.click();
         wait(seconds);
@@ -61,9 +64,16 @@ public class EmployeesPage extends BaseTest {
         driver.findElement(By.id("departmentsDd")).click();
         driver.findElement(By.id("55b92ace21e4b7c40f000012")).click();
         driver.findElement(By.id("projectManagerDD")).click();
-        driver.findElement(By.id("55b92ad221e4b7c40f000062")).click();
+        driver.findElement(By.id("55b92ad221e4b7c40f000084")).click();
         driver.findElement(By.id("jobTypeDd")).click();
         driver.findElement(By.id("fullTime")).click();
+        wait(seconds);
+        driver.findElement(By.xpath("//table[@id='hireFireTable']/tbody/tr/td[11]")).click();
+        driver.findElement(By.cssSelector("input.editing.statusInfo")).click();
+        driver.findElement(By.cssSelector("input.editing.statusInfo")).clear();
+        driver.findElement(By.cssSelector("input.editing.statusInfo")).sendKeys("200");
+
+        wait(seconds);
         createAppBtn  = driver.findElement(By.id("createBtnDialog"));
         createAppBtn.click();
 
@@ -102,7 +112,7 @@ public class EmployeesPage extends BaseTest {
     public void EmployeesFilter(RemoteWebDriver driver) throws InterruptedException, IOException {
         driver.findElement(By.id("listBtn")).click();
         wait(seconds);
-        driver.findElement(By.linkText("A")).click();
+        driver.findElement(By.linkText("I")).click();
         wait(seconds);
         driver.findElement(By.linkText("G")).click();
 

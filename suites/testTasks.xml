@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+    <test name="CorrectTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateCorrectTask"/>
+        </classes>
+    </test>
+    <test name="IncorrectTasktChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateIncorrectTask"/>
+        </classes>
+    </test>
+    <test name="EmptyTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateTaskWithBlankField"/>
+        </classes>
+    </test>
+    <test name="ShortTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateShortTask"/>
+        </classes>
+    </test>
+    <test name="DetailsOfTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.DetailsOfTask"/>
+        </classes>
+    </test>
+    <test name="DragAndDropChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.DragAndDropTasks"/>
+        </classes>
+    </test>
+    <test name="RemoveChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.RemoveTask"/>
+        </classes>
+    </test>
+</suite>

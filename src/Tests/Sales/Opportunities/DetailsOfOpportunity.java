@@ -19,6 +19,7 @@ public class DetailsOfOpportunity extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         OpportunitiesPage opportunityPage = personsPage.switchToOpportunities(driver);
+        wait(seconds);
         opportunityPage.viewOpportunityDetails(driver);
         wait(seconds);
 //        assertEquals("MS", getDriver().findElement(By.id("name")).getAttribute("value"));

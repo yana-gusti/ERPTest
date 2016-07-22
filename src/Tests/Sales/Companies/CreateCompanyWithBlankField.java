@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class CreateCompanyWithBlankField extends BaseTest {
 
-    @Test(groups = { "bad" })
+    @Test (groups = { "good" })
 
     public void CreateCompanyWithBlankField() throws InterruptedException, IOException
     {

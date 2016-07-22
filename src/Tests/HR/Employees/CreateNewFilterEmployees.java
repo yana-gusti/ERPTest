@@ -16,10 +16,6 @@ public class CreateNewFilterEmployees extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
-//        wait(3000);
-//        String firstName = employeesPage.getProperty("firstName.remove");
-//        String lastName = employeesPage.getProperty("lastName.remove");
-//        employeesPage.createEmployee(firstName, lastName);
         wait(seconds);
         employeesPage.EmployeesFilter(driver);
     }

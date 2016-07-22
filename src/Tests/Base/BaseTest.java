@@ -78,8 +78,8 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
     @AfterTest(groups = { "good", "bad" })
     public void after() throws InterruptedException, IOException {
-        wait(seconds);
-            logOut(driver);
+//        wait(seconds);
+//            logOut(driver);
             driver.close();
     }
     public void logOut(RemoteWebDriver driver) throws InterruptedException, IOException

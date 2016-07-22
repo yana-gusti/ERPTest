@@ -42,8 +42,10 @@ public class LeadsPage extends BaseTest {
 
 
     public void ChangeStage(RemoteWebDriver driver) throws InterruptedException {
-        driver.findElement(By.linkText("In Progress")).click();
-        driver.findElement(By.id("528ce74ef3f67bc40b00001e")).click();
+        driver.findElement(By.linkText("Draft")).click();
+        WebElement dbItem = driver.findElement(By.xpath("//*[@data-status='inprogress']"));
+        dbItem.click();
+
 
 
     }

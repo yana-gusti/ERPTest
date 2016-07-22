@@ -55,12 +55,14 @@ public class CompaniesPage extends BaseTest {
         choose_one.click();
 
     }
-    public void editCompany(RemoteWebDriver driver){
+    public void editCompany(RemoteWebDriver driver) throws InterruptedException {
         editCompany = driver.findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
         editCompany.click();
         driver.findElement(By.name("website")).clear();
         driver.findElement(By.name("website")).sendKeys("www.ua.com");
+        wait(seconds);
         driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]")).click();
+
     }
 
     public void removeCompany(RemoteWebDriver driver) throws InterruptedException, IOException {

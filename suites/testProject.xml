@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+    <test name="CorrectProjectChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateCorrectProject"/>
+        </classes>
+    </test>
+    <test name="IncorrectProjectChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateIncorrectProject"/>
+        </classes>
+    </test>
+    <test name="EmptyProjectChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateEmptyProject"/>
+        </classes>
+    </test>
+    <test name="WithAttachChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateProjectWithAttachment"/>
+        </classes>
+    </test>
+    <test name="CreateTimeCardChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateTimeCard"/>
+        </classes>
+    </test>
+    <test name="CreateQuotationChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Projects.CreateQuotation"/>
+        </classes>
+    </test>
+</suite>

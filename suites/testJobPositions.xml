@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
-    <!--<test name="CorrectJobChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.HR.JobPosition.CreateCorrectJob"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="EmptyJobChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.HR.JobPosition.CreateEmptyJob"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="IncorrectJobChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.HR.JobPosition.CreateIncorrectJob"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="ShortJobFirefox" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.HR.JobPosition.CreateShortJob"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="DetailsOfJobFirefox" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.HR.JobPosition.DetailsOfJob"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="EditJobChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.HR.JobPosition.EditJob"/>-->
-        <!--</classes>-->
-    <!--</test>-->
+    <test name="CorrectJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateCorrectJob"/>
+        </classes>
+    </test>
+    <test name="EmptyJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateEmptyJob"/>
+        </classes>
+    </test>
+    <test name="IncorrectJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateIncorrectJob"/>
+        </classes>
+    </test>
+    <test name="ShortJobFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.CreateShortJob"/>
+        </classes>
+    </test>
+    <test name="DetailsOfJobFirefox" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.DetailsOfJob"/>
+        </classes>
+    </test>
+    <test name="EditJobChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.HR.JobPosition.EditJob"/>
+        </classes>
+    </test>
     <test name="RemoveJobChrome" verbose="1" parallel="true">
         <parameter name="myBrowser" value="chrome" />
         <classes>

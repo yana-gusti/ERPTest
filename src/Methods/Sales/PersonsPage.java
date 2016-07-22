@@ -104,6 +104,8 @@ public class PersonsPage extends BaseTest {
     }
     public ProjectPage switchToProject(RemoteWebDriver driver) throws InterruptedException {
         driver.findElement(By.linkText("Project")).click();
+        wait(seconds);
+        driver.findElement(By.linkText("Projects")).click();
 
 //        driver.findElement(By.className(arrowXpath)).click();
 
@@ -138,6 +140,9 @@ public class PersonsPage extends BaseTest {
     public EmployeesPage switchToEmployee(RemoteWebDriver driver) throws InterruptedException {
         HR = driver.findElement(By.linkText("HR"));
         HR.click();
+        wait(seconds);
+        driver.findElement(By.linkText("Employees")).click();
+
 //        driver.findElement(By.className(arrowXpath)).click();
 
 
@@ -200,6 +205,7 @@ public class PersonsPage extends BaseTest {
         listBtn.click();
         wait(seconds);
         driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[5]")).click();
+        wait(seconds);
         driver.findElement(By.id("top-bar-deleteBtn")).click();
 
 

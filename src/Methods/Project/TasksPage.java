@@ -7,6 +7,7 @@ import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 
@@ -30,52 +31,46 @@ public class TasksPage extends BaseTest {
     public WebElement Source;
     public WebElement KarbanViewButton;
 
-    public TasksPage()
-    {
-        super();
-    }
 
+    public void createCorrectTask(String _Summary, RemoteWebDriver driver) throws InterruptedException {
 
-
-    public void createCorrectTask(String _Summary) throws InterruptedException {
-
-        createBtn  = getDriver().findElement(By.id("top-bar-createBtn"));
+        createBtn  = driver.findElement(By.id("top-bar-createBtn"));
         createBtn.click();
         wait(seconds);
-        Summary = getDriver().findElement(By.id("summaryTask"));
+        Summary = driver.findElement(By.id("summaryTask"));
         Summary.click();
         Summary.sendKeys(_Summary);
-        WebElement StageSelector = getDriver().findElement(By.id("workflowsDd"));
+        WebElement StageSelector = driver.findElement(By.id("workflowsDd"));
         StageSelector.click();
-        WebElement SelectingStage = getDriver().findElement(By.id("528ce35af3f67bc40b000010"));
+        WebElement SelectingStage = driver.findElement(By.id("528ce35af3f67bc40b000010"));
         SelectingStage.click();
-        getDriver().findElement(By.xpath("(//button[@type='button'])[6]")).click();
+       driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
 
     }
 
-    public void viewTaskDetails() throws IOException, InterruptedException {
-        choose_one = getDriver().findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]"));
+    public void viewTaskDetails(RemoteWebDriver driver) throws IOException, InterruptedException {
+        choose_one = driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]"));
         choose_one.click();
     }
 
-    public void removeTask() throws InterruptedException, IOException {
-        getDriver().findElement(By.id("check_all")).click();
-        getDriver().findElement(By.id("top-bar-deleteBtn")).click();
+    public void removeTask(RemoteWebDriver driver) throws InterruptedException, IOException {
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[1]/input")).click();
+        driver.findElement(By.id("top-bar-deleteBtn")).click();
 
     }
-    public void cancel() throws InterruptedException {
-        cancelBtn = getDriver().findElement(By.xpath("(//button[@type='button'])[7]"));
+    public void cancel(RemoteWebDriver driver) throws InterruptedException {
+        cancelBtn = driver.findElement(By.xpath("(//button[@type='button'])[7]"));
         cancelBtn.click();
     }
-    public void SwitchToKarbanView() throws InterruptedException {
-        KarbanViewButton=getDriver().findElement(By.id("kanbanBtn"));
+    public void SwitchToKarbanView(RemoteWebDriver driver) throws InterruptedException {
+        KarbanViewButton=driver.findElement(By.id("kanbanBtn"));
         KarbanViewButton.click();
     }
-    public void DragDropToInProgress() throws InterruptedException {
+    public void DragDropToInProgress(RemoteWebDriver driver) throws InterruptedException {
 
-        Source=getDriver().findElement(By.cssSelector(".task-header"));
-        Target=getDriver().findElement(By.xpath(".//*[@id='528ce131f3f67bc40b00000d']"));
-        new Actions(getDriver()).dragAndDrop(Source, Target).perform();
+        Source=driver.findElement(By.cssSelector(".task-header"));
+        Target=driver.findElement(By.xpath(".//*[@id='528ce131f3f67bc40b00000d']"));
+        new Actions(driver).dragAndDrop(Source, Target).perform();
     }
 
 }

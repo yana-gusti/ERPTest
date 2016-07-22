@@ -43,8 +43,8 @@ public class OpportunitiesPage extends BaseTest {
     }
 
     public void viewOpportunityDetails( RemoteWebDriver driver) throws IOException, InterruptedException {
-        listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
-        listBtn.click();
+        driver.findElement(By.id("listBtn")).click();
+
         wait(seconds);
         choose_one = driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[4]"));
         choose_one.click();
@@ -72,11 +72,12 @@ public class OpportunitiesPage extends BaseTest {
 
     public void ChangeStage( RemoteWebDriver driver) throws InterruptedException {
         wait(seconds);
-        SelectCurrentStage=driver.findElement(By.linkText("New"));
+        SelectCurrentStage=driver.findElement(By.linkText("To be discussed"));
         SelectCurrentStage.click();
         wait(seconds);
-        SelectStage=driver.findElement(By.id("528cde9ef3f67bc40b000008"));
-        SelectStage.click();
+        WebElement dbItem = driver.findElement(By.xpath("//*[@data-status='done']"));
+        dbItem.click();
+
         wait(seconds);
     }
 

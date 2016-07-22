@@ -55,8 +55,8 @@ public class ApplicationsPage extends BaseTest {
         firstName.sendKeys(_firstName);
         lastName = driver.findElement(By.id("last"));
         lastName.sendKeys(_lastName);
-        WebElement birthday=driver.findElement(By.id("dateBirth"));
-        birthday.click();
+        wait(seconds);
+        driver.findElement(By.id("dateBirth")).click();
         wait(seconds);
         driver.findElement(By.linkText("Prev")).click();
         wait(seconds);

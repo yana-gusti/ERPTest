@@ -17,10 +17,6 @@ public class RemoveEmployee extends BaseTest {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
         EmployeesPage employeesPage = personsPage.switchToEmployee(driver);
-//        wait(3000);
-//        String firstName = employeesPage.getProperty("firstName.remove");
-//        String lastName = employeesPage.getProperty("lastName.remove");
-//        employeesPage.createEmployee(firstName, lastName);
         wait(seconds);
         employeesPage.SwitchOnList(driver);
         wait(seconds);
@@ -29,10 +25,5 @@ public class RemoveEmployee extends BaseTest {
         employeesPage.removeEmployee(driver);
         wait(seconds);
         alertAcept();
-//        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
-//        wait(1000);
-//        jobPositionsPage.removeJobPosition();
-//        wait(1000);
-//        alertAcept();
     }
 }
