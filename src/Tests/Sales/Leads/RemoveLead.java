@@ -20,11 +20,9 @@ public class RemoveLead extends BaseTest {
         wait(seconds);
         LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
-        leadsPage.viewLeadDetails(driver);
-        wait(seconds);
         leadsPage.removeLead(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
 
     }
 }

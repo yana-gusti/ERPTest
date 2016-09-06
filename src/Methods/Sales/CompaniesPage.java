@@ -67,8 +67,8 @@ public class CompaniesPage extends BaseTest {
 
     public void removeCompany(RemoteWebDriver driver) throws InterruptedException, IOException {
 
-        deleteBtn = driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']"));
-        deleteBtn.click();
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[1]/input")).click();
+        driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']")).click();
     }
     public void cancel(RemoteWebDriver driver) throws InterruptedException {
         cancelBtn = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]"));

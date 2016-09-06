@@ -21,8 +21,6 @@ public class DetailsOfLead extends BaseTest {
         LeadsPage leadsPage = personsPage.switchToLeads(driver);
         wait(seconds);
         leadsPage.viewLeadDetails(driver);
-        wait(1000);
-        leadsPage.cancel(driver);
     }
 
 }

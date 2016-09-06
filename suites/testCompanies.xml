@@ -14,7 +14,7 @@
         </classes>
     </test>
     <test name="RemoveCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.RemoveCompany"/>
         </classes>
@@ -37,10 +37,10 @@
             <class name="Tests.Sales.Companies.DetailsOfCompany"/>
         </classes>
     </test>
-    <test name="EditCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Sales.Companies.EditCompany"/>
-        </classes>
-    </test>
+    <!--<test name="EditCompanyChrome" verbose="1" parallel="true">-->
+        <!--<parameter name="myBrowser" value="chrome" />-->
+        <!--<classes>-->
+            <!--<class name="Tests.Sales.Companies.EditCompany"/>-->
+        <!--</classes>-->
+    <!--</test>-->
 </suite>

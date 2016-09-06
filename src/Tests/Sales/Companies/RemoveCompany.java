@@ -22,10 +22,8 @@ public class RemoveCompany extends BaseTest {
         wait(seconds);
         companyPage.SwitchOnList(driver);
         wait(seconds);
-        companyPage.viewCompanyDetails(driver);
-        wait(seconds);
         companyPage.removeCompany(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
     }
 }

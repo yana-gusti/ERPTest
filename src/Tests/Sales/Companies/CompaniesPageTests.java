@@ -29,7 +29,7 @@ public class CompaniesPageTests extends BaseTest {
         String companyName = "!@#$";
         companyPage.createCorrectCompany(companyName, driver);
         wait(1000);
-        alertAcept();
+        alertAcept(driver);
         wait(1000);
         companyPage.cancel(driver);
         wait(1000);
@@ -45,7 +45,7 @@ public class CompaniesPageTests extends BaseTest {
         String companyName = "a";
         companyPage.createCorrectCompany(companyName, driver);
         wait(1000);
-        alertAcept();
+        alertAcept(driver);
         wait(1000);
         companyPage.cancel(driver);
         wait(1000);
@@ -79,7 +79,7 @@ public class CompaniesPageTests extends BaseTest {
         String companyName = "";
         companyPage.createCorrectCompany(companyName, driver);
         wait(1000);
-        alertAcept();
+        alertAcept(driver);
         wait(1000);
         companyPage.cancel(driver);
         wait(1000);
@@ -138,7 +138,7 @@ public class CompaniesPageTests extends BaseTest {
         wait(1000);
         companyPage.removeCompany(driver);
         wait(1000);
-        alertAcept();
+        alertAcept(driver);
         wait(1000);
 //        assertEquals("0", getDriver().findElement(By.id("grid-count")).getText());
         wait(1000);

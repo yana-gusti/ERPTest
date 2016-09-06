@@ -22,6 +22,6 @@ public class RemovePerson extends BaseTest {
         wait(seconds);
         personsPage.removePerson(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
     }
 }

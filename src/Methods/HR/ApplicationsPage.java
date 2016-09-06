@@ -19,7 +19,6 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class ApplicationsPage extends BaseTest {
-    public WebElement userName;
     public WebElement createBtn;
     public WebElement firstName;
     public WebElement lastName;
@@ -27,23 +26,6 @@ public class ApplicationsPage extends BaseTest {
     public WebElement logOut;
     public WebElement listBtn;
     public WebElement choose_one;
-    public WebElement deleteBtn;
-    public WebElement createEmployee;
-    public WebElement Target;
-    public WebElement Source;
-    public WebElement ListViewButton;
-    public WebElement SelectCurrentStage;
-    public WebElement SelectStage;
-    public WebElement ArrowDownButtn;
-    public WebElement UndefinedCheckBox;
-    public WebElement InitialCheckBox;
-    public WebElement readyToTeachBox;
-    public WebElement FirstInterviewBox;
-    public WebElement SecondInterviewBox;
-    public WebElement IntershipBox;
-    public WebElement ContractSingnetBox;
-    public WebElement ContractEndBox;
-    public WebElement Refused;
 
 
 
@@ -87,9 +69,8 @@ public class ApplicationsPage extends BaseTest {
     }
     public void removeApp(RemoteWebDriver driver) throws InterruptedException {
 
-        deleteBtn = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]"));
-        deleteBtn.click();
-
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[1]/input")).click();
+        driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']")).click();
 
     }
     public void cancel(RemoteWebDriver driver){
@@ -99,7 +80,7 @@ public class ApplicationsPage extends BaseTest {
 
 
     public void cancelInDetails(RemoteWebDriver driver){
-        driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]")).click();
+        driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
 
     }
 

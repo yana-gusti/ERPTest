@@ -26,7 +26,7 @@ public class CreateCorrectProject extends BaseTest {
         wait(seconds);
         projectPage.switchToList(driver);
         wait(seconds);
-        assertEquals("Qa test", driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).getText());
+        assertEquals("Qa test", driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[2]")).getText());
 
     }
 }

@@ -115,7 +115,7 @@ public class JobPositionsPageTest extends BaseTest {
         wait(3000);
         jobPositionsPage.removeJobPosition(driver);
         wait(3000);
-        alertAcept();
+        alertAcept(driver);
         wait(4000);
 //        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
 //        wait(1000);

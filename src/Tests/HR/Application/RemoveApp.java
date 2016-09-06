@@ -19,11 +19,9 @@ public class RemoveApp extends BaseTest {
         wait(seconds);
         applicationsPage.SwitchOnList(driver);
         wait(seconds);
-        applicationsPage.viewAppDetails(driver);
-        wait(seconds);
         applicationsPage.removeApp(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
         wait(seconds);
     }
 }

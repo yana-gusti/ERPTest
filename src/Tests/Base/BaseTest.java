@@ -3,7 +3,6 @@ package Tests.Base;
 import Methods.MyProfile.LoginPage;
 import Methods.MyProfile.MoveThroughMenu;
 import Methods.Sales.PersonsPage;
-import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -39,28 +38,34 @@ public class BaseTest {
 //Parameter will get browser from testng.xml on which browser test to run
 @Parameters("myBrowser")
 public  void beforeClass(String myBrowser) throws MalformedURLException {
-
-    if(myBrowser.equals("chrome")){
-        DesiredCapabilities capability = new DesiredCapabilities().chrome();
-        capability.setBrowserName("chrome");
-        capability.setPlatform(Platform.WINDOWS);
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-    }
-    else if(myBrowser.equals("firefox")){
-        DesiredCapabilities capability = new DesiredCapabilities().firefox();
-        capability.setBrowserName("firefox");
-        capability.setPlatform(Platform.WINDOWS);
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-    }
-        else if(myBrowser.equals("internet explorer")){
-            DesiredCapabilities capability = new DesiredCapabilities().internetExplorer();
+    DesiredCapabilities capability = null;
+    switch (myBrowser){
+        case "chrome":
+            capability = new DesiredCapabilities().chrome();
+            capability.setBrowserName("chrome");
+            capability.setPlatform(Platform.WINDOWS);
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+            driver.get(baseUrl);
+            break;
+        case "firefox":
+            capability = new DesiredCapabilities().firefox();
+            capability.setBrowserName("firefox");
+            capability.setPlatform(Platform.WINDOWS);
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+            driver.get(baseUrl);
+            break;
+        case "internet explorer":
+            capability = new DesiredCapabilities().internetExplorer();
             capability.setBrowserName("internet explorer");
             capability.setPlatform(Platform.WINDOWS);
             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-        }
-
-
-    driver.get(baseUrl);
+            driver.get(baseUrl);
+        default:
+            break;
+    }
+//    capability.setPlatform(Platform.WINDOWS);
+//    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+//    driver.get(baseUrl);
     if(myBrowser.equals("chrome")){
         driver.manage().window().maximize();
     }
@@ -120,7 +125,24 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
         LoginPage loginPage = new LoginPage();
         PersonsPage personsPage = loginPage.loginPositive(driver);
+//        PersonsPage personsPage = LoginLiveTest();
         return personsPage;
+    }
+
+    public PersonsPage LoginLiveTest() throws InterruptedException {
+        driver.findElement(By.linkText("LOG IN")).click();
+        wait(seconds);
+        driver.findElement(By.id("email_i")).clear();
+        driver.findElement(By.id("email_i")).sendKeys("yana.gusti@gmail.com");
+        wait(seconds);
+        driver.findElement(By.id("password_i")).clear();
+        driver.findElement(By.id("password_i")).sendKeys("1q2w3e4r");
+        wait(seconds);
+        driver.findElement(By.id("login")).click();
+        wait(seconds);
+        driver.findElement(By.linkText("Persons")).click();
+        return new PersonsPage();
+
     }
 
 
@@ -128,7 +150,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
     {
         Thread.sleep(milliSeconds);
     }
-    public void alertAcept(){
+    public void alertAcept(RemoteWebDriver driver){
         driver.switchTo().alert().accept();
 
     }

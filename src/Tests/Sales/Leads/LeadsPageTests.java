@@ -78,7 +78,7 @@ public class LeadsPageTests extends BaseTest {
         //steps
         leadsPage.createCorrectLead(leadsName, driver);
         wait(1000);
-        alertAcept();
+        alertAcept(driver);
         wait(1000);
         leadsPage.cancel(driver);
     }
@@ -130,7 +130,7 @@ public class LeadsPageTests extends BaseTest {
         wait(2000);
         leadsPage.removeLead(driver);
         wait(1000);
-        alertAcept();
+        alertAcept(driver);
         wait(1000);
 //        assertEquals("0 - 0 of 0 items", getDriver().findElement(By.cssSelector("div.countOnPage > div > span")).getText());
         wait(1000);
