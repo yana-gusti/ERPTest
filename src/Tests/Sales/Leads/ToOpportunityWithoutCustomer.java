@@ -10,10 +10,10 @@ import java.io.IOException;
 /**
  * Created by yana on 26.05.2016.
  */
-public class RemoveLead extends BaseTest {
+public class ToOpportunityWithoutCustomer extends BaseTest {
     @Test(groups = { "good" })
 
-    public void RemoveLead() throws InterruptedException, IOException
+    public void ToOpportunityWithout() throws InterruptedException, IOException
     {
 
         PersonsPage personsPage = GoToPersonsPage();
@@ -22,11 +22,13 @@ public class RemoveLead extends BaseTest {
         wait(seconds);
         leadsPage.viewLeadDetails(driver);
         wait(seconds);
-        leadsPage.selectLead(driver);
+        leadsPage.convertToOpportunity(driver);
         wait(seconds);
-        leadsPage.removeLead(driver);
+        leadsPage.selectWithoutCustomer(driver);
         wait(seconds);
-        alertAcept();
+        leadsPage.selectWithoutCustomerFromMenu(driver);
+        wait(seconds);
+        leadsPage.createOpportunity(driver);
 
     }
 }

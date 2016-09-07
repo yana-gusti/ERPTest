@@ -23,7 +23,7 @@ public class DetailsOfOpportunity extends BaseTest {
         opportunityPage.viewOpportunityDetails(driver);
         wait(seconds);
 //        assertEquals("MS", getDriver().findElement(By.id("name")).getAttribute("value"));
-        opportunityPage.cancel(driver);
+        //opportunityPage.cancel(driver);
 
     }
 }

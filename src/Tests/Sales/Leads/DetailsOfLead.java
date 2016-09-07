@@ -22,7 +22,7 @@ public class DetailsOfLead extends BaseTest {
         wait(seconds);
         leadsPage.viewLeadDetails(driver);
         wait(1000);
-        leadsPage.cancel(driver);
+        //leadsPage.cancel(driver);
     }
 
 }

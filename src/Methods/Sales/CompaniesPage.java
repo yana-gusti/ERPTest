@@ -26,6 +26,7 @@ public class CompaniesPage extends BaseTest {
     public WebElement cancelBtn;
     public WebElement choose_one;
     public WebElement editCompany;
+    public WebElement selectChb;
 
 
 
@@ -56,14 +57,14 @@ public class CompaniesPage extends BaseTest {
 
     }
     public void editCompany(RemoteWebDriver driver) throws InterruptedException {
-        editCompany = driver.findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
-        editCompany.click();
-        driver.findElement(By.name("website")).clear();
-        driver.findElement(By.name("website")).sendKeys("www.ua.com");
+
+        driver.findElement(By.xpath("//input[@data-id='website']")).clear();
+        driver.findElement(By.xpath("//input[@data-id='website']")).sendKeys("www.ua.com");
         wait(seconds);
-        driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]")).click();
+        driver.findElement(By.id("saveBtn")).click();
 
     }
+
 
     public void removeCompany(RemoteWebDriver driver) throws InterruptedException, IOException {
 
@@ -73,6 +74,10 @@ public class CompaniesPage extends BaseTest {
     public void cancel(RemoteWebDriver driver) throws InterruptedException {
         cancelBtn = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[2]"));
         cancelBtn.click();
+    }
+    public void selectCompany(RemoteWebDriver driver) throws InterruptedException {
+        selectChb = driver.findElement(By.xpath(".//tr[1]/td[1]/label/input[@class = 'checkbox'][1]"));
+        selectChb.click();
     }
 }
 

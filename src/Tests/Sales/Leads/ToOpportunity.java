@@ -23,6 +23,8 @@ public class ToOpportunity extends BaseTest {
         leadsPage.viewLeadDetails(driver);
         wait(seconds);
         leadsPage.convertToOpportunity(driver);
+        wait(seconds);
+        leadsPage.createOpportunity(driver);
 
     }
 }

@@ -2,43 +2,43 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
     <test name="CorrectCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.CreateCorrectCompany"/>
         </classes>
     </test>
     <test name="EmptyCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.CreateCompanyWithBlankField"/>
         </classes>
     </test>
     <test name="RemoveCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.RemoveCompany"/>
         </classes>
     </test>
     <test name="IncorrectCompanyFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.CreateIncorrectCompany"/>
         </classes>
     </test>
     <test name="ShortCompanyFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.CreateShortCompany"/>
         </classes>
     </test>
     <test name="DetailsOfCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.DetailsOfCompany"/>
         </classes>
     </test>
     <test name="EditCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.EditCompany"/>
         </classes>

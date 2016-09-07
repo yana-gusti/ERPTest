@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
     <test name="CorrectOpportunityChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Opportunities.CreateCorrectOpportunity"/>
         </classes>

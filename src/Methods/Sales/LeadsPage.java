@@ -18,6 +18,8 @@ public class LeadsPage extends BaseTest {
     private WebElement leadName;
     private WebElement createLeadBtn;
     public WebElement choose_one;
+    private WebElement selectChb;
+    private WebElement deleteBtn;
 
     public LeadsPage()
     {
@@ -56,8 +58,8 @@ public class LeadsPage extends BaseTest {
     }
 
     public void removeLead(RemoteWebDriver driver) throws InterruptedException, IOException {
-        driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
-
+        deleteBtn = driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']"));
+        deleteBtn.click();
     }
     public void cancel(RemoteWebDriver driver) throws InterruptedException {
         driver.findElement(By.xpath("(//button[@type='button'])[7]")).click();
@@ -66,9 +68,31 @@ public class LeadsPage extends BaseTest {
 
     public void convertToOpportunity(RemoteWebDriver driver){
         driver.findElement(By.id("convertToOpportunity")).click();
-       driver.findElement(By.xpath("(//button[@type='button'])[10]")).click();
+
+      // driver.findElement(By.xpath("(//button[@type='button'])[10]")).click();
 
 
+    }
+    public void selectWithoutCustomer(RemoteWebDriver driver){
+
+        driver.findElement(By.id("createCustomerOrNot")).click();
+
+    }
+    public void selectWithoutCustomerFromMenu(RemoteWebDriver driver){
+
+        driver.findElement(By.xpath("//option[text() = 'Do not create a new customer']")).click();
+
+    }
+    public void createOpportunity(RemoteWebDriver driver){
+
+        driver.findElement(By.xpath("//span [ text() = 'Create opportunity']")).click();
+        // driver.findElement(By.xpath("(//button[@type='button'])[10]")).click();
+
+
+    }
+    public void selectLead(RemoteWebDriver driver) throws InterruptedException {
+        selectChb = driver.findElement(By.xpath(".//tr[1]/td[1]/label/input[@class = 'checkbox'][1]"));
+        selectChb.click();
     }
 
 }

@@ -2,49 +2,55 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
     <test name="CorrectLeadChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.CorrectLead"/>
         </classes>
     </test>
     <test name="DetailsOfLeadChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.DetailsOfLead"/>
         </classes>
     </test>
     <test name="FilterChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.Filter"/>
         </classes>
     </test>
     <test name="LeadWithBlankFieldFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.LeadWithBlankField"/>
         </classes>
     </test>
     <test name="RemoveLeadFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.RemoveLead"/>
         </classes>
     </test>
     <test name="ShortLeadChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.ShortLead"/>
         </classes>
     </test>
     <test name="ToOpportunityChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.ToOpportunity"/>
         </classes>
     </test>
+    <test name="ToOpportunityWithoutChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.ToOpportunityWithoutCustomer"/>
+        </classes>
+    </test>
     <test name="IncorrectLeadChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.IncorrectLead"/>
         </classes>

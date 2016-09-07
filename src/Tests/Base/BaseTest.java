@@ -132,6 +132,11 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
         driver.switchTo().alert().accept();
 
     }
+    public void alertAccept() throws InterruptedException {
+        wait(100);
+        driver.switchTo().alert().accept();
+
+    }
 
     public void waitForProgressBar(WebDriver driver, String text) throws InterruptedException {
         WebDriverWait webDriverWait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);

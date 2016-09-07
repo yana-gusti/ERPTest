@@ -24,8 +24,10 @@ public class RemoveCompany extends BaseTest {
         wait(seconds);
         companyPage.viewCompanyDetails(driver);
         wait(seconds);
+        companyPage.selectCompany(driver);
+        wait(seconds);
         companyPage.removeCompany(driver);
         wait(seconds);
-        alertAcept();
+        alertAccept();
     }
 }
