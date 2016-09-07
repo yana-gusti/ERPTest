@@ -55,6 +55,7 @@ public class TasksPage extends BaseTest {
 
     public void removeTask(RemoteWebDriver driver) throws InterruptedException, IOException {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[1]/input")).click();
+        wait(seconds);
         driver.findElement(By.id("top-bar-deleteBtn")).click();
 
     }

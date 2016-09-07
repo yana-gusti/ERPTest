@@ -21,6 +21,6 @@ public class RemoveJob extends BaseTest {
         wait(seconds);
         jobPositionsPage.removeJobPosition(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
     }
 }

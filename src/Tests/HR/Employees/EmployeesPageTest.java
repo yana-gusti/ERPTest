@@ -148,7 +148,7 @@ public class EmployeesPageTest extends BaseTest {
         wait(3000);
         employeesPage.removeEmployee(driver);
         wait(3000);
-        alertAcept();
+        alertAcept(driver);
 //        JobPositionsPage jobPositionsPage = personsPage.switchToJobPosition();
 //        wait(1000);
 //        jobPositionsPage.removeJobPosition();

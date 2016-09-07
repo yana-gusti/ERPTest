@@ -60,11 +60,9 @@ public class EmployeesPage extends BaseTest {
 //        wait(1000);
         driver.findElement(By.linkText("Job")).click();
         driver.findElement(By.id("jobPositionDd")).click();
-        driver.findElement(By.id("56e6b8b9701f50ac4d0a4974")).click();
-        driver.findElement(By.id("departmentsDd")).click();
-        driver.findElement(By.id("55b92ace21e4b7c40f000012")).click();
+        driver.findElement(By.xpath(".//*[@id='content']/ul/li")).click();
         driver.findElement(By.id("projectManagerDD")).click();
-        driver.findElement(By.id("55b92ad221e4b7c40f000084")).click();
+        driver.findElement(By.xpath(".//*[@id='content']/ul/li")).click();
         driver.findElement(By.id("jobTypeDd")).click();
         driver.findElement(By.id("fullTime")).click();
         wait(seconds);
@@ -88,8 +86,8 @@ public class EmployeesPage extends BaseTest {
 
     }
     public void removeEmployee(RemoteWebDriver driver) throws InterruptedException {
-        deleteBtn = driver.findElement(By.xpath(".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]"));
-        deleteBtn.click();
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[1]/input")).click();
+        driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']")).click();
 
     }
     public void CheckAll(RemoteWebDriver driver){

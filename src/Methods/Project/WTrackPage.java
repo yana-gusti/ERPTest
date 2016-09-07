@@ -43,6 +43,6 @@ public class WTrackPage extends BaseTest {
 
         driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']")).click();
 
-        alertAcept();
+        alertAcept(driver);
     }
 }

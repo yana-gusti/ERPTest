@@ -21,7 +21,7 @@ public class RemoveTask extends BaseTest {
         wait(seconds);
         taskPage.removeTask(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
         wait(seconds);
         personsPage.logOut(driver);
 

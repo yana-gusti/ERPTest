@@ -39,7 +39,7 @@
         </classes>
     </test>
     <test name="RemovePersonFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Persons.RemovePerson"/>
         </classes>

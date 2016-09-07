@@ -49,9 +49,8 @@ public class JobPositionsPage extends BaseTest {
     }
     public void removeJobPosition(RemoteWebDriver driver) throws InterruptedException {
 
-        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
-        wait(seconds);
-        driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[1]/input")).click();
+        driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']")).click();
 
 
 

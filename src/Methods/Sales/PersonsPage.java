@@ -1,5 +1,6 @@
 package Methods.Sales;
 
+import Methods.Accounting.ChartOfAccount;
 import Methods.Accounting.CustomerPaymentsPage;
 import Methods.HR.ApplicationsPage;
 import Methods.HR.BirthdaysPage;
@@ -160,9 +161,17 @@ public class PersonsPage extends BaseTest {
 
         return new JobPositionsPage();
     }
+    public ChartOfAccount switchToChartOfAccount(RemoteWebDriver driver) throws InterruptedException {
+        driver.findElement(By.linkText("Accounting")).click();
+        wait(seconds);
+        driver.findElement(By.linkText("Chart Of Account")).click();
+//        driver.findElement(By.className(arrowXpath)).click();
+
+
+        return new ChartOfAccount();
+    }
     public BirthdaysPage switchToBirthdays(RemoteWebDriver driver) throws InterruptedException {
-        HR = driver.findElement(By.linkText("HR"));
-        HR.click();
+        driver.findElement(By.linkText("HR")).click();
         wait(seconds);
         BirthdayPageOpen=driver.findElement(By.xpath("Birthdays"));
         BirthdayPageOpen.click();
@@ -204,9 +213,8 @@ public class PersonsPage extends BaseTest {
         listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();
         wait(seconds);
-        driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[5]")).click();
-        wait(seconds);
-        driver.findElement(By.id("top-bar-deleteBtn")).click();
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[1]/input")).click();
+        driver.findElement(By.xpath(".//*[@id='top-bar-deleteBtn']")).click();
 
 
     }

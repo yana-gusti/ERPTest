@@ -34,13 +34,13 @@ public class BirthdaysPageTests extends BaseTest {
         wait(1000);
         employeesPage.removeEmployee(driver);
         wait(1000);
-        alertAcept();
+        alertAcept(driver);
         wait(1000);
       jobPositionsPage = personsPage.switchToJobPosition(driver);
       wait(1000);
       jobPositionsPage.removeJobPosition(driver);
       wait(1000);
-      alertAcept();
+      alertAcept(driver);
       wait(1000);
       personsPage.logOut(driver);
 

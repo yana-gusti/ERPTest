@@ -28,7 +28,11 @@ public class ProjectPage extends BaseTest {
         projectType.click();
         driver.findElement(By.id("fixed")).click();
         driver.findElement(By.id("customerDd")).click();
-        driver.findElement(By.id("570b65d718efef5454b6b58d")).click();
+        driver.findElement(By.xpath(".//*[@id='content']/ul/li[1]")).click();
+        driver.findElement(By.linkText("Other Info")).click();
+        driver.findElement(By.id("paymentMethod")).click();
+        driver.findElement(By.xpath(".//*[@id='content']/ul/li[1]")).click();
+
 
         driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
 
@@ -41,15 +45,14 @@ public class ProjectPage extends BaseTest {
     }
     public void openProject(RemoteWebDriver driver) throws InterruptedException {
 
-        driver.findElement(By.xpath("//tbody[@id='listTable']/tr/td[3]")).click();
-        wait(seconds);
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
     }
 
     public void removeAllProjects(RemoteWebDriver driver) throws InterruptedException {
 
         driver.findElement(By.id("check_all")).click();
         driver.findElement(By.id("top-bar-deleteBtn")).click();
-        alertAcept();
+        alertAcept(driver);
 
     }
 
@@ -130,7 +133,7 @@ public class ProjectPage extends BaseTest {
         wait(seconds);
         driver.findElement(By.xpath("//tbody[@id='listTable']/tr[2]/td[4]")).click();
         wait(seconds);
-        assertEquals(driver.findElement(By.cssSelector("button.btn.approve")).getText(), "Approve");
+
 
 
 
@@ -250,10 +253,10 @@ public class ProjectPage extends BaseTest {
 
         wait(seconds);
         driver.findElement(By.cssSelector("button.btn.newPayment")).click();
-        wait(seconds);
-        driver.findElement(By.id("paymentMethod")).click();
-        wait(seconds);
-        driver.findElement(By.id("565f2e05ab70d49024242e10")).click();
+//        wait(seconds);
+//        driver.findElement(By.xpath(".//*[@id='paymentMethod']")).click();
+//        wait(seconds);
+//        driver.findElement(By.id(".//*[@id='content']/ul/li[1]")).click();
         wait(seconds);
         driver.findElement(By.id("create-payment-dialog")).click();
 

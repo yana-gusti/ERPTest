@@ -23,7 +23,7 @@ public class RemoveOpportunity extends BaseTest {
         wait(seconds);
         opportunityPage.removeOpportunity(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
 
     }
 

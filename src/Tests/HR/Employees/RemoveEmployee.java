@@ -20,10 +20,8 @@ public class RemoveEmployee extends BaseTest {
         wait(seconds);
         employeesPage.SwitchOnList(driver);
         wait(seconds);
-        employeesPage.viewEmployeeDetails(driver);
-        wait(seconds);
         employeesPage.removeEmployee(driver);
         wait(seconds);
-        alertAcept();
+        alertAcept(driver);
     }
 }

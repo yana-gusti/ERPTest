@@ -56,13 +56,13 @@
         </classes>
     </test>
     <test name="DeletePaymentChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeletePayment"/>
         </classes>
     </test>
     <test name="DeleteProformaChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeleteProforma"/>
         </classes>
@@ -92,19 +92,19 @@
         </classes>
     </test>
     <test name="DeletePayment2Chrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeletePayment"/>
         </classes>
     </test>
     <test name="DeleteInvoiceChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeleteInvoice"/>
         </classes>
     </test>
     <test name="DeleteOrderChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeleteOrder"/>
         </classes>

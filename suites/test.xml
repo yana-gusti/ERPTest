@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
     <test name="CorrectAppFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.HR.Application.CorrectApp"/>
         </classes>
@@ -32,7 +32,7 @@
         </classes>
     </test>
     <test name="RemoveAppChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.HR.Application.RemoveApp"/>
         </classes>
@@ -50,7 +50,7 @@
         </classes>
     </test>
     <test name="RemoveCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Companies.RemoveCompany"/>
         </classes>
@@ -71,12 +71,6 @@
         <parameter name="myBrowser" value="chrome" />
         <classes>
             <class name="Tests.Sales.Companies.DetailsOfCompany"/>
-        </classes>
-    </test>
-    <test name="EditCompanyChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Sales.Companies.EditCompany"/>
         </classes>
     </test>
     <test name="CorrectEmployeeChrome" verbose="1" parallel="true">
@@ -104,7 +98,7 @@
         </classes>
     </test>
     <test name="ShortEmployeeFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.HR.Employees.CreateShortEmployee"/>
         </classes>
@@ -116,7 +110,7 @@
         </classes>
     </test>
     <test name="RemoveEmployeeChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.HR.Employees.RemoveEmployee"/>
         </classes>
@@ -158,7 +152,7 @@
         </classes>
     </test>
     <test name="RemoveJobChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.HR.JobPosition.RemoveJob"/>
         </classes>
@@ -188,7 +182,7 @@
         </classes>
     </test>
     <test name="RemoveLeadFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Leads.RemoveLead"/>
         </classes>
@@ -211,54 +205,6 @@
             <class name="Tests.Sales.Leads.IncorrectLead"/>
         </classes>
     </test>
-    <!--<test name="AccountingChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuAccounting"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="ExpensesChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuExpenses"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="HRChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuHR"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="PayrollFirefox" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuPayroll"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="ProjectFirefox" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuProject"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="PurchasesChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuPurchases"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="SalesChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuSales"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="SettingsChrome" verbose="1" parallel="true">-->
-        <!--<parameter name="myBrowser" value="chrome" />-->
-        <!--<classes>-->
-            <!--<class name="Tests.MoveThroughMenu.MoveThroughMenuSettings"/>-->
-        <!--</classes>-->
-    <!--</test>-->
     <test name="CorrectOpportunityChrome" verbose="1" parallel="true">
         <parameter name="myBrowser" value="chrome" />
         <classes>
@@ -296,7 +242,7 @@
         </classes>
     </test>
     <test name="RemoveOpportunityChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Opportunities.RemoveOpportunity"/>
         </classes>
@@ -320,7 +266,7 @@
         </classes>
     </test>
     <test name="DetailsOfPersonFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Persons.DetailsOfPerson"/>
         </classes>
@@ -339,51 +285,9 @@
         </classes>
     </test>
     <test name="RemovePersonFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Persons.RemovePerson"/>
-        </classes>
-    </test>
-    <test name="CorrectTaskChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Project.Tasks.CreateCorrectTask"/>
-        </classes>
-    </test>
-    <test name="IncorrectTasktChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Project.Tasks.CreateIncorrectTask"/>
-        </classes>
-    </test>
-    <test name="EmptyTaskChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Project.Tasks.CreateTaskWithBlankField"/>
-        </classes>
-    </test>
-    <test name="ShortTaskChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Project.Tasks.CreateShortTask"/>
-        </classes>
-    </test>
-    <test name="DetailsOfTaskChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Project.Tasks.DetailsOfTask"/>
-        </classes>
-    </test>
-    <test name="DragAndDropChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Project.Tasks.DragAndDropTasks"/>
-        </classes>
-    </test>
-    <test name="RemoveChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
-        <classes>
-            <class name="Tests.Project.Tasks.RemoveTask"/>
         </classes>
     </test>
     <test name="CorrectProjectChrome" verbose="1" parallel="true">
@@ -441,13 +345,13 @@
         </classes>
     </test>
     <test name="DeletePaymentChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeletePayment"/>
         </classes>
     </test>
     <test name="DeleteProformaChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeleteProforma"/>
         </classes>
@@ -477,21 +381,63 @@
         </classes>
     </test>
     <test name="DeletePayment2Chrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeletePayment"/>
         </classes>
     </test>
     <test name="DeleteInvoiceChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeleteInvoice"/>
         </classes>
     </test>
     <test name="DeleteOrderChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Project.Projects.DeleteOrder"/>
+        </classes>
+    </test>
+    <test name="CorrectTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateCorrectTask"/>
+        </classes>
+    </test>
+    <test name="IncorrectTasktChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateIncorrectTask"/>
+        </classes>
+    </test>
+    <test name="EmptyTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateTaskWithBlankField"/>
+        </classes>
+    </test>
+    <test name="ShortTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.CreateShortTask"/>
+        </classes>
+    </test>
+    <test name="DetailsOfTaskChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.DetailsOfTask"/>
+        </classes>
+    </test>
+    <test name="DragAndDropChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome" />
+        <classes>
+            <class name="Tests.Project.Tasks.DragAndDropTasks"/>
+        </classes>
+    </test>
+    <test name="RemoveChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Project.Tasks.RemoveTask"/>
         </classes>
     </test>
 </suite>
