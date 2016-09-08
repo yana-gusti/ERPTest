@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 
 import java.io.IOException;
 
@@ -23,7 +24,7 @@ public class OpportunitiesPage extends BaseTest {
     public WebElement Source;
     public WebElement SelectCurrentStage;
     public WebElement SelectStage;
-
+    public WebElement openOpportunitie;
 
     public OpportunitiesPage()
     {
@@ -71,13 +72,13 @@ public class OpportunitiesPage extends BaseTest {
 
     public void ChangeStage( RemoteWebDriver driver) throws InterruptedException {
         wait(seconds);
-        SelectCurrentStage=driver.findElement(By.linkText("To be discussed"));
+        openOpportunitie = driver.findElement(By.xpath(".//tr[1]/td[2]/span[text() = 'Test']"));
+        openOpportunitie.click();
+        wait(seconds);
+        SelectCurrentStage=driver.findElement(By.xpath("//div[text()= 'To estimate']"));
         SelectCurrentStage.click();
         wait(seconds);
-        WebElement dbItem = driver.findElement(By.xpath("//*[@data-status='done']"));
-        dbItem.click();
 
-        wait(seconds);
     }
 
     public void SwitchToListView( RemoteWebDriver driver) throws InterruptedException {

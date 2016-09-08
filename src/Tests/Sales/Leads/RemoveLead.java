@@ -26,7 +26,7 @@ public class RemoveLead extends BaseTest {
         wait(seconds);
         leadsPage.removeLead(driver);
         wait(seconds);
-        alertAcept();
+        //alertAcept();
 
     }
 }

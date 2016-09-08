@@ -3,6 +3,7 @@ package Tests.Sales.Opportunities;
 import Methods.Sales.OpportunitiesPage;
 import Methods.Sales.PersonsPage;
 import Tests.Base.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -23,6 +24,8 @@ public class OpportunityStage extends BaseTest {
         opportunityPage.SwitchToListView(driver);
         wait(seconds);
         opportunityPage.ChangeStage(driver);
+        wait(seconds);
+
 
     }
 }
