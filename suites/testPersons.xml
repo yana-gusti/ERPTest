@@ -26,7 +26,7 @@
         </classes>
     </test>
     <test name="EditPersonFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="firefox" />
         <classes>
             <class name="Tests.Sales.Persons.EditPerson"/>
         </classes>

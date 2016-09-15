@@ -220,12 +220,20 @@ public class PersonsPage extends BaseTest {
     }
 
     public void editPerson(RemoteWebDriver driver) throws InterruptedException {
-        editPerson =driver.findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
-        editPerson.click();
-        wait(seconds);
-       driver.findElement(By.id("emailInput")).clear();
-        driver.findElement(By.id("emailInput")).sendKeys("yana@mail.ru");
-        driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
+        // editPerson =driver.findElement(By.xpath(".//*[@id='top-bar-editBtn']"));
+        // editPerson.click();
+        // wait(seconds);
+
+        //  driver.findElement(By.id("emailInput")).clear();
+        // driver.findElement(By.id("emailInput")).sendKeys("yana@mail.ru");
+
+
+        editPerson = driver.findElement(By.xpath("//div/input[@data-id = 'email']"));
+        editPerson.clear();
+        editPerson.sendKeys("yana@mail.ru");
+        driver.findElement (By.id("saveBtn")).click();
+
+        //driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
     }
     public void cancel(RemoteWebDriver driver){
         driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
