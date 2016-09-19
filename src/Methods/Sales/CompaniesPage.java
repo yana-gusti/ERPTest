@@ -19,6 +19,8 @@ public class CompaniesPage extends BaseTest {
     private WebElement createBtn;
     private WebElement companyName;
     private WebElement createCompanyBtn;
+    private WebElement filterByCountryBtn;
+    private WebElement choosedCountry;
     public WebElement chooseToDelete;
     public WebElement personNameView;
     public WebElement listBtn;
@@ -27,8 +29,11 @@ public class CompaniesPage extends BaseTest {
     public WebElement choose_one;
     public WebElement editCompany;
     public WebElement selectChb;
-
-
+    public WebElement filterBtn;
+    public WebElement filterByNameBtn;
+    public WebElement choosedName;
+    private WebElement filterByServicesBtn;
+    private WebElement choosedService;
 
     public void createCorrectCompany(String _companyName, RemoteWebDriver driver) throws InterruptedException {
 
@@ -43,8 +48,42 @@ public class CompaniesPage extends BaseTest {
 
     }
 
+    public void openFilterMenu(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterBtn = driver.findElement(By.xpath(".//*[@id='searchContainer']/div/div[1]/span[2]"));
+        filterBtn.click();
 
+    }
+    public void filterByName(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByNameBtn = driver.findElement(By.id("name"));
+        filterByNameBtn.click();
+        wait(seconds);
+        choosedName = driver.findElement(By.xpath(".//*[@id='nameUl']/li[1]"));
+        choosedName.click();
+        wait(seconds);
 
+    }
+    public void filterByCountry(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByCountryBtn = driver.findElement(By.id("country"));
+        filterByCountryBtn.click();
+        wait(seconds);
+        choosedCountry = driver.findElement(By.xpath(".//*[@id='countryUl']/li[2]"));
+        choosedCountry.click();
+        wait(seconds);
+
+    }
+    public void filterByServices(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByServicesBtn = driver.findElement(By.id("services"));
+        filterByServicesBtn.click();
+        wait(seconds);
+        choosedService = driver.findElement(By.xpath(".//*[@id='servicesUl']/li[1]"));
+        choosedService.click();
+        wait(seconds);
+
+    }
     public void SwitchOnList(RemoteWebDriver driver) throws InterruptedException {
         listBtn = driver.findElement(By.xpath(".//*[@id='listBtn']"));
         listBtn.click();

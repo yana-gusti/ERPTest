@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+
+    <test name="FilterByNameChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.FilterByName"/>
+        </classes>
+    </test>
+    <test name="FilterByContryChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.FilterByCountry"/>
+        </classes>
+    </test>
+    <test name="FilterByServicesChrome" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.FilterByServices"/>
+        </classes>
+    </test>
     <test name="CorrectCompanyChrome" verbose="1" parallel="true">
         <parameter name="myBrowser" value="firefox" />
         <classes>
@@ -43,4 +62,5 @@
             <class name="Tests.Sales.Companies.EditCompany"/>
         </classes>
     </test>
+
 </suite>
