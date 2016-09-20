@@ -20,6 +20,18 @@ public class LeadsPage extends BaseTest {
     public WebElement choose_one;
     private WebElement selectChb;
     private WebElement deleteBtn;
+    private WebElement filterByContactNameBtn;
+    private WebElement choosedContactName;
+    private WebElement filterBySourceBtn;
+    private WebElement choosedSource;
+    private WebElement filterByStageBtn;
+    private WebElement choosedStage;
+    private WebElement filterBySalesBtn;
+    private WebElement choosedSales;
+    private WebElement filterByCreatedByBtn;
+    private WebElement choosedCreatedBy;
+    private WebElement filterBtn;
+
 
     public LeadsPage()
     {
@@ -95,4 +107,61 @@ public class LeadsPage extends BaseTest {
         selectChb.click();
     }
 
+    public void openFilterMenu(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterBtn = driver.findElement(By.xpath(".//*[@id='searchContainer']/div/div[1]/span[2]"));
+        filterBtn.click();
+
+    }
+    public void filterByContactName(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByContactNameBtn = driver.findElement(By.id("contactName"));
+        filterByContactNameBtn.click();
+        wait(seconds);
+        choosedContactName = driver.findElement(By.xpath(".//*[@id='contactNameUl']/li[2]"));
+        choosedContactName.click();
+        wait(seconds);
+
+    }
+    public void filterBySource(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterBySourceBtn = driver.findElement(By.id("source"));
+        filterBySourceBtn.click();
+        wait(seconds);
+        choosedSource = driver.findElement(By.xpath(".//*[@id='sourceUl']/li[1]"));
+        choosedSource.click();
+        wait(seconds);
+
+    }
+
+    public void filterByStage(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByStageBtn = driver.findElement(By.id("workflow"));
+        filterByStageBtn.click();
+        wait(seconds);
+        choosedStage = driver.findElement(By.xpath(".//*[@id='workflowUl']/li[1]"));
+        choosedStage.click();
+        wait(seconds);
+
+    }
+    public void filterBySales(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterBySalesBtn = driver.findElement(By.id("salesPerson"));
+        filterBySalesBtn.click();
+        wait(seconds);
+        choosedSales = driver.findElement(By.xpath(".//*[@id='salesPersonUl']/li[1]"));
+        choosedSales.click();
+        wait(seconds);
+
+    }
+    public void filterByCreatedBy(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByCreatedByBtn = driver.findElement(By.id("createdBy"));
+        filterByCreatedByBtn.click();
+        wait(seconds);
+        choosedCreatedBy = driver.findElement(By.xpath(".//*[@id='createdByUl']/li[1]"));
+        choosedCreatedBy.click();
+        wait(seconds);
+
+    }
 }

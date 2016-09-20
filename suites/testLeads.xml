@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+    <test name="FilterByCreatedBy" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.FilterByCreatedBy"/>
+        </classes>
+    </test>
+    <test name="FilterBySalesPerson" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.FilterBySalesPerson"/>
+        </classes>
+    </test>
+    <test name="FilterByStage" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.FilterByStage"/>
+        </classes>
+    </test>
+    <test name="FilterBySource" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.FilterBySource"/>
+        </classes>
+    </test>
+    <test name="FilterByContactName" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.FilterByContactName"/>
+        </classes>
+    </test>
     <test name="CorrectLeadChrome" verbose="1" parallel="true">
         <parameter name="myBrowser" value="firefox" />
         <classes>
