@@ -25,6 +25,14 @@ public class OpportunitiesPage extends BaseTest {
     public WebElement SelectCurrentStage;
     public WebElement SelectStage;
     public WebElement openOpportunitie;
+    private WebElement filterByCustomerBtn;
+    private WebElement choosedCustomer;
+    private WebElement filterByStageBtn;
+    private WebElement choosedStage;
+    private WebElement filterBySalesBtn;
+    private WebElement choosedSales;
+    private WebElement filterBtn;
+
 
     public OpportunitiesPage()
     {
@@ -87,4 +95,41 @@ public class OpportunitiesPage extends BaseTest {
         ListViewButton.click();
         wait(seconds);
     }
+    public void openFilterMenu(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterBtn = driver.findElement(By.xpath(".//*[@id='searchContainer']/div/div[1]/span[2]"));
+        filterBtn.click();
+
+    }
+    public void filterByCustomer(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByCustomerBtn = driver.findElement(By.id("customer"));
+        filterByCustomerBtn.click();
+        wait(seconds);
+        choosedCustomer = driver.findElement(By.xpath(".//*[@id='customerUl']/li[1]"));
+        choosedCustomer.click();
+        wait(seconds);
+
+    }
+    public void filterByStage(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByStageBtn = driver.findElement(By.id("workflow"));
+        filterByStageBtn.click();
+        wait(seconds);
+        choosedStage = driver.findElement(By.xpath(".//*[@id='workflowUl']/li[1]"));
+        choosedStage.click();
+        wait(seconds);
+
+    }
+    public void filterBySales(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterBySalesBtn = driver.findElement(By.id("salesPerson"));
+        filterBySalesBtn.click();
+        wait(seconds);
+        choosedSales = driver.findElement(By.xpath(".//*[@id='salesPersonUl']/li[1]"));
+        choosedSales.click();
+        wait(seconds);
+
+    }
+
 }

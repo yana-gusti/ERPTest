@@ -40,6 +40,13 @@ public class PersonsPage extends BaseTest {
     public WebElement editPerson;
     public WebElement Per5PageItem;
     public WebElement SelectPages;
+    private WebElement filterBtn;
+    private WebElement filterByFullNameBtn;
+    private WebElement filterByCountryBtn;
+    private WebElement choosedFullName;
+    private WebElement choosedCountry;
+    private WebElement filterByServicesBtn;
+    private WebElement choosedServices;
 //    public  String arrowXpath = "sidebar_toggler" ;
 
 
@@ -256,6 +263,42 @@ public class PersonsPage extends BaseTest {
         SelectPages=driver.findElement(By.xpath(".//*[@id='pageList']/li[2]"));
         SelectPages.click();
         wait(seconds);
+    }
+    public void openFilterMenu(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterBtn = driver.findElement(By.xpath(".//*[@id='searchContainer']/div/div[1]/span[2]"));
+        filterBtn.click();
+
+    }
+    public void filterByFullName(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByFullNameBtn = driver.findElement(By.id("name"));
+        filterByFullNameBtn.click();
+        wait(seconds);
+        choosedFullName = driver.findElement(By.xpath(".//*[@id='nameUl']/li[1]"));
+        choosedFullName.click();
+        wait(seconds);
+
+    }
+    public void filterByCountry(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByCountryBtn = driver.findElement(By.id("country"));
+        filterByCountryBtn.click();
+        wait(seconds);
+        choosedCountry = driver.findElement(By.xpath(".//*[@id='countryUl']/li[1]"));
+        choosedCountry.click();
+        wait(seconds);
+
+    }
+    public void filterByServices(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        filterByServicesBtn = driver.findElement(By.id("services"));
+        filterByServicesBtn.click();
+        wait(seconds);
+        choosedServices = driver.findElement(By.xpath(".//*[@id='servicesUl']/li[1]"));
+        choosedServices.click();
+        wait(seconds);
+
     }
 
     }
