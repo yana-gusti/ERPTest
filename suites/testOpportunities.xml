@@ -1,68 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+    <test name="AddToFavoritesFilter" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome"/>
+        <classes>
+            <class name="Tests.Sales.Opportunities.AddToFavoritesFilter"/>
+        </classes>
+    </test>
+    <test name="RemoveFromFilterValue" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome"/>
+        <classes>
+            <class name="Tests.Sales.Opportunities.RemoveFilterValue"/>
+        </classes>
+    </test>
+    <test name="RemoveFromFavorites" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="chrome"/>
+        <classes>
+            <class name="Tests.Sales.Opportunities.RemoveFromFavoritesFilter"/>
+        </classes>
+    </test>
     <test name="SearchOpportunity" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.SearchOpportunity"/>
         </classes>
     </test>
     <test name="FilterByCustomer" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.FilterByCustomer"/>
         </classes>
     </test>
     <test name="FilterBySalesPerson" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.FilterBySalesPerson"/>
         </classes>
     </test>
     <test name="FilterByStage" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.FilterByStage"/>
         </classes>
     </test>
     <test name="CorrectOpportunityChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="firefox"/>
         <classes>
             <class name="Tests.Sales.Opportunities.CreateCorrectOpportunity"/>
         </classes>
     </test>
     <test name="IncorrectOpportunityChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.CreateIncorrectOpportunity"/>
         </classes>
     </test>
     <test name="OpportunityWithBlankFieldChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.CreateOpportunityWithBlankField"/>
         </classes>
     </test>
     <test name="ShortOpportunityFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.CreateShortOpportunity"/>
         </classes>
     </test>
     <test name="DetailsOfOpportunityFirefox" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.DetailsOfOpportunity"/>
         </classes>
     </test>
     <test name="OpportunityStageChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="chrome" />
+        <parameter name="myBrowser" value="chrome"/>
         <classes>
             <class name="Tests.Sales.Opportunities.OpportunityStage"/>
         </classes>
     </test>
     <test name="RemoveOpportunityChrome" verbose="1" parallel="true">
-        <parameter name="myBrowser" value="firefox" />
+        <parameter name="myBrowser" value="firefox"/>
         <classes>
             <class name="Tests.Sales.Opportunities.RemoveOpportunity"/>
         </classes>

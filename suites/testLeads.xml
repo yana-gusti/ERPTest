@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+    <test name="AddToFavoritesFilter" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.AddToFavoritesFilter"/>
+        </classes>
+    </test>
+    <test name="RemoveFilterFromFavorites" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.RemoveFromFavoritesFilter"/>
+        </classes>
+    </test>
+    <test name="RemoveFromFilterValues" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.RemoveFilterValues"/>
+        </classes>
+    </test>
     <test name="SearchLead" verbose="1" parallel="true">
         <parameter name="myBrowser" value="firefox" />
         <classes>

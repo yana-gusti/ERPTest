@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by puzzlefacePC on 03.01.14.
@@ -33,6 +34,11 @@ public class LeadsPage extends BaseTest {
     private WebElement choosedCreatedBy;
     private WebElement filterBtn;
     private WebElement searchInput;
+    private WebElement favoritesTab;
+    private WebElement saveButton;
+    private WebElement filterField;
+    private WebElement useByDefaultCheckbox;
+
 
     public LeadsPage()
     {
@@ -172,6 +178,44 @@ public class LeadsPage extends BaseTest {
         wait(seconds);
         searchInput.sendKeys(Keys.RETURN);
         wait(seconds);
+
+    }
+    public void removeFromFavoritesFilter(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        favoritesTab = driver.findElement(By.xpath("//li[@data-value='#favoritesContent']"));
+        favoritesTab.click();
+        wait(seconds);
+        List<WebElement> removeFromFavoritesBtn =driver.findElements(By.xpath("//button[@class='removeSavedFilter icon-close']"));
+        removeFromFavoritesBtn.get(0).click();
+        wait(seconds);
+
+
+    }
+
+    public void addToFavoritesFilter(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        favoritesTab = driver.findElement(By.xpath("//li[@data-value='#favoritesContent']"));
+        favoritesTab.click();
+        wait(seconds);
+        filterField = driver.findElement(By.id("forFilterName"));
+        filterField.sendKeys("test2");
+        wait(seconds);
+        useByDefaultCheckbox = driver.findElement(By.xpath("//div[@class='useByDefault']/input[@id='defaultFilter']"));
+        useByDefaultCheckbox.click();
+        wait(seconds);
+        saveButton = driver.findElement(By.id("saveFilterButton"));
+        saveButton.click();
+        wait(seconds);
+
+
+
+    }
+    public void removeFilterValueFilter(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        List<WebElement> removeFilterValuesBtn = driver.findElements(By.xpath("//span[@class='removeValues']"));
+        removeFilterValuesBtn.get(0).click();
+        wait(seconds);
+
 
     }
 }
