@@ -85,7 +85,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
     public void after() throws InterruptedException, IOException {
 //        wait(seconds);
 //            logOut(driver);
-            driver.close();
+            driver.quit();
     }
     public void logOut(RemoteWebDriver driver) throws InterruptedException, IOException
     {

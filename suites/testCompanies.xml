@@ -2,6 +2,31 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
 
+    <test name="AddToFavoritesFilter" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.AddToFavoritesFilter"/>
+        </classes>
+    </test>
+    <test name="RemoveFilterValues" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.RemoveFilterValues"/>
+        </classes>
+    </test>
+    <test name="RemoveFromFavoritesFilter" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.RemoveFromFavoritesFilter"/>
+        </classes>
+    </test>
+    <test name="SearchCompanies" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Companies.SearchCompanies"/>
+        </classes>
+    </test>
+
     <test name="FilterByNameChrome" verbose="1" parallel="true">
         <parameter name="myBrowser" value="firefox" />
         <classes>

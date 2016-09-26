@@ -4,6 +4,7 @@ import Methods.MyProfile.LoginPage;
 import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -32,6 +33,7 @@ public class OpportunitiesPage extends BaseTest {
     private WebElement filterBySalesBtn;
     private WebElement choosedSales;
     private WebElement filterBtn;
+    private WebElement searchInput;
 
 
     public OpportunitiesPage()
@@ -131,5 +133,13 @@ public class OpportunitiesPage extends BaseTest {
         wait(seconds);
 
     }
+    public void search(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        searchInput = driver.findElement(By.id("searchInput"));
+        searchInput.sendKeys("ERP");
+        wait(seconds);
+        searchInput.sendKeys(Keys.RETURN);
+        wait(seconds);
 
+    }
 }

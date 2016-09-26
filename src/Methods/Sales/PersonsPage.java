@@ -13,6 +13,7 @@ import Methods.Project.WTrackPage;
 import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -47,6 +48,7 @@ public class PersonsPage extends BaseTest {
     private WebElement choosedCountry;
     private WebElement filterByServicesBtn;
     private WebElement choosedServices;
+    private WebElement searchInput;
 //    public  String arrowXpath = "sidebar_toggler" ;
 
 
@@ -297,6 +299,15 @@ public class PersonsPage extends BaseTest {
         wait(seconds);
         choosedServices = driver.findElement(By.xpath(".//*[@id='servicesUl']/li[1]"));
         choosedServices.click();
+        wait(seconds);
+
+    }
+    public void search(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        searchInput = driver.findElement(By.id("searchInput"));
+        searchInput.sendKeys("John");
+        wait(seconds);
+        searchInput.sendKeys(Keys.RETURN);
         wait(seconds);
 
     }

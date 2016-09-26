@@ -4,6 +4,7 @@ import Methods.MyProfile.LoginPage;
 import Tests.Base.BaseTest;
 import data.Settings;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -31,7 +32,7 @@ public class LeadsPage extends BaseTest {
     private WebElement filterByCreatedByBtn;
     private WebElement choosedCreatedBy;
     private WebElement filterBtn;
-
+    private WebElement searchInput;
 
     public LeadsPage()
     {
@@ -161,6 +162,15 @@ public class LeadsPage extends BaseTest {
         wait(seconds);
         choosedCreatedBy = driver.findElement(By.xpath(".//*[@id='createdByUl']/li[1]"));
         choosedCreatedBy.click();
+        wait(seconds);
+
+    }
+    public void search(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        searchInput = driver.findElement(By.id("searchInput"));
+        searchInput.sendKeys("Web");
+        wait(seconds);
+        searchInput.sendKeys(Keys.RETURN);
         wait(seconds);
 
     }
