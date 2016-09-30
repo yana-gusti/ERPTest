@@ -12,11 +12,11 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by yana on 15.06.2016.
  */
-public class RemoveFromFilterValues extends BaseTest {
+public class AttachFileToPerson extends BaseTest {
 
     @Test(groups = { "good" })
 
-    public void RemoveFromFilterValues() throws InterruptedException, IOException
+    public void AttachFileToPerson() throws InterruptedException, IOException
     {
         PersonsPage personsPage = GoToPersonsPage();
         wait(seconds);
@@ -24,11 +24,10 @@ public class RemoveFromFilterValues extends BaseTest {
         wait(seconds);
         personsPage.SwitchOnList(driver);
         wait(seconds);
-        personsPage.openFilterMenu(driver);
+        personsPage.viewPersonDetails(driver);
         wait(seconds);
-        personsPage.filterByFullName(driver);
+        personsPage.attachFileToLead(driver);
         wait(seconds);
-        personsPage.removeFilterValueFilter(driver);
-        wait(seconds);
+
     }
 }

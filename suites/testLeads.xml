@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+    <test name="RemoveAttachmentFromLead" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.DeleteAttachFromLead"/>
+        </classes>
+    </test>
+    <test name="AttachFileToLead" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox" />
+        <classes>
+            <class name="Tests.Sales.Leads.AttachFileToLead"/>
+        </classes>
+    </test>
     <test name="AddToFavoritesFilter" verbose="1" parallel="true">
         <parameter name="myBrowser" value="firefox" />
         <classes>

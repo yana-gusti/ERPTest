@@ -3,11 +3,11 @@ package Tests.Base;
 import Methods.MyProfile.LoginPage;
 import Methods.MyProfile.MoveThroughMenu;
 import Methods.Sales.PersonsPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -155,7 +156,7 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
     }
     public void alertAccept() throws InterruptedException {
-        wait(100);
+        wait(1000);
         driver.switchTo().alert().accept();
 
     }
@@ -174,4 +175,22 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
 
     }
+    public void attachFileToLead(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+
+        WebElement El = driver.findElement(By.id("inputAttach"));
+        ((RemoteWebElement) El ).setFileDetector(new LocalFileDetector());
+        El.sendKeys("/Users/vitaliybizilia/Desktop/test.png");
+        wait(seconds);
+
+    }
+    public void removeAttachFileToLead(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        ((JavascriptExecutor)driver).executeScript("document.getElementsByClassName('deleteAttach')[0].click();");
+        wait(seconds);
+
+
+    }
+
+
 }

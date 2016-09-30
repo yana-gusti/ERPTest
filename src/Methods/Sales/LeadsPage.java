@@ -6,8 +6,11 @@ import data.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -38,7 +41,7 @@ public class LeadsPage extends BaseTest {
     private WebElement saveButton;
     private WebElement filterField;
     private WebElement useByDefaultCheckbox;
-
+    private WebElement attach;
 
     public LeadsPage()
     {
@@ -200,9 +203,9 @@ public class LeadsPage extends BaseTest {
         filterField = driver.findElement(By.id("forFilterName"));
         filterField.sendKeys("test2");
         wait(seconds);
-        useByDefaultCheckbox = driver.findElement(By.xpath("//div[@class='useByDefault']/input[@id='defaultFilter']"));
-        useByDefaultCheckbox.click();
-        wait(seconds);
+       // useByDefaultCheckbox = driver.findElement(By.xpath("//div[@class='useByDefault']/input[@id='defaultFilter']"));
+       // useByDefaultCheckbox.click();
+       // wait(seconds);
         saveButton = driver.findElement(By.id("saveFilterButton"));
         saveButton.click();
         wait(seconds);
@@ -218,4 +221,5 @@ public class LeadsPage extends BaseTest {
 
 
     }
+
 }
