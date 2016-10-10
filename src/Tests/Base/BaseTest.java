@@ -192,5 +192,39 @@ public  void beforeClass(String myBrowser) throws MalformedURLException {
 
     }
 
+    public void changePageShowedOnPagination(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollBy(0,250)", "");
+        wait(10000);
+        WebElement selectArrow = driver.findElement(By.xpath("//button[@class='currentPageList icon-arrow-up2']"));
+        selectArrow.click();
+        wait(10000);
+        WebElement chooseItem = driver.findElement(By.xpath("//li[text()='3']"));
+        chooseItem.click();
+    }
 
+    public void changeItemsQuantityShowedOnPage(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        WebElement changeQuantityCounter = driver.findElement(By.xpath("//a[@class='itemsNumber' and text()='200']"));
+        changeQuantityCounter.click();
+        wait(seconds);
+    }
+
+    public void nextPreviousPageTesting(RemoteWebDriver driver) throws InterruptedException {
+        wait(seconds);
+        WebElement nextPageItem = driver.findElement(By.id("nextPage"));
+        nextPageItem.click();
+        wait(seconds);
+        WebElement previousPageItem = driver.findElement(By.id("previousPage"));
+        previousPageItem.click();
+        wait(seconds);
+        WebElement lastShowedPageItem = driver.findElement(By.id("lastShowPage"));
+        lastShowedPageItem.click();
+        wait(seconds);
+        WebElement firstShowPageItem = driver.findElement(By.id("firstShowPage"));
+        firstShowPageItem.click();
+        wait(seconds);
+
+    }
 }

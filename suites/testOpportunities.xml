@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ScheduleBusTest" parallel="tests" thread-count="1">
+    <test name="ChangePageShowedTest" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox"/>
+        <classes>
+            <class name="Tests.Sales.Opportunities.ChangePageShowedTest"/>
+        </classes>
+    </test>
+    <test name="ChangeItemsQuantityOnPage" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox"/>
+        <classes>
+            <class name="Tests.Sales.Opportunities.ChangeItemsQuantityOnPageTest"/>
+        </classes>
+    </test>
+    <test name="NextPreviousPageTest" verbose="1" parallel="true">
+        <parameter name="myBrowser" value="firefox"/>
+        <classes>
+            <class name="Tests.Sales.Opportunities.NextPreviousPageTest"/>
+        </classes>
+    </test>
     <test name="AttachFileToopportinity" verbose="1" parallel="true">
         <parameter name="myBrowser" value="firefox"/>
         <classes>
